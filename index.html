@@ -376,11 +376,11 @@
       const DD = String(now.getDate()).padStart(2, '0');
       
       // Increment total visits
-      fetch('https://api.counterapi.dev/v1/bimsprint_web/total/up').catch(() => {});
+      fetch('https://api.counterapi.dev/v1/bimsprint_web/total/up/').catch(() => {});
       // Increment daily visits
-      fetch(`https://api.counterapi.dev/v1/bimsprint_web/day_${YYYY}_${MM}_${DD}/up`).catch(() => {});
+      fetch(`https://api.counterapi.dev/v1/bimsprint_web/day_${YYYY}_${MM}_${DD}/up/`).catch(() => {});
       // Increment monthly visits
-      fetch(`https://api.counterapi.dev/v1/bimsprint_web/month_${YYYY}_${MM}/up`).catch(() => {});
+      fetch(`https://api.counterapi.dev/v1/bimsprint_web/month_${YYYY}_${MM}/up/`).catch(() => {});
     }
 
     // Secret footer copyright double-tap (5 clicks) to open dashboard
@@ -421,7 +421,7 @@
 
       try {
         const fetchVal = async (key) => {
-          const res = await fetch(`https://api.counterapi.dev/v1/bimsprint_web/${key}`);
+          const res = await fetch(`https://api.counterapi.dev/v1/bimsprint_web/${key}/`);
           if (!res.ok) return 0;
           const data = await res.json();
           return data.count || 0;
