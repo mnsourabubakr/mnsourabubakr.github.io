@@ -376,11 +376,11 @@
       const DD = String(now.getDate()).padStart(2, '0');
       
       // Increment total visits
-      fetch('https://api.counterapi.dev/v1/projects/bimsprint_web/keys/total/increment').catch(() => {});
+      fetch('https://api.counterapi.dev/v1/bimsprint_web/total/up').catch(() => {});
       // Increment daily visits
-      fetch(`https://api.counterapi.dev/v1/projects/bimsprint_web/keys/day_${YYYY}_${MM}_${DD}/increment`).catch(() => {});
+      fetch(`https://api.counterapi.dev/v1/bimsprint_web/day_${YYYY}_${MM}_${DD}/up`).catch(() => {});
       // Increment monthly visits
-      fetch(`https://api.counterapi.dev/v1/projects/bimsprint_web/keys/month_${YYYY}_${MM}/increment`).catch(() => {});
+      fetch(`https://api.counterapi.dev/v1/bimsprint_web/month_${YYYY}_${MM}/up`).catch(() => {});
     }
 
     // Secret footer copyright double-tap (5 clicks) to open dashboard
@@ -421,10 +421,10 @@
 
       try {
         const fetchVal = async (key) => {
-          const res = await fetch(`https://api.counterapi.dev/v1/projects/bimsprint_web/keys/${key}`);
+          const res = await fetch(`https://api.counterapi.dev/v1/bimsprint_web/${key}`);
           if (!res.ok) return 0;
           const data = await res.json();
-          return data.value || 0;
+          return data.count || 0;
         };
 
         const total = await fetchVal('total');
