@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Tools — BIM Sprint</title>
+<meta name="description" content="Browse BIM Sprint's automation tool packages: Structural Rebar Suite, CAD-to-Revit Suite, and BIM Utilities.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/images/logo.png" alt="BIM Sprint" onerror="this.style.display='none'">
+    <div>
+      <span class="nav-logo-text">BIM Sprint</span>
+      <span class="nav-logo-sub">BIM Automation</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#why">Why Automate</a>
+    <a href="index.html#services">Our Services</a>
+    <a href="tools.html">Our Tools</a>
+    <a href="index.html#contact" class="nav-cta">Contact Us</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#about">About Us</a>
+  <a href="index.html#why">Why Automate</a>
+  <a href="index.html#services">Our Services</a>
+  <a href="tools.html">Our Tools</a>
+  <a href="index.html#contact">Contact Us</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="section-label" style="justify-content:center">Revit API Add-ins</div>
+  <h1 class="section-title" style="font-size:clamp(32px,5vw,48px)">Our Automation <span class="accent">Solutions</span></h1>
+  <p class="section-sub" style="max-width:600px;margin:14px auto 0;text-align:center">
+    Click a package to explore its tools. Each tool eliminates hours of manual engineering work.
+  </p>
+  <p style="font-family:var(--mono);font-size:12px;color:var(--amber);margin-top:20px;text-align:center">
+    ⚠ These are selected examples — we build custom tools for any workflow.
+  </p>
+</div>
+
+<!-- ACCORDIONS -->
+<div class="accordion">
+
+  <!-- PACKAGE 01 -->
+  <div id="pkg01">
+    <div class="acc-header">
+      <div class="acc-num">01</div>
+      <div class="acc-info">
+        <h3>Structural Rebar &amp; Reinforcement Automation Suite</h3>
+        <p>5 tools covering all RC reinforcement detailing in Revit — footings, columns, slab rebar, legs generation, and visibility control.</p>
+        <div class="acc-badges">
+          <span class="acc-badge">C#</span>
+          <span class="acc-badge">.NET 8</span>
+          <span class="acc-badge">Revit API</span>
+          <span class="acc-badge">WPF / MVVM</span>
+        </div>
+      </div>
+      <div class="acc-arrow">▼</div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-tools">
+        <a href="tool.html?id=01" class="acc-tool">
+          <h4>Isolated Footing Rebar Tool</h4>
+          <p>Automates all reinforcement detailing for isolated footings — mesh layers, side bars, cover constraints.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=02" class="acc-tool">
+          <h4>Column Reinforcement Tool</h4>
+          <p>Complete column detailing — longitudinal bars, starter bars, stirrups with variable spacing zones.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=03" class="acc-tool">
+          <h4>Additional Rebar from CAD Tool</h4>
+          <p>Reads imported CAD drawings and converts annotated rebar into fully parametric Revit reinforcement.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=13" class="acc-tool">
+          <h4>Legs Generator Tool</h4>
+          <p>Automates placing of structural hook legs for rebar layers at concrete edges, openings, and slab drops.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=04" class="acc-tool">
+          <h4>Rebar Visibility Control Tool</h4>
+          <p>One-click visibility manager for all rebar elements across any Revit view.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGE 02 -->
+  <div id="pkg02">
+    <div class="acc-header">
+      <div class="acc-num">02</div>
+      <div class="acc-info">
+        <h3>CAD-to-Revit Structural Modeling Suite</h3>
+        <p>4 tools that convert imported AutoCAD drawings into fully parametric Revit structural elements.</p>
+        <div class="acc-badges">
+          <span class="acc-badge">C#</span>
+          <span class="acc-badge">.NET 8</span>
+          <span class="acc-badge">Revit API</span>
+          <span class="acc-badge">CAD Geometry</span>
+        </div>
+      </div>
+      <div class="acc-arrow">▼</div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-tools">
+        <a href="tool.html?id=05" class="acc-tool">
+          <h4>Foundation Modeling Tool</h4>
+          <p>Reads CAD geometry → generates isolated footings and raft slabs with correct dimensions, types, and naming.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=06" class="acc-tool">
+          <h4>Columns &amp; RC Walls Modeling Tool</h4>
+          <p>Processes CAD plans → generates all structural columns and RC walls as parametric Revit elements.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=07" class="acc-tool">
+          <h4>Slabs &amp; Drop Panels Modeling Tool</h4>
+          <p>Reads slab boundaries from CAD → generates Revit slabs with correct types, elevations, and Drop Panels.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=08" class="acc-tool">
+          <h4>Beams Modeling Tool</h4>
+          <p>Reads beam geometry from CAD → places structural beams including irregular cross-sections across floors.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGE 03 -->
+  <div id="pkg03">
+    <div class="acc-header">
+      <div class="acc-num">03</div>
+      <div class="acc-info">
+        <h3>General &amp; Multi-Discipline BIM Utilities</h3>
+        <p>General-purpose tools for Architectural, Structural, and MEP workflows — navigation, finishing, data transfer.</p>
+        <div class="acc-badges">
+          <span class="acc-badge">C#</span>
+          <span class="acc-badge">.NET 8</span>
+          <span class="acc-badge">Revit API</span>
+          <span class="acc-badge">Observable Properties</span>
+        </div>
+      </div>
+      <div class="acc-arrow">▼</div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-tools">
+        <a href="tool.html?id=09" class="acc-tool">
+          <h4>Model Navigator Tool</h4>
+          <p>Centralized model control — browse categories, select elements, perform bulk actions from one panel.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=10" class="acc-tool">
+          <h4>Room Wizard Tool</h4>
+          <p>Room management with instant Section Box navigation and live material change preview.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=11" class="acc-tool">
+          <h4>Instance Parameter Transfer Tool</h4>
+          <p>Copy, move, or delete instance parameter values across elements — supports all storage types.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+        <a href="tool.html?id=12" class="acc-tool">
+          <h4>Type Parameter Transfer Tool</h4>
+          <p>Same powerful interface operating on Revit family type parameters. Essential for BIM data management.</p>
+          <span class="acc-tool-link">View Details →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<section class="section section-blue" style="text-align:center">
+  <h2 class="section-title">Need a <span class="accent">Custom Tool</span>?</h2>
+  <p class="section-sub" style="margin:12px auto 28px;text-align:center">We build custom automation for any workflow, any discipline. Tell us your process.</p>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mnsourabubakr95@gmail.com&su=Custom+Tool+Request" target="_blank" class="btn btn-primary">Request Custom Tool →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.png" alt="" style="height:28px" onerror="this.style.display='none'">
+      <span class="footer-brand-name">BIM Sprint</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#why">Why Automate</a>
+      <a href="tools.html">Tools</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px">
+    <span class="footer-copy">© 2025 BIM Sprint · All rights reserved</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

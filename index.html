@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIM Sprint — BIM Automation Solutions</title>
+<meta name="description" content="BIM Sprint specializes in Revit API automation and custom BIM tools for Architecture, Structure, MEP & Infrastructure.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/images/logo.png" alt="BIM Sprint" onerror="this.style.display='none'">
+    <div>
+      <span class="nav-logo-text">BIM Sprint</span>
+      <span class="nav-logo-sub">BIM Automation</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About Us</a>
+    <a href="#why">Why Automate</a>
+    <a href="#services">Our Services</a>
+    <a href="tools.html">Our Tools</a>
+    <a href="#contact" class="nav-cta">Contact Us</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="#about">About Us</a>
+  <a href="#why">Why Automate</a>
+  <a href="#services">Our Services</a>
+  <a href="tools.html">Our Tools</a>
+  <a href="#contact">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="assets/images/logo.png" alt="BIM Sprint Logo" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E40AF,#0EA5E9);color:#fff;font-size:28px;font-weight:900\'>BS</div>'">
+    </div>
+    <h1><span class="accent">BIM Sprint</span><br>Automation Solutions</h1>
+    <div class="hero-tagline">Engineering Automation & BIM Solutions</div>
+    <p class="hero-sub">
+      <em>Automating Engineering.</em> Accelerating Productivity.<br>
+      We build production-grade Revit add-ins and custom engineering software
+      that eliminate repetitive modeling tasks across all disciplines.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Architecture</span>
+      <span class="hero-tag">Structure</span>
+      <span class="hero-tag">MEP</span>
+      <span class="hero-tag">Infrastructure</span>
+      <span class="hero-tag">Revit API</span>
+      <span class="hero-tag">C# / .NET 8</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">90%+</div><div class="stat-label">Avg. Time Saved</div></div>
+      <div class="stat"><div class="stat-num">13+</div><div class="stat-label">Tools Deployed</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Solution Packages</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Disciplines Served</div></div>
+    </div>
+    <div class="hero-ctas">
+      <a href="tools.html" class="btn btn-primary">Explore Our Tools →</a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="section-header center">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Our <span class="accent">Services</span></h2>
+    <p class="section-sub">Complete engineering automation solutions — from ready-to-use Revit add-ins to full custom software development and structural BIM services.</p>
+  </div>
+  <div class="services-grid">
+    <!-- Left: Software Solutions -->
+    <div class="svc-card">
+      <div class="svc-card-header">
+        <div class="svc-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+            <path d="M6 8l-2 2 2 2"/>
+            <path d="M10 8l2 2-2 2"/>
+          </svg>
+        </div>
+        <h3>BIM AUTOMATION &<br><span>SOFTWARE SOLUTIONS</span></h3>
+      </div>
+      <div class="svc-list">
+        <div class="svc-item">
+          <div class="svc-item-icon">🧩</div>
+          <span>Ready-to-Use Revit Add-ins</span>
+        </div>
+        <div class="svc-item">
+          <div class="svc-item-icon">🔧</div>
+          <span>Custom Revit Add-in Development</span>
+        </div>
+        <div class="svc-item">
+          <div class="svc-item-icon">⚙️</div>
+          <span>Workflow Automation</span>
+        </div>
+        <div class="svc-item">
+          <div class="svc-item-icon">💻</div>
+          <span>Custom Engineering Software Development</span>
+        </div>
+        <div class="svc-item">
+          <div class="svc-item-icon">🔄</div>
+          <span>Legacy Software Modernization</span>
+        </div>
+        <div class="svc-item">
+          <div class="svc-item-icon">🛠️</div>
+          <span>Revit Add-in Maintenance & Enhancement</span>
+        </div>
+        <div class="svc-item">
+          <div class="svc-item-icon">🔒</div>
+          <span>Software Licensing & Protection</span>
+        </div>
+        <div class="svc-item">
+          <div class="svc-item-icon">📋</div>
+          <span>BIM Automation Consulting</span>
+        </div>
+      </div>
+    </div>
+    <!-- Right: Structural BIM Services -->
+    <div class="svc-right-cards">
+      <div class="svc-card" style="padding: 30px; display: flex; flex-direction: column; gap: 20px; flex: 1;">
+        <div class="svc-card-header" style="margin-bottom: 0; border-bottom: 2px solid rgba(255,138,0,0.08); padding-bottom: 12px; width: 100%;">
+          <div class="svc-card-icon orange">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18"/>
+              <path d="M9 21V9l3-3 3 3v12"/>
+              <path d="M5 21V12l2-2 2 2v9"/>
+              <path d="M15 21v-7l2-2 2 2v9"/>
+            </svg>
+          </div>
+          <h3>STRUCTURAL BIM<br><span>SERVICES</span></h3>
+        </div>
+        <div class="svc-right-cards" style="gap: 16px; width: 100%;">
+          <div class="svc-right-card">
+            <div class="svc-right-icon">🏢</div>
+            <h4>Structural & Architectural<br>BIM Modeling</h4>
+          </div>
+          <div class="svc-right-card">
+            <div class="svc-right-icon">📐</div>
+            <h4>Structural<br>Shop Drawings</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="section section-alt" id="about">
+  <div class="section-header">
+    <div class="section-label">About the Company</div>
+    <h2 class="section-title">About <span class="accent">BIM Sprint</span></h2>
+    <p class="section-sub">A focused team building world-class BIM automation — not just tools, but complete workflow solutions.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-card-label">Who We Are</div>
+      <h3>Our Specialization</h3>
+      <ul>
+        <li>Specialized firm providing BIM Automation, Revit API add-ins, and custom engineering software</li>
+        <li>Advanced software licensing & protection (code encryption, subscription control, node-locking, and piracy prevention)</li>
+        <li>Professional Structural & Architectural BIM modeling and shop drawing production</li>
+        <li>7+ years of combined structural engineering and software development expertise</li>
+        <li>Deployed on large-scale, high-complexity projects — hospitals, towers, infrastructure</li>
+        <li>Production-grade architecture: C#, .NET 8, Revit API, WPF, MVVM</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <div class="about-card-label">What We Offer</div>
+      <h3>Three Core Delivery Models</h3>
+      <ul>
+        <li><strong>Ready Products</strong> — Industry-proven, production-ready Revit Add-ins for immediate deployment</li>
+        <li><strong>Custom Tools</strong> — Bespoke Revit API add-ins tailored to your company's workflows and standards</li>
+        <li><strong>BIM Services</strong> — High-quality structural/architectural modeling & precision shop drawing creation</li>
+        <li>Comprehensive onboarding, documentation, updates, and consulting support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY AUTOMATE -->
+<section class="section" id="why">
+  <div class="section-header">
+    <div class="section-label">The Case for Automation</div>
+    <h2 class="section-title">Why <span class="accent">BIM Automation</span>?</h2>
+    <p class="section-sub">Manual BIM modeling is the single largest time sink in any engineering workflow. Automation changes everything.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <div class="why-num">90%+</div>
+      <h3>Modeling Time Reduced</h3>
+      <p>Tasks that previously took full working days are completed in minutes. Benchmarked on real hospital and university projects.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-num">Zero</div>
+      <h3>Human Errors Eliminated</h3>
+      <p>Automated placement reads directly from engineering drawings — no re-interpretation, no typos, no missed elements.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📐</div>
+      <div class="why-num">100%</div>
+      <h3>Workflow Standardization</h3>
+      <p>Every project follows the same standards automatically. Naming, type families, cover constraints — all enforced.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏗️</div>
+      <div class="why-num">∞</div>
+      <h3>Unlimited Scale</h3>
+      <p>10-floor building or 50-floor tower — automation scales instantly. Linear manual effort becomes constant.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TOOLS PREVIEW -->
+<section class="section section-blue" id="tools">
+  <div class="section-header center">
+    <div class="section-label">Our Solutions</div>
+    <h2 class="section-title">Automation <span class="accent">Tool Packages</span></h2>
+    <p class="section-sub">Selected examples of our deployed automation tools — each eliminating hours of manual engineering work.</p>
+  </div>
+  <div class="tools-preview">
+    <a href="tools.html#pkg01" class="tool-preview-card">
+      <div class="tpc-num">01</div>
+      <div class="tpc-title">Structural Rebar &amp; Reinforcement Suite</div>
+      <div class="tpc-desc">5 tools covering all RC reinforcement detailing — footings, columns, slab rebar, legs generation, and visibility control.</div>
+      <span class="tpc-badge">5 Tools</span>
+    </a>
+    <a href="tools.html#pkg02" class="tool-preview-card">
+      <div class="tpc-num">02</div>
+      <div class="tpc-title">CAD-to-Revit Structural Modeling Suite</div>
+      <div class="tpc-desc">Convert imported AutoCAD drawings into fully parametric Revit elements — foundations, columns, slabs, beams.</div>
+      <span class="tpc-badge">4 Tools</span>
+    </a>
+    <a href="tools.html#pkg03" class="tool-preview-card">
+      <div class="tpc-num">03</div>
+      <div class="tpc-title">General &amp; Multi-Discipline BIM Utilities</div>
+      <div class="tpc-desc">Model navigation, room finishing management, and parameter data transfer across the entire Revit model.</div>
+      <span class="tpc-badge">4 Tools</span>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:36px">
+    <a href="tools.html" class="btn btn-primary">View All Tools →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+  <div class="section-header">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Ready to <span class="accent">Automate</span>?</h2>
+    <p class="section-sub">Tell us about your process. We'll scope a solution — ready tool or custom add-in built for your team.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="ci-icon">📞</div>
+        <div><strong>Phone</strong><br>
+          <a href="tel:+201068970898" style="color:var(--primary)">+20 106 897 0898</a> / 
+          <a href="tel:+201129011401" style="color:var(--primary)">+20 112 901 1401</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">💬</div>
+        <div><strong>WhatsApp</strong><br><a href="https://wa.me/201068970898" target="_blank" style="color:var(--primary)">+20 106 897 0898</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">✉️</div>
+        <div><strong>Email</strong><br><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mnsourabubakr95@gmail.com" target="_blank" style="color:var(--primary)">mnsourabubakr95@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">🌐</div>
+        <div><strong>Website</strong><br><a href="https://www.bimsprint.com" target="_blank" style="color:var(--primary)">www.bimsprint.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">💼</div>
+        <div><strong>LinkedIn</strong><br><a href="https://linkedin.com/in/mansour-abo-bakr-61aa10239" target="_blank" style="color:var(--primary)">Mansour Abo Bakr</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">⌨️</div>
+        <div><strong>GitHub</strong><br><a href="https://github.com/mnsourabubakr" target="_blank" style="color:var(--primary)">mnsourabubakr</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <div><strong>Location</strong><br>Cairo, Nasr City, Egypt</div>
+      </div>
+    </div>
+    <div class="contact-ctas">
+      <a href="https://wa.me/201068970898" target="_blank" class="btn btn-primary">💬 Contact Us</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mnsourabubakr95@gmail.com&su=Custom+Tool+Request" target="_blank" class="btn btn-outline">Request Custom Tool</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.png" alt="" style="height:28px" onerror="this.style.display='none'">
+      <span class="footer-brand-name">BIM Sprint</span>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#why">Why Automate</a>
+      <a href="tools.html">Tools</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/mnsourabubakr" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/mansour-abo-bakr-61aa10239" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px">
+    <span class="footer-copy">© 2025 BIM Sprint · All rights reserved · Open to local &amp; international clients</span>
+  </div>
+</footer>
+
+<!-- ADMIN STATS MODAL -->
+<div id="adminStatsModal" class="stats-modal">
+  <div class="stats-modal-content">
+    <span class="stats-modal-close" onclick="closeStatsModal()">&times;</span>
+    <h3 class="stats-modal-title">📊 Visitor Statistics</h3>
+    <p class="stats-modal-subtitle">Private website traffic overview for BIM Sprint</p>
+    
+    <div class="stats-grid">
+      <div class="stat-box full-width">
+        <div class="stat-box-lbl">Total Visits</div>
+        <div class="stat-box-val" id="statTotal">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-lbl">Today</div>
+        <div class="stat-box-val" id="statToday">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-lbl">This Month</div>
+        <div class="stat-box-val" id="statMonth">0</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+
+<!-- Visitor Stats Logic -->
+<script>
+  (function() {
+    // Check if user has already visited in this session to prevent reload spam
+    if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem('bimsprint_counted')) {
+      sessionStorage.setItem('bimsprint_counted', 'true');
+      
+      const now = new Date();
+      const YYYY = now.getFullYear();
+      const MM = String(now.getMonth() + 1).padStart(2, '0');
+      const DD = String(now.getDate()).padStart(2, '0');
+      
+      // Increment total visits
+      fetch('https://api.counterapi.dev/v1/projects/bimsprint_web/keys/total/increment').catch(() => {});
+      // Increment daily visits
+      fetch(`https://api.counterapi.dev/v1/projects/bimsprint_web/keys/day_${YYYY}_${MM}_${DD}/increment`).catch(() => {});
+      // Increment monthly visits
+      fetch(`https://api.counterapi.dev/v1/projects/bimsprint_web/keys/month_${YYYY}_${MM}/increment`).catch(() => {});
+    }
+
+    // Secret footer copyright double-tap (5 clicks) to open dashboard
+    let clicks = 0;
+    const footerCopy = document.querySelector('.footer-copy');
+    if (footerCopy) {
+      footerCopy.style.cursor = 'pointer';
+      footerCopy.title = "Admin Portal Link";
+      footerCopy.addEventListener('click', () => {
+        clicks++;
+        if (clicks >= 5) {
+          clicks = 0;
+          openStatsModal();
+        }
+      });
+    }
+
+    // Also supports directly navigating with URL parameter ?admin=true
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('admin') === 'true') {
+      window.history.replaceState({}, document.title, window.location.pathname);
+      openStatsModal();
+    }
+
+    async function openStatsModal() {
+      const modal = document.getElementById('adminStatsModal');
+      if (!modal) return;
+      modal.classList.add('show');
+      
+      const now = new Date();
+      const YYYY = now.getFullYear();
+      const MM = String(now.getMonth() + 1).padStart(2, '0');
+      const DD = String(now.getDate()).padStart(2, '0');
+
+      document.getElementById('statTotal').textContent = 'Loading...';
+      document.getElementById('statToday').textContent = 'Loading...';
+      document.getElementById('statMonth').textContent = 'Loading...';
+
+      try {
+        const fetchVal = async (key) => {
+          const res = await fetch(`https://api.counterapi.dev/v1/projects/bimsprint_web/keys/${key}`);
+          if (!res.ok) return 0;
+          const data = await res.json();
+          return data.value || 0;
+        };
+
+        const total = await fetchVal('total');
+        const today = await fetchVal(`day_${YYYY}_${MM}_${DD}`);
+        const month = await fetchVal(`month_${YYYY}_${MM}`);
+
+        document.getElementById('statTotal').textContent = total;
+        document.getElementById('statToday').textContent = today;
+        document.getElementById('statMonth').textContent = month;
+      } catch (err) {
+        document.getElementById('statTotal').textContent = 'Error';
+        document.getElementById('statToday').textContent = 'Error';
+        document.getElementById('statMonth').textContent = 'Error';
+      }
+    }
+
+    window.closeStatsModal = function() {
+      const modal = document.getElementById('adminStatsModal');
+      if (modal) modal.classList.remove('show');
+    }
+  })();
+</script>
+</body>
+</html>

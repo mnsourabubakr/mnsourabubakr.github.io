@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Details — BIM Sprint</title>
+<meta name="description" content="BIM Sprint automation tool details — features, time comparisons, and demo.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/images/logo.png" alt="BIM Sprint" onerror="this.style.display='none'">
+    <div>
+      <span class="nav-logo-text">BIM Sprint</span>
+      <span class="nav-logo-sub">BIM Automation</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#why">Why Automate</a>
+    <a href="index.html#services">Our Services</a>
+    <a href="tools.html">Our Tools</a>
+    <a href="index.html#contact" class="nav-cta">Contact Us</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#about">About Us</a>
+  <a href="index.html#why">Why Automate</a>
+  <a href="index.html#services">Our Services</a>
+  <a href="tools.html">Our Tools</a>
+  <a href="index.html#contact">Contact Us</a>
+</div>
+
+<!-- TOOL CONTENT -->
+<main class="tool-page" id="tool-content">
+  <a href="tools.html" class="tool-back">← Back to All Tools</a>
+  <div id="tool-badge" class="tool-badge"></div>
+  <h1 id="tool-title" class="tool-detail-title"></h1>
+  <p id="tool-desc" class="tool-desc"></p>
+
+  <!-- Image -->
+  <div class="tool-image" id="tool-image-wrap">
+    <img id="tool-img" alt="">
+  </div>
+
+  <!-- Features -->
+  <div class="tool-section">
+    <h3>Key Features</h3>
+    <ul class="feat-list" id="tool-features"></ul>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="tool-section">
+    <h3 id="table-title">Time Comparison</h3>
+    <table class="cmp-table">
+      <thead>
+        <tr><th>Task</th><th>Manual</th><th>With Tool</th><th>Saved</th></tr>
+      </thead>
+      <tbody id="tool-table"></tbody>
+    </table>
+    <div class="summary-bar" id="tool-summary"></div>
+  </div>
+
+  <!-- CTA & Demo -->
+  <div class="tool-cta">
+    <h3>Interested in this tool?</h3>
+    <p>Contact us to purchase or discuss customization for your workflow.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="https://wa.me/201068970898" target="_blank" class="btn btn-primary">💬 Contact Us</a>
+      <button onclick="playDemo()" class="btn btn-outline">▶ Watch a Demo</button>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.png" alt="" style="height:28px" onerror="this.style.display='none'">
+      <span class="footer-brand-name">BIM Sprint</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px">
+    <span class="footer-copy">© 2025 BIM Sprint · All rights reserved</span>
+  </div>
+</footer>
+
+<script src="js/tools-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Load tool data from URL param
+  const params = new URLSearchParams(window.location.search);
+  const toolId = params.get('id');
+  const tool = toolId ? TOOLS[toolId] : null;
+
+  if (tool) {
+    document.title = tool.title + ' — BIM Sprint';
+    document.getElementById('tool-badge').textContent = tool.pkg;
+    document.getElementById('tool-title').textContent = tool.title;
+    document.getElementById('tool-desc').textContent = tool.desc;
+    
+    const imgEl = document.getElementById('tool-img');
+    imgEl.onerror = function() {
+      this.parentElement.innerHTML = '<div class="tool-image-placeholder">📸 Screenshot available upon request</div>';
+    };
+    imgEl.src = tool.image;
+    imgEl.alt = tool.title;
+
+    // Features
+    const featEl = document.getElementById('tool-features');
+    tool.features.forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f;
+      featEl.appendChild(li);
+    });
+
+    // Table
+    document.getElementById('table-title').textContent = tool.tableTitle;
+    const tbody = document.getElementById('tool-table');
+    tool.rows.forEach(r => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${r[0]}</td>
+        <td><span class="e-manual">${r[1]}</span></td>
+        <td><span class="e-auto">${r[2]}</span></td>
+        <td><span class="e-save">${r[3]}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Summary
+    document.getElementById('tool-summary').innerHTML = '⚡ ' + tool.summary;
+
+    // Watch a Demo logic
+    window.playDemo = function() {
+      if (tool.videoUrl && tool.videoUrl.trim() !== '') {
+        window.open(tool.videoUrl, '_blank');
+      } else {
+        alert("Video is not available currently / الفيديو غير متاح حالياً");
+      }
+    };
+  } else {
+    document.getElementById('tool-content').innerHTML = `
+      <div style="text-align:center;padding:120px 20px">
+        <h2 style="margin-bottom:16px">Tool Not Found</h2>
+        <p style="color:var(--text-sec);margin-bottom:24px">The requested tool could not be found.</p>
+        <a href="tools.html" class="btn btn-primary">← Back to Tools</a>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>
