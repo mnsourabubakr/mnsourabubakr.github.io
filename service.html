@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Details — BIM Sprint</title>
+<meta name="description" content="BIM Sprint automation services - custom development, consulting, and modeling details.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .service-page {
+    max-width: var(--width-content);
+    margin: 120px auto 60px;
+    padding: 0 24px;
+  }
+  .service-back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--primary-600);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .service-back:hover {
+    color: var(--primary-800);
+  }
+  .service-header-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+  .service-icon-large {
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+    background: var(--primary-50);
+    border: 1.5px solid var(--primary-100);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .service-detail-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0;
+  }
+  .service-tagline {
+    font-size: 18px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+  .service-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+  }
+  .service-meta-item {
+    font-size: 14px;
+    color: var(--text-sec);
+  }
+  .service-meta-item strong {
+    color: var(--text);
+  }
+  .service-section {
+    margin-bottom: 40px;
+  }
+  .service-section h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(15,76,129,0.08);
+  }
+  .service-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .service-ul li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text-sec);
+    line-height: 1.5;
+  }
+  .service-ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  .service-box-cta {
+    background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 100%);
+    color: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    margin: 50px 0;
+    box-shadow: var(--shadow-lg);
+  }
+  .service-box-cta h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .service-box-cta p {
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  .pkg-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s;
+  }
+  .pkg-card:hover {
+    border-color: var(--primary-400);
+    box-shadow: var(--shadow-md);
+  }
+  .pkg-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .pkg-desc {
+    font-size: 13px;
+    color: var(--text-sec);
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .related-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--accent);
+    color: var(--primary);
+    transform: translateX(2px);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/images/logo.png" alt="BIM Sprint" onerror="this.style.display='none'">
+    <div>
+      <span class="nav-logo-text">BIM Sprint</span>
+      <span class="nav-logo-sub">BIM Automation</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#why">Why Automate</a>
+    <a href="index.html#services">Our Services</a>
+    <a href="tools.html">Our Tools</a>
+    <a href="index.html#contact" class="nav-cta">Contact Us</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#about">About Us</a>
+  <a href="index.html#why">Why Automate</a>
+  <a href="index.html#services">Our Services</a>
+  <a href="tools.html">Our Tools</a>
+  <a href="index.html#contact">Contact Us</a>
+</div>
+
+<!-- SERVICE CONTENT -->
+<main class="service-page" id="service-content">
+  <a href="index.html#services" class="service-back">← Back to Services</a>
+  
+  <div class="service-header-wrap">
+    <div id="service-icon" class="service-icon-large"></div>
+    <h1 id="service-title" class="service-detail-title"></h1>
+  </div>
+  
+  <p id="service-tagline" class="service-tagline"></p>
+
+  <div style="display:flex;gap:12px;margin-bottom:36px;flex-wrap:wrap">
+    <a href="https://wa.me/201068970898" target="_blank" class="btn btn-primary">Request a Free Consultation</a>
+    <button onclick="playDemo()" class="btn btn-outline">▶ Watch Demo (Coming Soon)</button>
+  </div>
+
+  <div class="service-meta-grid">
+    <div class="service-meta-item">
+      📅 <strong>Delivery Time:</strong> <span id="service-delivery"></span>
+    </div>
+    <div class="service-meta-item">
+      ⚙️ <strong>Compatibility:</strong> <span id="service-compat"></span>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="service-section">
+    <h3>Overview</h3>
+    <p id="service-overview" style="line-height:1.6;color:var(--text-sec);font-size:15px"></p>
+  </div>
+
+  <!-- Packages (Only for ready tools) -->
+  <div class="service-section" id="service-packages-section" style="display:none">
+    <h3>Available Deployed Packages</h3>
+    <div class="packages-grid" id="service-packages"></div>
+  </div>
+
+  <!-- Features -->
+  <div class="service-section">
+    <h3>Key Features</h3>
+    <ul class="service-ul" id="service-features"></ul>
+  </div>
+
+  <!-- Use Cases -->
+  <div class="service-section">
+    <h3>Typical Use Cases</h3>
+    <ul class="service-ul" id="service-usecases"></ul>
+  </div>
+
+  <!-- Deliverables -->
+  <div class="service-section" id="service-deliverables-section" style="display:none">
+    <h3>Deliverables Included</h3>
+    <ul class="service-ul" id="service-deliverables"></ul>
+  </div>
+
+  <!-- CTA Box -->
+  <div class="service-box-cta">
+    <h3>Ready to improve your engineering workflow?</h3>
+    <p>Let's discuss your project requirements and find the best automated solution tailored for your team.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="https://wa.me/201068970898" target="_blank" class="btn btn-primary">Request a Consultation</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mnsourabubakr95@gmail.com&su=Consultation+Request" target="_blank" class="btn btn-outline" style="border-color:#fff;color:#fff">Email Us</a>
+    </div>
+  </div>
+
+  <!-- Related Services -->
+  <div class="service-section">
+    <h3>Related Services</h3>
+    <div class="related-grid" id="service-related"></div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.png" alt="" style="height:28px" onerror="this.style.display='none'">
+      <span class="footer-brand-name">BIM Sprint</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px">
+    <span class="footer-copy">© 2025 BIM Sprint · All rights reserved</span>
+  </div>
+</footer>
+
+<script src="js/services-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const serviceId = params.get('id');
+  const service = serviceId ? SERVICES[serviceId] : null;
+
+  if (service) {
+    document.title = service.title + ' — BIM Sprint';
+    document.getElementById('service-icon').textContent = service.icon;
+    document.getElementById('service-title').textContent = service.title;
+    document.getElementById('service-tagline').textContent = service.tagline;
+    document.getElementById('service-delivery').textContent = service.deliveryTime;
+    document.getElementById('service-compat').textContent = service.supportedVersions;
+    document.getElementById('service-overview').textContent = service.overview;
+
+    // Features
+    const featEl = document.getElementById('service-features');
+    service.features.forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f;
+      featEl.appendChild(li);
+    });
+
+    // Use Cases
+    const casesEl = document.getElementById('service-usecases');
+    service.useCases.forEach(c => {
+      const li = document.createElement('li');
+      li.textContent = c;
+      casesEl.appendChild(li);
+    });
+
+    // Packages (if service 01)
+    if (service.packages && service.packages.length > 0) {
+      document.getElementById('service-packages-section').style.display = 'block';
+      const pkgEl = document.getElementById('service-packages');
+      service.packages.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'pkg-card';
+        div.innerHTML = `
+          <div class="pkg-name">${p.name}</div>
+          <div class="pkg-desc">${p.desc}</div>
+          <a href="tools.html" class="btn btn-outline" style="padding:6px 12px;font-size:12px;width:auto;display:inline-block">View Tools (${p.count})</a>
+        `;
+        pkgEl.appendChild(div);
+      });
+    }
+
+    // Deliverables (if any)
+    if (service.deliverables && service.deliverables.length > 0) {
+      document.getElementById('service-deliverables-section').style.display = 'block';
+      const delEl = document.getElementById('service-deliverables');
+      service.deliverables.forEach(d => {
+        const li = document.createElement('li');
+        li.textContent = d;
+        delEl.appendChild(li);
+      });
+    }
+
+    // Related
+    const relEl = document.getElementById('service-related');
+    service.related.forEach(r => {
+      const a = document.createElement('a');
+      a.className = 'related-card';
+      a.href = `service.html?id=${r.id}`;
+      a.innerHTML = `
+        <span>${r.name}</span>
+        <span style="color:var(--accent)">→</span>
+      `;
+      relEl.appendChild(a);
+    });
+
+    window.playDemo = function() {
+      alert("Watch Demo videos are coming soon for this service package / فيديوهات المعاينة ستتوفر قريباً!");
+    };
+  } else {
+    document.getElementById('service-content').innerHTML = `
+      <div style="text-align:center;padding:120px 20px">
+        <h2 style="margin-bottom:16px">Service Not Found</h2>
+        <p style="color:var(--text-sec);margin-bottom:24px">The requested service details could not be found.</p>
+        <a href="index.html#services" class="btn btn-primary">← Back to Services</a>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>

@@ -312,5 +312,76 @@ const TOOLS = {
       ["Cover checking and manual adjustments", "~4 hours", "Collision-free", "100%"]
     ],
     summary: "Large foundation raft detailing — Manual: <strong style='color:var(--error)'>~26 hours</strong> → With Tool: <strong>under 10 seconds</strong> (99.9% time saved)"
+  },
+  "14": {
+    pkg: "Package 03 · Tool 05",
+    title: "Selection by Filter Tool",
+    desc: "An intelligent selection interface — pick a single element, choose any instance parameter, select a value, and instantly select all matching elements in the active view.",
+    image: "assets/images/tool-14-selection-parameter.png",
+    features: [
+      "Pick & Learn: Click any element in the model to instantly display all its available instance parameters",
+      "Unique Value Discovery: Choose a parameter to retrieve all its unique existing values in the current view without duplicates",
+      "Instant Smart Selection: Select a value and click Filter to automatically select all elements with the same parameter value in the active view",
+      "Active View Scope: Searches only within visible elements in the current view (not the entire project) for high precision and fast performance",
+      "All Data Types Supported: Seamlessly handles and processes text, integers, doubles, and Element IDs, converting them to searchable string values",
+      "Alphabetical Sorting: Automatically sorts parameters and values alphabetically for fast and easy access"
+    ],
+    tableTitle: "Time Comparison — Selecting Elements by Parameter",
+    rows: [
+      ["Select all doors with a specific Mark", "~8 min (Schedule → Filter → Select)", "4 clicks (under 5 sec)", "95%"],
+      ["Select elements by a non-standard custom parameter", "~15 min (Requires writing a Dynamo/API script)", "Pick value → Filter (under 5 sec)", "98%"],
+      ["Select all beams with a specific connection type in a large model", "~12 min (Visual inspection + Ctrl+Click)", "Pick → Filter → Done", "97%"],
+      ["Find elements by a long text parameter value", "~10 min (Export → Excel → Filter → Copy IDs → Select in Revit)", "Choose value from list (under 5 sec)", "99%"]
+    ],
+    summary: "Smart, instant selection of coordination elements in large views. Manual: <strong style='color:var(--error)'>20–40 minutes</strong> (requires scheduling, exporting, or custom scripting, often failing with custom parameters) → With Tool: <strong>under 15 seconds</strong>."
+  },
+  "15": {
+    pkg: "Package 03 · Tool 06",
+    title: "Warning Clash Visualizer Tool",
+    desc: "A centralized warning management dashboard — display all project warnings and clashes in a single list, and instantly isolate, color-code, and zoom into conflicting elements in a dedicated 3D view with an automatically sized section box.",
+    image: "assets/images/tool-15-clash-visualizer.png",
+    features: [
+      "Central Warning List: Displays all project warnings in a detailed table with error messages, element counts, and specific element details",
+      "Smart 3D Warning View: Automatically generates or reuses a dedicated 3D view named 'WarningView' specifically for visualizing issues",
+      "Auto-Isolation: Instantly isolates only the conflicting elements of the selected warning, clearing previous overrides automatically",
+      "Precise Section Box: Calculates the exact bounding box around the clashing elements and applies it with a safe offset (4 feet / ~1.2 meters)",
+      "Multi-Color Coding: Uses a pre-defined 8-color palette to paint each clashing element a different color for instant visual differentiation",
+      "Solid Surface Fills: Applies high-contrast solid surface fills and projection colors for optimal visibility",
+      "Auto-Zoom & Select: Automatically selects the clashing elements and zooms in (ShowElements) to focus on the issue area",
+      "Smart View Reuse: Avoids cluttering the project by reusing the 'WarningView' and cleaning up old overrides rather than creating new views",
+      "Grouping by Category: Internally categorizes conflicting elements by category for better tracking"
+    ],
+    tableTitle: "Time Comparison — Inspecting Clashing Elements & Warnings",
+    rows: [
+      ["Find conflicting elements for a specific warning", "~10 min (Manage → Warnings → copy IDs → search manually)", "Click 'Show' (1 sec)", "97%"],
+      ["Isolate conflicting elements in a 3D view", "~5 min (Isolate manually using element IDs)", "Done automatically", "99%"],
+      ["Adjust Section Box around clash zone", "~4 min (Manually adjusting 6 section box grips)", "Calculated automatically", "98%"],
+      ["Color-code each element differently for visibility", "~8 min (Manually override graphics per element)", "Done automatically with 8 colors", "99%"],
+      ["Fully inspect a single warning from A to Z", "~25 min", "1 click", "99%"]
+    ],
+    summary: "Comprehensive warning and clash inspection. Manual: <strong style='color:var(--error)'>2–4 hours</strong> (locating warnings, copying IDs, isolating, color-coding, and zooming for dozens of items) → With Tool: <strong>under 5 minutes</strong> to inspect all warnings one-by-one."
+  },
+  "16": {
+    pkg: "Package 03 · Tool 07",
+    title: "Door Data Sync Tool",
+    desc: "A bi-directional data bridge — export all door data from Revit to a SQL Server database, edit parameters externally (via Excel, SQL, or web tools), and sync the changes back to Revit parameters in seconds.",
+    image: "assets/images/tool-16-sql-doors.png",
+    features: [
+      "Auto Table Creation: Instantly creates a 'Doors' table with correct schemas in SQL Server with verification to prevent duplicates",
+      "Comprehensive Export: Scans the project and exports key door parameters: UniqueId, FamilyType, Mark, and Finish",
+      "Smart Import & Sync: Reads updated values from the SQL database and updates the corresponding Revit elements using the UniqueId as a primary key",
+      "Duplicate Prevention: Safe primary key handling skips already-exported elements without throwing errors",
+      "Read-Only Protection: Safely skips read-only parameters without breaking the synchronization process",
+      "Secure Connection: Uses Windows Authentication (Integrated Security) and TrustServerCertificate for local SQL Server instances",
+      "Instant Progress Logs: Provides real-world success notifications showing the count of elements exported or updated"
+    ],
+    tableTitle: "Time Comparison — Syncing Door Parameters",
+    rows: [
+      ["Exporting 500 doors to external tables", "~30 min (Schedule → Export → Clean Excel)", "Click 'Export' (2 sec)", "98%"],
+      ["Updating finish parameters for 200 doors externally", "~45 min (Editing elements one-by-one in Revit)", "Click 'Import' (5 sec)", "99%"],
+      ["Designing database tables and schemas", "~20 min (Designing DB → creating columns → setting types)", "Click 'Create Table' (1 sec)", "99%"],
+      ["Verification of duplicate or missing doors", "~15 min (Comparing Excel lists against Revit schedules)", "UniqueId matches 100% reliably", "100%"]
+    ],
+    summary: "Update finish data for all doors in the project from an external database. Manual: <strong style='color:var(--error)'>1–2 hours</strong> (exporting schedules, editing Excel, locating elements, and typing updates) → With Tool: <strong>under 30 seconds</strong>."
   }
 };
