@@ -119,27 +119,28 @@ const SERVICES = {
   "05": {
     title: "Legacy Software Modernization",
     icon: "🔄",
-    tagline: "Still using old Excel macros or Windows Forms apps? Let's fix that.",
-    overview: "We modernize legacy engineering software by rebuilding it with modern technologies — such as WPF and MVVM — while preserving your existing business logic. Your team keeps the same workflow they know, but gets a faster, more stable, and professionally packaged tool.",
+    tagline: "Your tools still work — but they deserve a modern, professional look and feel.",
+    overview: "We specialize in modernizing the UI and architecture of existing Windows desktop tools. Whether you have an old Windows Forms application that needs to be rebuilt in WPF with a proper MVVM structure, or a WPF app whose interface needs a visual upgrade with modern design systems like Material Design — we handle it while preserving your existing business logic completely.",
     deliveryTime: "Depends on complexity",
-    supportedVersions: "Windows 10/11, .NET 8+",
+    supportedVersions: "Windows 10/11, .NET 8+, WPF / Material Design",
     features: [
-      "VBA to .NET Migration: Move from fragile VBA/Macros to robust, compiled C# code",
-      "Modern UI: Replace outdated, raw interfaces with clean, responsive designs",
-      "Performance Boost: Significantly faster execution times and better stability",
-      "Code Protection: Secure compiled code instead of exposed VBA scripts",
-      "Professional Installer: Proper distribution packages instead of manual copying",
-      "Data Compatibility: Full backward compatibility with your existing sheets and files"
+      "Windows Forms → WPF Migration: Rebuild your WinForms app using WPF and the proper MVVM pattern",
+      "WPF UI Modernization: Upgrade existing WPF interfaces with modern design systems (Material Design, Fluent UI)",
+      "UI Extension & Redesign: Add new panels, tabs, or controls to an existing interface without breaking it",
+      "MVVM Architecture: Implement proper separation of logic and UI for cleaner, testable code",
+      "Component-Level Upgrades: Modernize specific controls or windows without rewriting the entire app",
+      "Visual Consistency: Establish a unified design system across all windows and dialogs"
     ],
     useCases: [
-      "Converting large, fragile Excel VBA macros into robust Revit add-ins or desktop apps.",
-      "Rebuilding old Windows Forms tools into WPF with modern MVVM design patterns.",
-      "Securing proprietary structural calculations from unauthorized copies."
+      "Migrating a Windows Forms structural calculation tool into a modern WPF application with MVVM.",
+      "Applying Material Design to an existing WPF add-in that still uses default ugly grey controls.",
+      "Adding a new settings panel or a results dashboard to an existing desktop tool.",
+      "Redesigning an old-style ribbon toolbar into a clean modern sidebar navigation."
     ],
     related: [
-      { id: "04", name: "Custom Engineering Software Development" },
+      { id: "02", name: "Custom Revit Add-in Development" },
       { id: "06", name: "Revit Add-in Maintenance & Enhancement" },
-      { id: "07", name: "Software Licensing & Protection" }
+      { id: "04", name: "Custom Engineering Software Development" }
     ]
   },
   "06": {
