@@ -1,4 +1,4 @@
-// BIM Sprint — Services Data
+//// BIM Sprint — Services Data
 
 const SERVICES = {
   "01": {
@@ -251,36 +251,42 @@ const SERVICES = {
       { id: "03", name: "Workflow Automation" }
     ]
   },
-  "10": {
-    title: "Structural Shop Drawings",
-    icon: "📐",
-    tagline: "Construction-ready shop drawings — precise, detailed, and built for the site.",
-    overview: "Our shop drawings are prepared with constructability, accuracy, and ease of execution in mind. We produce detailed structural shop drawings ready for direct site execution, including rebar detailing for slabs, beams, columns, and foundations, complete with Bar Bending Schedules (BBS) and precise construction details.",
-    deliveryTime: "Depends on sheet count and complexity",
-    supportedVersions: "Drawing templates (DWG / PDF / RVT)",
-    features: [
-      "Rebar Detailing: Precise reinforcement detailing following local building codes",
-      "Bar Bending Schedules (BBS): Complete bar bending schedules automatically matching sheets",
-      "Cross-Sections: Clear, readable, and highly annotated cross-sections for easy site reading",
-      "Quantity Summaries: Steel weights and concrete volumes summarized per sheet/zone",
-      "Rigorous QC: In-depth verification rounds before final drawings are issued"
-    ],
-    useCases: [
-      "Creating shop drawings for columns, stirrups, and starter dowels in a high-rise tower.",
-      "Preparing raft foundation reinforcement layouts with correct lap splices and hook lengths.",
-      "Generating slab rebar detailing with automated BBS for large residential layouts."
-    ],
-    deliverables: [
-      "Reinforcement detail drawings (DWG & PDF)",
-      "Concrete dimension drawings",
-      "Sections and detail elevation views",
-      "Bar Bending Schedules (BBS)",
-      "Steel and concrete quantity summaries"
-    ],
-    related: [
-      { id: "09", name: "Structural & Architectural BIM Modeling" },
-      { id: "08", name: "BIM Automation Consulting" },
-      { id: "01", name: "Ready-to-Use Revit Add-ins" }
-    ]
-  }
+    "10": {
+        title: "Structural Shop Drawings",
+        icon: "📐",
+        tagline: "Construction-ready shop drawings — precise, detailed, and built for the site.",
+        overview: "We produce Revit-based structural shop drawings for concrete elements — from concrete dimension plans to full reinforcement detailing with Bar Bending Schedules (BBS) and quantity summaries. You provide an IFC or RVT model at LOD 300, and we deliver fabrication-ready shop drawings at LOD 400 directly from Revit. We also provide LOD 500 as-built documentation reflecting actual site conditions after execution.",
+        deliveryTime: "Depends on sheet count and complexity",
+        supportedVersions: "IFC / RVT / DWG / PDF",
+        features: [
+            "Revit-Native Detailing: All shop drawings produced directly in Revit — not drafted in CAD and back-linked",
+            "IFC to LOD 400 Workflow: We accept IFC models and develop them into full fabrication-level shop drawings in Revit",
+            "LOD 300 → LOD 400: We receive your structural model and develop it from coordination level to fabrication level — bar diameters, spacing, lap lengths, hook details, and cover all fully specified",
+            "LOD 500 As-Built: After execution, we update the Revit model to reflect actual built conditions — including every design change, site modification, and approved deviation",
+            "Rebar Detailing: Precise reinforcement detailing for slabs, beams, columns, and foundations following local building codes",
+            "Bar Bending Schedules (BBS): Complete bar bending schedules generated directly from the Revit model, matching each sheet",
+            "Cross-Sections: Clear, readable, and highly annotated cross-sections for easy site reading",
+            "Quantity Summaries: Steel weights and concrete volumes extracted directly from Revit per sheet and per zone",
+            "Rigorous QC: In-depth verification rounds before final drawings are issued"
+        ],
+        useCases: [
+            "Creating shop drawings for columns, stirrups, and starter dowels in a high-rise tower from an IFC model.",
+            "Preparing raft foundation reinforcement layouts with correct lap splices and hook lengths in Revit.",
+            "Generating slab rebar detailing with automated BBS for large residential layouts.",
+            "Updating the Revit model to LOD 500 as-built after site execution with all field changes."
+        ],
+        deliverables: [
+            "Reinforcement detail drawings (DWG & PDF — exported from Revit)",
+            "Concrete dimension drawings",
+            "Sections and detail elevation views",
+            "Bar Bending Schedules (BBS)",
+            "Steel and concrete quantity summaries",
+            "LOD 500 as-built Revit model (when requested)"
+        ],
+        related: [
+            { id: "09", name: "Structural & Architectural BIM Modeling" },
+            { id: "08", name: "BIM Automation Consulting" },
+            { id: "01", name: "Ready-to-Use Revit Add-ins" }
+        ]
+    }
 };
