@@ -168,32 +168,55 @@ const SERVICES = {
       { id: "07", name: "Software Licensing & Protection" }
     ]
   },
-  "07": {
-    title: "Software Licensing & Protection",
-    icon: "🔒",
-    tagline: "Protect your intellectual property — secure, flexible, and user-friendly licensing.",
-    overview: "Our licensing solutions help protect your intellectual property while providing a smooth experience for legitimate users. From code obfuscation to advanced licensing systems (Node-Lock, Subscription, Floating License), we give you full control over who uses your software and how.",
-    deliveryTime: "Typically 1–2 weeks",
-    supportedVersions: "Cross-platform compatibility",
-    features: [
-      "Code Obfuscation: Prevent reverse engineering and decompilation of your code",
-      "Online Activation: Smooth activation with a secure admin dashboard",
-      "Device Locking: Lock licenses to specific hardware IDs (Node-Locking)",
-      "Subscription Licensing: Setup monthly, annual, or lifetime options",
-      "Trial Versions: Built-in demo limitations (time-locked or feature-locked)",
-      "Tamper Protection: Secure cryptography to validate license files offline"
-    ],
-    useCases: [
-      "Setting up licensing for commercial Revit add-ins sold to external firms.",
-      "Securing internal software tools so they cannot be copied outside the company.",
-      "Managing subscription durations and trial licenses for a suite of tools."
-    ],
-    related: [
-      { id: "02", name: "Custom Revit Add-in Development" },
-      { id: "04", name: "Custom Engineering Software Development" },
-      { id: "06", name: "Revit Add-in Maintenance & Enhancement" }
-    ]
-  },
+    "07": {
+        title: "Software Licensing & Protection",
+        icon: "🔒",
+        tagline: "Protect your engineering tools with secure licensing and advanced code protection.",
+
+        overview: "We provide a complete dual-layer protection solution for your engineering software. The first layer is a flexible licensing system that gives you full control over who can use your tools and for how long. The second layer is an advanced Code Obfuscation (code protection) solution that helps secure your compiled assemblies against reverse engineering and intellectual property theft — while ensuring your DLL files never leave your own computer.",
+
+        deliveryTime: "Instant setup for managed licensing / 1–2 days for complete system handover",
+
+        compatibility: "Compatible with any engineering software, including Revit add-ins, AutoCAD plugins, Civil 3D tools, Tekla extensions, standalone applications, and Python scripts.",
+
+        features: [
+            "Dual-Layer Protection: Combine secure software licensing with advanced code protection to safeguard both software access and intellectual property.",
+
+            "Two Licensing Models: Choose between a fully managed licensing service, where we handle user licenses and activations for you, or purchase the complete licensing infrastructure to manage everything independently.",
+
+            "Managed Licensing Service: Simply integrate our lightweight validation component into your application, and we handle license creation, activation, expiration, renewals, and user management.",
+
+            "Self-Hosted Licensing System: Receive the complete licensing server, administration dashboard, deployment guide, database structure, and client validation SDK, allowing you to host and manage your own licensing platform.",
+
+            "Advanced Code Obfuscation (Code Protection): We provide a ready-to-use local obfuscation toolkit specifically configured for C# engineering applications. All protection is performed entirely on your own computer—your DLL files never leave your machine and are never uploaded or shared with us. This guarantees complete privacy while significantly increasing protection against reverse engineering, decompilation, and intellectual property theft.",
+
+            "100% Local Processing: Your DLL files always remain inside your own development environment. We never request, receive, upload, or store any part of your compiled application, ensuring complete confidentiality of your software.",
+
+            "Multi-Language Support: Ready-to-use validation libraries for both C# and Python applications, connected to the same licensing backend.",
+
+            "Device Locking (Node-Lock): Bind licenses to specific hardware IDs to prevent unauthorized sharing across multiple machines.",
+
+            "Subscription & Trial Management: Support monthly, yearly, lifetime, time-limited, and feature-limited licensing models."
+        ],
+
+        deliverables: [
+            "Managed Licensing Model: Complete licensing management with user administration, license activation, renewal, and expiration management.",
+
+            "Self-Hosted Licensing Model: Complete licensing server, administration dashboard, deployment guide, database structure, and client validation SDK.",
+
+            "Local Code Obfuscation Toolkit: A ready-to-use local protection tool specifically configured for engineering software. All DLL protection is performed entirely on your own computer, so your compiled files never leave your environment.",
+
+            "Secure administration dashboard for managing users, licenses, activations, and subscription expirations.",
+
+            "Post-delivery technical support for deployment and integration."
+        ],
+
+        related: [
+            { id: "02", name: "Custom Revit Add-in Development" },
+            { id: "04", name: "Custom Engineering Software Development" },
+            { id: "06", name: "Revit Add-in Maintenance & Enhancement" }
+        ]
+    },
   "08": {
     title: "BIM Automation Consulting",
     icon: "📋",
