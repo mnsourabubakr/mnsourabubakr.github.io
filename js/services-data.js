@@ -1,121 +1,166 @@
 //// BIM Sprint — Services Data
 
 const SERVICES = {
-  "01": {
-    title: "Ready-to-Use Revit Add-ins",
-    icon: "🧩",
-    tagline: "Install, click, and automate — production-ready tools that deliver results from day one.",
-    overview: "Ready-to-use Revit Add-ins designed to automate repetitive engineering tasks, improve modeling accuracy, and significantly reduce project delivery time. No complex setup needed — install the tool and start saving hours immediately.",
-    deliveryTime: "Instant download and activation",
-    supportedVersions: "Revit 2022–2027",
-    features: [
-      "Instant Setup: Install in under a minute with zero configuration",
-      "60-80% Time Savings: Proven in real-world structural and architectural projects",
-      "Regular Updates: Continuous improvements and new features based on user feedback",
-      "Full Compatibility: Seamless performance across all modern Revit versions",
-      "Full Documentation: Complete step-by-step guides and priority technical support"
-    ],
-    packages: [
-      { name: "🔩 Rebar Automation Suite", count: "5 tools", desc: "Structural reinforcement automation (footings, columns, slabs, legs generator...)" },
-      { name: "📐 CAD to Revit Suite", count: "4 tools", desc: "CAD integration & instant elements modeling" },
-      { name: "⚡ Productivity Suite", count: "7 tools", desc: "General productivity, parameter transfers, warning clash visualization, SQL doors..." }
-    ],
-    useCases: [
-      "MEP Coordination: Highlight and color-code warning elements instantly inside 3D section boxes.",
-      "Structural Detailing: Drawing hook legs for foundation slabs or placing column stirrup zones automatically.",
-      "Parameter Auditing: Copying and verifying instance or type parameters in bulk in seconds."
-    ],
-    related: [
-      { id: "02", name: "Custom Revit Add-in Development" },
-      { id: "03", name: "Workflow Automation" },
-      { id: "08", name: "BIM Automation Consulting" }
-    ]
-  },
-  "02": {
-    title: "Custom Revit Add-in Development",
-    icon: "🔧",
-    tagline: "Your unique workflow deserves a unique tool — built to fit, not to force change.",
-    overview: "Every company has unique workflows. We develop custom Revit Add-ins tailored specifically to your standards, ensuring seamless integration with your existing processes. You don't need to change how your team works — we build the tool around your workflow.",
-    deliveryTime: "Depends on project scope (typically 1–3 weeks)",
-    supportedVersions: "Revit 2022–2027",
-    features: [
-      "Workflow-First Design: Built around your existing process with zero operational disruption",
-      "Professional UI: Clean, intuitive interface that feels native to Revit's layout",
-      "System Integration: Connect with Excel, databases, and external enterprise systems",
-      "Real-Project Testing: Thoroughly tested on actual project models before delivery",
-      "Source Code Option: Full source code ownership and repository handover available"
-    ],
-    useCases: [
-      "Automated drawing generation based on custom model data and standards.",
-      "Custom parameter management tools for company-specific workflows.",
-      "Project-specific scheduling, custom exporting, and reporting modules.",
-      "Automated QA/QC check sheets built natively into the ribbon."
-    ],
-    deliverables: [
-      "Compiled Revit Add-in (.dll / .addin files)",
-      "Professional MSI Installer package",
-      "Complete user guide & training video",
-      "Full Source Code (optional)",
-      "Free post-delivery support & bug-fix warranty"
-    ],
-    related: [
-      { id: "03", name: "Workflow Automation" },
-      { id: "06", name: "Revit Add-in Maintenance & Enhancement" },
-      { id: "07", name: "Software Licensing & Protection" }
-    ]
-  },
-  "03": {
-    title: "Workflow Automation",
-    icon: "⚙️",
-    tagline: "Eliminate repetitive tasks — let automation handle the boring stuff.",
-    overview: "We transform manual, time-consuming engineering processes into fully automated workflows. Whether it's within Revit or across multiple software platforms (Revit + Excel + AutoCAD + Navisworks), we connect all the dots and keep your projects moving with minimal human intervention.",
-    deliveryTime: "Depends on project scope (typically 1–4 weeks)",
-    supportedVersions: "Revit 2022–2027",
-    features: [
-      "Multi-Software Integration: Bridge Revit, Excel, AutoCAD, Navisworks, and more",
-      "Batch Processing: Execute operations on hundreds of elements at once",
-      "60-90% Time Savings: Proven, measurable reduction in manual coordination work",
-      "Full Documentation: Every automation step documented for your team",
-      "Modular Design: Flexible architecture you can easily extend or update later"
-    ],
-    useCases: [
-      "Automated drawing generation and sheet placement from model data.",
-      "Parameter management and data synchronization between Revit and Excel.",
-      "CAD-to-Revit automated modeling workflows.",
-      "Batch exporting of drawings, schedules, and models into PDF/DWG/IFC formats."
-    ],
-    related: [
-      { id: "02", name: "Custom Revit Add-in Development" },
-      { id: "04", name: "Custom Engineering Software Development" },
-      { id: "08", name: "BIM Automation Consulting" }
-    ]
-  },
-  "04": {
-    title: "Custom Engineering Software Development",
-    icon: "💻",
-    tagline: "Full-scale engineering software — from concept to deployment.",
-    overview: "We develop complete engineering software solutions that go beyond Revit. Whether you need a calculation engine, an internal management system, a web-based data platform, or any custom engineering application — we build it from scratch using modern technologies.",
-    deliveryTime: "Depends on project scope",
-    supportedVersions: "Windows 10/11, Web-based",
-    features: [
-      "Desktop Applications: Professional applications using WPF and .NET",
-      "Web Applications: Modern web apps accessible securely from anywhere",
-      "Database Design: Engineered databases for structural and engineering data",
-      "Calculation Engines: Precise engineering calculation modules tailored to code",
-      "Enterprise Security: Production-grade security and reliability built-in"
-    ],
-    useCases: [
-      "Engineering desktop design and calculation applications.",
-      "Internal database-driven management and tracking systems.",
-      "Custom reporting systems and project management utilities.",
-      "Cloud platforms for structural data exchange and auditing."
-    ],
-    related: [
-      { id: "05", name: "Legacy Software Modernization" },
-      { id: "07", name: "Software Licensing & Protection" },
-      { id: "08", name: "BIM Automation Consulting" }
-    ]
-  },
+    "01": {
+        title: "Ready-to-Use Revit Add-ins",
+        icon: "🧩",
+        tagline: "Install, click, and automate — production-ready tools that deliver results from day one.",
+
+        overview: "Ready-to-use Revit Add-ins designed to eliminate repetitive engineering tasks, improve modeling accuracy, and save over 80% of your time. Simply install, activate, and start delivering projects faster from day one. Spend less time modeling and more time engineering.",
+
+        deliveryTime: "Instant download and activation",
+
+        supportedVersions: "Revit 2022–2027",
+
+        features: [
+            "Save 80%+ of Your Time: Eliminate repetitive workflows and focus on engineering instead of repetitive clicking.",
+            "Production-Proven: Every tool has been developed, tested, and successfully used in real engineering projects before release.",
+            "Instant Setup: Install in under a minute with zero configuration.",
+            "Professional Toolkits: Organized into specialized suites for reinforcement, CAD conversion, and engineering productivity.",
+            "Regular Updates: Continuous improvements and new features based on user feedback.",
+            "Full Documentation: Complete step-by-step guides with priority technical support."
+        ],
+
+        packages: [
+            {
+                name: "🔩 Rebar Automation Suite",
+                count: "5 Professional Tools",
+                desc: "Structural reinforcement automation (footings, columns, slabs, legs generator...)"
+            },
+            {
+                name: "📐 CAD to Revit Suite",
+                count: "4 Professional Tools",
+                desc: "CAD integration & instant elements modeling"
+            },
+            {
+                name: "⚡ Productivity Suite",
+                count: "7 Professional Tools",
+                desc: "General productivity, parameter transfers, warning clash visualization, SQL doors..."
+            }
+        ],
+
+        related: [
+            { id: "02", name: "Custom Revit Add-in Development" },
+            { id: "03", name: "Workflow Automation" },
+            { id: "08", name: "BIM Automation Consulting" }
+        ]
+    },
+    "02": {
+        title: "Custom Revit Add-in Development",
+        icon: "🔧",
+
+        tagline: "Your workflow is unique — your software should be too.",
+
+        overview: "Every company has its own standards and workflows. Whether you need a completely new Revit Add-in, want to automate repetitive engineering tasks, solve a workflow bottleneck, or extend one of our ready-to-use add-ins to meet your company's requirements, we build solutions around the way your team already works. The result is less manual work, higher accuracy, and significantly improved productivity.",
+
+        deliveryTime: "Depends on project scope (typically 1–3 weeks)",
+
+        supportedVersions: "Revit 2022–2027",
+
+        features: [
+            "Workflow-First Development: Every tool is designed around your existing workflow with minimal disruption to your daily operations.",
+
+            "Custom Automation Solutions: If your team performs repetitive tasks or faces workflow bottlenecks, we develop tailored automation tools—or extend and customize our existing add-ins—to solve those challenges efficiently.",
+
+            "Professional Native UI: Clean, intuitive interfaces that integrate naturally with the Revit Ribbon and user experience.",
+
+            "System Integration: Connect seamlessly with Excel, SQL databases, ERP systems, REST APIs, cloud platforms, and other third-party software.",
+
+            "Production-Proven Quality: Every solution is thoroughly tested on real project models before delivery to ensure reliability and performance.",
+
+            "Scalable Architecture: Designed for future enhancements, allowing new features and modules to be added as your business grows.",
+
+            "Source Code Ownership (Optional): Receive the complete source code and repository handover if full ownership is required."
+        ],
+
+        deliverables: [
+            "Compiled Revit Add-in (.dll / .addin)",
+
+            "Professional MSI Installer",
+
+            "Complete User Documentation & Training Video",
+
+            "Full Source Code & Repository Handover (Optional)",
+
+            "Free Post-Delivery Support & Bug-Fix Warranty"
+        ],
+
+        related: [
+            { id: "03", name: "Workflow Automation" },
+            { id: "06", name: "Revit Add-in Maintenance & Enhancement" },
+            { id: "07", name: "Software Licensing & Protection" }
+        ]
+    },
+    "03": {
+        title: "Workflow Automation",
+        icon: "⚙️",
+
+        tagline: "Automate complete engineering workflows—not just individual tasks.",
+
+        overview: "We automate complete engineering workflows by connecting the software your team already uses. Whether it's Revit, Excel, AutoCAD, Navisworks, SQL databases, cloud services, or internal business systems, we eliminate repetitive manual work and create seamless end-to-end automation that saves time, reduces errors, and improves productivity across your entire organization.",
+
+        deliveryTime: "Depends on project scope (typically 1–4 weeks)",
+
+        supportedVersions: "Revit 2022–2027",
+
+        features: [
+            "End-to-End Workflow Automation: Transform repetitive engineering processes into fully automated workflows with minimal human intervention.",
+
+            "Multi-Software Integration: Connect Revit, Excel, AutoCAD, Navisworks, SQL databases, REST APIs, cloud services, and third-party business systems.",
+
+            "Batch Processing: Execute operations on hundreds or thousands of elements in a single run.",
+
+            "Save 80%+ of Your Time: Eliminate repetitive coordination tasks and allow your team to focus on engineering instead of manual processes.",
+
+            "Production-Proven Solutions: Every automation workflow is tested on real engineering projects before deployment.",
+
+            "Scalable & Modular Design: Easily expand, maintain, and adapt your automation as your business grows.",
+
+            "Complete Documentation & Training: Every workflow is fully documented, with training provided to ensure smooth adoption."
+        ],
+
+        related: [
+            { id: "02", name: "Custom Revit Add-in Development" },
+            { id: "04", name: "Custom Engineering Software Development" },
+            { id: "08", name: "BIM Automation Consulting" }
+        ]
+    },
+    "04": {
+        title: "Custom Engineering Software Development",
+        icon: "💻",
+
+        tagline: "Engineering software built around your business—not the other way around.",
+
+        overview: "We design and develop complete engineering software solutions tailored to your business needs. Whether you need a desktop application, web platform, engineering calculation engine, project management system, internal database solution, or cloud-based engineering platform, we build scalable software from the ground up using modern technologies that integrate seamlessly with your existing workflows.",
+
+        deliveryTime: "Depends on project scope",
+
+        supportedVersions: "Windows 10/11, Web-based, Cloud Applications",
+
+        features: [
+            "Tailor-Made Software: Every application is designed specifically around your business requirements and engineering workflows.",
+
+            "Desktop & Web Applications: Professional Windows applications, modern web platforms, and cloud-based engineering systems.",
+
+            "Complete Engineering Solutions: From desktop applications to web platforms and cloud-connected systems, we build complete software tailored to your business.",
+
+            "System Integration: Connect with SQL databases, Excel, ERP systems, cloud services, and third-party engineering software.",
+
+            "Engineering Calculation Engines: Develop reliable calculation modules based on your design codes, standards, and company requirements.",
+
+            "Scalable Architecture: Built for long-term growth with modular, maintainable, and extensible software architecture.",
+
+            "Production-Grade Security: Secure authentication, role-based permissions, encrypted data storage, and enterprise-level reliability.",
+
+            "Complete Documentation & Technical Support: Professional documentation, deployment guidance, user training, and post-delivery support."
+        ],
+
+        related: [
+            { id: "05", name: "Legacy Software Modernization" },
+            { id: "07", name: "Software Licensing & Protection" },
+            { id: "08", name: "BIM Automation Consulting" }
+        ]
+    },
   "05": {
     title: "Legacy Software Modernization",
     icon: "🔄",
