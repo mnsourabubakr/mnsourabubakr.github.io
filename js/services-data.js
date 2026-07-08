@@ -177,8 +177,7 @@ const SERVICES = {
 
         deliveryTime: "Instant setup for managed licensing / 1–2 days for complete system handover",
 
-        compatibility: "Compatible with any engineering software, including Revit add-ins, AutoCAD plugins, Civil 3D tools, Tekla extensions, standalone applications, and Python scripts.",
-
+        supportedVersions: "Compatible with any engineering software, including Revit add-ins, AutoCAD plugins, Civil 3D tools, Tekla extensions, standalone applications, and Python scripts.",
         features: [
             "Dual-Layer Protection: Combine secure software licensing with advanced code protection to safeguard both software access and intellectual property.",
 
