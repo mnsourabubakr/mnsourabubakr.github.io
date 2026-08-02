@@ -1,231 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Tools — BIM Sprint</title>
-<meta name="description" content="Browse BIM Sprint's automation tool packages: Structural Rebar Suite, CAD-to-Revit Suite, and BIM Utilities.">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<!-- NAV -->
-<nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <img src="assets/images/logo.png" alt="BIM Sprint" onerror="this.style.display='none'">
-    <div>
-      <span class="nav-logo-text">BIM Sprint</span>
-      <span class="nav-logo-sub">BIM Automation</span>
-    </div>
-  </a>
-  <div class="nav-links">
-    <a href="index.html#about">About Us</a>
-    <a href="index.html#why">Why Automate</a>
-    <a href="index.html#services">Our Services</a>
-    <a href="tools.html">Our Tools</a>
-    <a href="index.html#contact" class="nav-cta">Contact Us</a>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ready-to-Use Revit Add-ins | BIM Sprint</title>
+  <meta name="description" content="Explore BIM Sprint Revit add-ins for reinforcement, CAD-to-Revit modeling, room finishes, parameters, QA/QC, and BIM productivity.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://mnsourabubakr.github.io/tools.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ready-to-Use Revit Add-ins | BIM Sprint">
+  <meta property="og:description" content="Explore BIM Sprint Revit add-ins for reinforcement, CAD-to-Revit modeling, room finishes, parameters, QA/QC, and BIM productivity.">
+  <meta property="og:url" content="https://mnsourabubakr.github.io/tools.html">
+  <meta property="og:image" content="https://mnsourabubakr.github.io/assets/images/social-share.jpg">
+  <meta property="og:site_name" content="BIM Sprint">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ready-to-Use Revit Add-ins | BIM Sprint">
+  <meta name="twitter:description" content="Explore BIM Sprint Revit add-ins for reinforcement, CAD-to-Revit modeling, room finishes, parameters, QA/QC, and BIM productivity.">
+  <meta name="twitter:image" content="https://mnsourabubakr.github.io/assets/images/social-share.jpg">
+  <meta name="theme-color" content="#041d38">
+  <link rel="icon" href="assets/images/favicon.png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/images/favicon-192.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/images/bim-sprint-logo.png" as="image">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "BIM Sprint Ready-to-Use Revit Add-ins", "url": "https://mnsourabubakr.github.io/tools.html", "isPartOf": {"@type": "WebSite", "name": "BIM Sprint", "url": "https://mnsourabubakr.github.io/"}}</script>
+</head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="BIM Sprint home">
+      <span class="brand-surface"><img src="assets/images/bim-sprint-logo.png" alt="BIM Sprint — Automating BIM Workflows" width="240" height="78"></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a class="nav-link " href="index.html">Home</a><a class="nav-link is-active" href="tools.html">Ready Add-ins</a><a class="nav-link " href="services/custom-revit-add-in-development.html">Custom Automation</a><a class="nav-link " href="services/structural-and-architectural-bim-modeling.html">BIM Services</a><a class="nav-link " href="workflow-results.html">Workflow Results</a><a class="nav-link " href="about.html">About</a></nav>
+    <a class="button button-small button-light header-cta" href="contact.html">Request a solution <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" data-menu-button><svg class="menu-open" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="menu-close" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
-  <div class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-<div class="mobile-menu">
-  <a href="index.html#about">About Us</a>
-  <a href="index.html#why">Why Automate</a>
-  <a href="index.html#services">Our Services</a>
-  <a href="tools.html">Our Tools</a>
-  <a href="index.html#contact">Contact Us</a>
-</div>
-
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="section-label" style="justify-content:center">Revit API Add-ins</div>
-  <h1 class="section-title" style="font-size:clamp(32px,5vw,48px)">Our Automation <span class="accent">Solutions</span></h1>
-  <p class="section-sub" style="max-width:600px;margin:14px auto 0;text-align:center">
-    Click a package to explore its tools. Each tool eliminates hours of manual engineering work.
-  </p>
-  <p style="font-family:var(--mono);font-size:12px;color:var(--amber);margin-top:20px;text-align:center">
-    ⚠ These are selected examples — we build custom tools for any workflow.
-  </p>
-</div>
-
-<!-- ACCORDIONS -->
-<div class="accordion">
-
-  <!-- PACKAGE 01 -->
-  <div id="pkg01">
-    <div class="acc-header">
-      <div class="acc-num">01</div>
-      <div class="acc-info">
-        <h3>Structural Rebar &amp; Reinforcement Automation Suite</h3>
-        <p>5 tools covering all RC reinforcement detailing in Revit — footings, columns, slab rebar, legs generation, and visibility control.</p>
-        <div class="acc-badges">
-          <span class="acc-badge">C#</span>
-          <span class="acc-badge">.NET 8</span>
-          <span class="acc-badge">Revit API</span>
-          <span class="acc-badge">WPF / MVVM</span>
-        </div>
-      </div>
-      <div class="acc-arrow">▼</div>
-    </div>
-    <div class="acc-body">
-      <div class="acc-tools">
-        <a href="tool.html?id=01" class="acc-tool">
-          <h4>Isolated Footing Rebar Tool</h4>
-          <p>Automates all reinforcement detailing for isolated footings — mesh layers, side bars, cover constraints.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=02" class="acc-tool">
-          <h4>Column Reinforcement Tool</h4>
-          <p>Complete column detailing — longitudinal bars, starter bars, stirrups with variable spacing zones.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=03" class="acc-tool">
-          <h4>Additional Rebar from CAD Tool</h4>
-          <p>Reads imported CAD drawings and converts annotated rebar into fully parametric Revit reinforcement.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=13" class="acc-tool">
-          <h4>Legs Generator Tool</h4>
-          <p>Automates placing of structural hook legs for rebar layers at concrete edges, openings, and slab drops.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=04" class="acc-tool">
-          <h4>Rebar Visibility Control Tool</h4>
-          <p>One-click visibility manager for all rebar elements across any Revit view.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- PACKAGE 02 -->
-  <div id="pkg02">
-    <div class="acc-header">
-      <div class="acc-num">02</div>
-      <div class="acc-info">
-        <h3>CAD-to-Revit Structural Modeling Suite</h3>
-        <p>4 tools that convert imported AutoCAD drawings into fully parametric Revit structural elements.</p>
-        <div class="acc-badges">
-          <span class="acc-badge">C#</span>
-          <span class="acc-badge">.NET 8</span>
-          <span class="acc-badge">Revit API</span>
-          <span class="acc-badge">CAD Geometry</span>
-        </div>
-      </div>
-      <div class="acc-arrow">▼</div>
-    </div>
-    <div class="acc-body">
-      <div class="acc-tools">
-        <a href="tool.html?id=05" class="acc-tool">
-          <h4>Foundation Modeling Tool</h4>
-          <p>Reads CAD geometry → generates isolated footings and raft slabs with correct dimensions, types, and naming.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=06" class="acc-tool">
-          <h4>Columns &amp; RC Walls Modeling Tool</h4>
-          <p>Processes CAD plans → generates all structural columns and RC walls as parametric Revit elements.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=07" class="acc-tool">
-          <h4>Slabs &amp; Drop Panels Modeling Tool</h4>
-          <p>Reads slab boundaries from CAD → generates Revit slabs with correct types, elevations, and Drop Panels.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=08" class="acc-tool">
-          <h4>Beams Modeling Tool</h4>
-          <p>Reads beam geometry from CAD → places structural beams including irregular cross-sections across floors.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
+  <nav class="mobile-nav" aria-label="Mobile navigation" data-mobile-nav><a href="index.html">Home</a><a href="tools.html">Ready Add-ins</a><a href="services/custom-revit-add-in-development.html">Custom Automation</a><a href="services/structural-and-architectural-bim-modeling.html">BIM Services</a><a href="workflow-results.html">Workflow Results</a><a href="about.html">About</a><a class="button button-primary" href="contact.html">Request a solution</a></nav>
+</header><main id="main-content">
+<section class="page-hero tools-hero"><div class="container page-hero-grid"><div><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Ready Add-ins</span></nav><span class="overline">Ready-to-use Revit add-ins</span><h1>Choose a focused tool for your workflow</h1><p>Browse 16 production-focused tools for reinforcement, CAD-to-Revit modeling, room finishes, parameter management, QA/QC, and engineering productivity.</p><div class="button-row"><a class="button button-primary" href="#catalog">Browse tools</a><a class="button button-ghost" href="contact.html">Ask about compatibility</a></div></div><div class="hero-tool-stack"><img class="stack-main" src="assets/images/tools/foundation-modeling-tool-isolated-and-raft.webp" alt="Foundation Modeling Tool interface"><img class="stack-a" src="assets/images/tools/room-wizard-tool.webp" alt="Room Wizard interface"><img class="stack-b" src="assets/images/tools/warning-clash-visualizer-tool.webp" alt="Warning Clash Visualizer interface"></div></div></section>
+<section class="section catalog-section" id="catalog"><div class="container"><div class="catalog-toolbar" data-tool-filters><label class="search-control"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span><input type="search" placeholder="Search tools, tasks, or categories" aria-label="Search tools" data-tool-search></label><label><span class="sr-only">Discipline</span><select data-filter="discipline"><option value="">All disciplines</option><option>Structure</option><option>Architecture</option><option>Multi-Discipline</option></select></label><label><span class="sr-only">Category</span><select data-filter="category"><option value="">All categories</option><option>Reinforcement</option><option>Modeling</option><option>Productivity</option><option>Parameters</option><option>QA/QC</option><option>Coordination</option><option>Finishes</option><option>Selection</option><option>Data</option></select></label><label><span class="sr-only">Suite</span><select data-filter="suite"><option value="">All suites</option><option>Rebar Automation Suite</option><option>CAD to Revit Modeling Suite</option><option>Productivity & Data Suite</option></select></label><button class="button button-secondary button-small" type="button" data-filter-reset>Reset</button></div>
+<div class="catalog-summary"><div><h2>All add-ins</h2><p><span data-tool-count>16</span> tools match your filters.</p></div><div class="suite-legend"><span><i class="dot dot-blue"></i> Rebar Automation</span><span><i class="dot dot-orange"></i> CAD to Revit</span><span><i class="dot dot-green"></i> Productivity & Data</span></div></div><div class="tools-grid" data-tool-grid><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Reinforcement" data-suite="Rebar Automation Suite" data-search="isolated footing rebar tool automates all reinforcement detailing for isolated footings in a single operation — placing mesh layers, side bars, and cover constraints automatically. reinforcement structure">
+      <a class="tool-card-image" href="tools/isolated-footing-rebar.html" aria-label="View Isolated Footing Rebar Tool"><img src="assets/images/tools/isolated-footing-rebar-tool.webp" alt="Isolated Footing Rebar Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Reinforcement</span></div><h3><a href="tools/isolated-footing-rebar.html">Isolated Footing Rebar Tool</a></h3><p>Automates all reinforcement detailing for isolated footings in a single operation — placing mesh layers, side bars, and cover constraints automatically.</p><div class="tool-card-footer"><span>Rebar Automation Suite</span><a href="tools/isolated-footing-rebar.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Reinforcement" data-suite="Rebar Automation Suite" data-search="column reinforcement tool a complete column detailing engine — handles longitudinal bars, starter bars (dowels), and stirrups with variable spacing zones, fully compliant with the egyptian code of practice. reinforcement structure">
+      <a class="tool-card-image" href="tools/column-reinforcement.html" aria-label="View Column Reinforcement Tool"><img src="assets/images/tools/column-reinforcement-tool.webp" alt="Column Reinforcement Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Reinforcement</span></div><h3><a href="tools/column-reinforcement.html">Column Reinforcement Tool</a></h3><p>A complete column detailing engine — handles longitudinal bars, starter bars (dowels), and stirrups with variable spacing zones, fully compliant with the Egyptian Code of Practice.</p><div class="tool-card-footer"><span>Rebar Automation Suite</span><a href="tools/column-reinforcement.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Reinforcement" data-suite="Rebar Automation Suite" data-search="additional rebar from autocad drawing tool reads an imported cad drawing directly inside revit and converts all annotated additional reinforcement into fully parametric revit rebar — zero manual placement required. reinforcement structure">
+      <a class="tool-card-image" href="tools/additional-rebar-from-autocad-drawing.html" aria-label="View Additional Rebar from AutoCAD Drawing Tool"><img src="assets/images/tools/additional-rebar-from-autocad-drawing-tool.webp" alt="Additional Rebar from AutoCAD Drawing Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Reinforcement</span></div><h3><a href="tools/additional-rebar-from-autocad-drawing.html">Additional Rebar from AutoCAD Drawing Tool</a></h3><p>Reads an imported CAD drawing directly inside Revit and converts all annotated additional reinforcement into fully parametric Revit rebar — zero manual placement required.</p><div class="tool-card-footer"><span>Rebar Automation Suite</span><a href="tools/additional-rebar-from-autocad-drawing.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Coordination" data-suite="Rebar Automation Suite" data-search="rebar visibility control tool a one-click visibility manager for all rebar elements across any revit view — eliminating the multi-step visibility/graphic overrides workflow entirely. coordination structure">
+      <a class="tool-card-image" href="tools/rebar-visibility-control.html" aria-label="View Rebar Visibility Control Tool"><img src="assets/images/tools/rebar-visibility-control-tool.webp" alt="Rebar Visibility Control Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Coordination</span></div><h3><a href="tools/rebar-visibility-control.html">Rebar Visibility Control Tool</a></h3><p>A one-click visibility manager for all rebar elements across any Revit view — eliminating the multi-step Visibility/Graphic Overrides workflow entirely.</p><div class="tool-card-footer"><span>Rebar Automation Suite</span><a href="tools/rebar-visibility-control.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Modeling" data-suite="CAD to Revit Modeling Suite" data-search="foundation modeling tool (isolated &amp; raft) reads cad layer geometry and automatically generates revit foundation elements — isolated footings and raft slabs — with correct dimensions, types, naming conventions, and level offsets. modeling structure">
+      <a class="tool-card-image" href="tools/foundation-modeling-isolated-and-raft.html" aria-label="View Foundation Modeling Tool (Isolated &amp; Raft)"><img src="assets/images/tools/foundation-modeling-tool-isolated-and-raft.webp" alt="Foundation Modeling Tool (Isolated &amp; Raft) interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Modeling</span></div><h3><a href="tools/foundation-modeling-isolated-and-raft.html">Foundation Modeling Tool (Isolated &amp; Raft)</a></h3><p>Reads CAD layer geometry and automatically generates Revit foundation elements — isolated footings and raft slabs — with correct dimensions, types, naming conventions, and level offsets.</p><div class="tool-card-footer"><span>CAD to Revit Modeling Suite</span><a href="tools/foundation-modeling-isolated-and-raft.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Modeling" data-suite="CAD to Revit Modeling Suite" data-search="columns &amp; rc walls modeling tool processes a cad plan and generates all structural columns (rectangular and circular) and rc walls as parametric revit elements — fully typed, named, and placed at correct levels. modeling structure">
+      <a class="tool-card-image" href="tools/columns-and-rc-walls-modeling.html" aria-label="View Columns &amp; RC Walls Modeling Tool"><img src="assets/images/tools/columns-and-rc-walls-modeling-tool.webp" alt="Columns &amp; RC Walls Modeling Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Modeling</span></div><h3><a href="tools/columns-and-rc-walls-modeling.html">Columns &amp; RC Walls Modeling Tool</a></h3><p>Processes a CAD plan and generates all structural columns (rectangular and circular) and RC walls as parametric Revit elements — fully typed, named, and placed at correct levels.</p><div class="tool-card-footer"><span>CAD to Revit Modeling Suite</span><a href="tools/columns-and-rc-walls-modeling.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Modeling" data-suite="CAD to Revit Modeling Suite" data-search="slabs &amp; drop panels modeling tool reads slab boundaries from an imported cad layer and generates revit slab elements with correct types, elevations, and drop panels — including level adjustment for all slabs. modeling structure">
+      <a class="tool-card-image" href="tools/slabs-and-drop-panels-modeling.html" aria-label="View Slabs &amp; Drop Panels Modeling Tool"><img src="assets/images/tools/slabs-and-drop-panels-modeling-tool.webp" alt="Slabs &amp; Drop Panels Modeling Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Modeling</span></div><h3><a href="tools/slabs-and-drop-panels-modeling.html">Slabs &amp; Drop Panels Modeling Tool</a></h3><p>Reads slab boundaries from an imported CAD layer and generates Revit slab elements with correct types, elevations, and Drop Panels — including level adjustment for all slabs.</p><div class="tool-card-footer"><span>CAD to Revit Modeling Suite</span><a href="tools/slabs-and-drop-panels-modeling.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Modeling" data-suite="CAD to Revit Modeling Suite" data-search="beams (regular &amp; irregular) modeling tool reads beam geometry from an imported cad plan and places all structural beams — including irregular cross-sections, l-shaped, t-shaped, and circular beams — across any number of floors simultaneously. modeling structure">
+      <a class="tool-card-image" href="tools/beams-regular-and-irregular-modeling.html" aria-label="View Beams (Regular &amp; Irregular) Modeling Tool"><img src="assets/images/tools/beams-regular-and-irregular-modeling-tool.webp" alt="Beams (Regular &amp; Irregular) Modeling Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Modeling</span></div><h3><a href="tools/beams-regular-and-irregular-modeling.html">Beams (Regular &amp; Irregular) Modeling Tool</a></h3><p>Reads beam geometry from an imported CAD plan and places all structural beams — including irregular cross-sections, L-shaped, T-shaped, and circular beams — across any number of floors simultaneously.</p><div class="tool-card-footer"><span>CAD to Revit Modeling Suite</span><a href="tools/beams-regular-and-irregular-modeling.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Multi-Discipline" data-category="Productivity" data-suite="Productivity &amp; Data Suite" data-search="model navigator tool a centralized model control panel — browse all categories and types, select any combination of elements, and perform bulk actions (isolate, hide, delete, override color) from a single interface. productivity multi-discipline">
+      <a class="tool-card-image" href="tools/model-navigator.html" aria-label="View Model Navigator Tool"><img src="assets/images/tools/model-navigator-tool.webp" alt="Model Navigator Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Multi-Discipline</span><span>Productivity</span></div><h3><a href="tools/model-navigator.html">Model Navigator Tool</a></h3><p>A centralized model control panel — browse all categories and types, select any combination of elements, and perform bulk actions (isolate, hide, delete, override color) from a single interface.</p><div class="tool-card-footer"><span>Productivity &amp; Data Suite</span><a href="tools/model-navigator.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Architecture" data-category="Finishes" data-suite="Productivity &amp; Data Suite" data-search="room wizard tool a room management panel that lists all rooms in the project, displays their properties, and lets architects change finish materials while viewing the result live in a section box — in real time. finishes architecture">
+      <a class="tool-card-image" href="tools/room-wizard.html" aria-label="View Room Wizard Tool"><img src="assets/images/tools/room-wizard-tool.webp" alt="Room Wizard Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Architecture</span><span>Finishes</span></div><h3><a href="tools/room-wizard.html">Room Wizard Tool</a></h3><p>A room management panel that lists all rooms in the project, displays their properties, and lets architects change finish materials while viewing the result live in a Section Box — in real time.</p><div class="tool-card-footer"><span>Productivity &amp; Data Suite</span><a href="tools/room-wizard.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Multi-Discipline" data-category="Parameters" data-suite="Productivity &amp; Data Suite" data-search="instance parameter transfer tool a data management tool for revit instance parameters — copy, move, or delete parameter values across element instances, or assign new values to any parameter type directly from the interface. parameters multi-discipline">
+      <a class="tool-card-image" href="tools/instance-parameter-transfer.html" aria-label="View Instance Parameter Transfer Tool"><img src="assets/images/tools/instance-parameter-transfer-tool.webp" alt="Instance Parameter Transfer Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Multi-Discipline</span><span>Parameters</span></div><h3><a href="tools/instance-parameter-transfer.html">Instance Parameter Transfer Tool</a></h3><p>A data management tool for Revit instance parameters — copy, move, or delete parameter values across element instances, or assign new values to any parameter type directly from the interface.</p><div class="tool-card-footer"><span>Productivity &amp; Data Suite</span><a href="tools/instance-parameter-transfer.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Multi-Discipline" data-category="Parameters" data-suite="Productivity &amp; Data Suite" data-search="type parameter transfer tool the companion to the instance parameter tool — same powerful interface but operating on revit family type parameters rather than individual instances. parameters multi-discipline">
+      <a class="tool-card-image" href="tools/type-parameter-transfer.html" aria-label="View Type Parameter Transfer Tool"><img src="assets/images/tools/type-parameter-transfer-tool.webp" alt="Type Parameter Transfer Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Multi-Discipline</span><span>Parameters</span></div><h3><a href="tools/type-parameter-transfer.html">Type Parameter Transfer Tool</a></h3><p>The companion to the Instance Parameter Tool — same powerful interface but operating on Revit family type parameters rather than individual instances.</p><div class="tool-card-footer"><span>Productivity &amp; Data Suite</span><a href="tools/type-parameter-transfer.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Structure" data-category="Reinforcement" data-suite="Rebar Automation Suite" data-search="legs generator tool an intelligent revit automation engine that instantly creates structural hook legs for rebar layers at concrete boundaries, openings, and drop panels across slabs, rafts, and beams. reinforcement structure">
+      <a class="tool-card-image" href="tools/legs-generator.html" aria-label="View Legs Generator Tool"><img src="assets/images/tools/legs-generator-tool.webp" alt="Legs Generator Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Structure</span><span>Reinforcement</span></div><h3><a href="tools/legs-generator.html">Legs Generator Tool</a></h3><p>An intelligent Revit automation engine that instantly creates structural hook legs for rebar layers at concrete boundaries, openings, and drop panels across slabs, rafts, and beams.</p><div class="tool-card-footer"><span>Rebar Automation Suite</span><a href="tools/legs-generator.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Multi-Discipline" data-category="Selection" data-suite="Productivity &amp; Data Suite" data-search="selection by filter tool an intelligent selection interface — pick a single element, choose any instance parameter, select a value, and instantly select all matching elements in the active view. selection multi-discipline">
+      <a class="tool-card-image" href="tools/selection-by-filter.html" aria-label="View Selection by Filter Tool"><img src="assets/images/tools/selection-by-filter-tool.webp" alt="Selection by Filter Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Multi-Discipline</span><span>Selection</span></div><h3><a href="tools/selection-by-filter.html">Selection by Filter Tool</a></h3><p>An intelligent selection interface — pick a single element, choose any instance parameter, select a value, and instantly select all matching elements in the active view.</p><div class="tool-card-footer"><span>Productivity &amp; Data Suite</span><a href="tools/selection-by-filter.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Multi-Discipline" data-category="QA/QC" data-suite="Productivity &amp; Data Suite" data-search="warning clash visualizer tool a centralized warning management dashboard — display all project warnings and clashes in a single list, and instantly isolate, color-code, and zoom into conflicting elements in a dedicated 3d view with an automatically sized section box. qa/qc multi-discipline">
+      <a class="tool-card-image" href="tools/warning-clash-visualizer.html" aria-label="View Warning Clash Visualizer Tool"><img src="assets/images/tools/warning-clash-visualizer-tool.webp" alt="Warning Clash Visualizer Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Multi-Discipline</span><span>QA/QC</span></div><h3><a href="tools/warning-clash-visualizer.html">Warning Clash Visualizer Tool</a></h3><p>A centralized warning management dashboard — display all project warnings and clashes in a single list, and instantly isolate, color-code, and zoom into conflicting elements in a dedicated 3D view with an automatically sized section box.</p><div class="tool-card-footer"><span>Productivity &amp; Data Suite</span><a href="tools/warning-clash-visualizer.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article><article class="tool-card" data-tool-card data-discipline="Architecture" data-category="Data" data-suite="Productivity &amp; Data Suite" data-search="door data sync tool a bi-directional data bridge — export all door data from revit to a sql server database, edit parameters externally (via excel, sql, or web tools), and sync the changes back to revit parameters in seconds. data architecture">
+      <a class="tool-card-image" href="tools/door-data-sync.html" aria-label="View Door Data Sync Tool"><img src="assets/images/tools/door-data-sync-tool.webp" alt="Door Data Sync Tool interface" loading="lazy" width="1280" height="720"></a>
+      <div class="tool-card-body"><div class="eyebrow-row"><span class="mini-badge">Architecture</span><span>Data</span></div><h3><a href="tools/door-data-sync.html">Door Data Sync Tool</a></h3><p>A bi-directional data bridge — export all door data from Revit to a SQL Server database, edit parameters externally (via Excel, SQL, or web tools), and sync the changes back to Revit parameters in seconds.</p><div class="tool-card-footer"><span>Productivity &amp; Data Suite</span><a href="tools/door-data-sync.html">View details <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </article></div><div class="empty-state" data-empty-state hidden><svg class="empty-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><h3>No matching tools</h3><p>Try a broader search or reset the filters.</p></div></div></section>
+<section class="benefit-strip"><div class="container benefit-grid"><div><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg><span><strong>Fast deployment</strong><small>Installation and activation guidance</small></span></div><div><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span><strong>Secure licensing</strong><small>Flexible licensing options</small></span></div><div><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7"/></svg><span><strong>Regular improvements</strong><small>Updates based on product development</small></span></div><div><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a8 8 0 0 1 16 0v5a2 2 0 0 1-2 2h-3v-7h5M4 14v7H2a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h2ZM9 21h6"/></svg><span><strong>Technical support</strong><small>Help with setup and usage</small></span></div></div></section>
+<section class="cta-section"><div class="container cta-panel"><div><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg><span><strong>Can’t find the exact workflow?</strong><small>BIM Sprint also develops custom Revit add-ins tailored to your company standards and process.</small></span></div><a class="button button-light" href="contact.html?service=custom-addin">Request a custom solution <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+</main><footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <span class="footer-logo"><img src="assets/images/bim-sprint-logo.png" alt="BIM Sprint" width="240" height="78"></span>
+      <p>Revit add-ins, custom BIM automation, and BIM delivery services built around real engineering workflows.</p>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/mansour-abo-bakr-61aa10239" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/mnsourabubakr" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+        <a href="mailto:mnsourabubakr95@gmail.com" aria-label="Email">@</a>
       </div>
     </div>
+    <div><h2>Solutions</h2><a href="tools.html">Ready Add-ins</a><a href="services/custom-revit-add-in-development.html">Custom Revit Add-ins</a><a href="services/workflow-automation.html">Workflow Automation</a><a href="services/structural-and-architectural-bim-modeling.html">BIM Modeling</a><a href="services/structural-shop-drawings.html">Shop Drawings</a></div>
+    <div><h2>Company</h2><a href="about.html">About BIM Sprint</a><a href="workflow-results.html">Workflow Results</a><a href="services.html">All Services</a><a href="contact.html">Contact</a></div>
+    <div><h2>Contact</h2><a href="mailto:mnsourabubakr95@gmail.com">mnsourabubakr95@gmail.com</a><a href="https://wa.me/201068970898" target="_blank" rel="noopener">WhatsApp: +20 106 897 0898</a><a href="tel:+201129011401">Phone: +201129011401</a><span>Cairo, Nasr City, Egypt</span></div>
   </div>
-
-  <!-- PACKAGE 03 -->
-  <div id="pkg03">
-    <div class="acc-header">
-      <div class="acc-num">03</div>
-      <div class="acc-info">
-        <h3>General &amp; Multi-Discipline BIM Utilities</h3>
-        <p>7 tools for Architectural, Structural, and MEP workflows — navigation, finishing, parameter transfer, smart selection filtering, warning visualization, and SQL synchronization.</p>
-        <div class="acc-badges">
-          <span class="acc-badge">C#</span>
-          <span class="acc-badge">.NET 8</span>
-          <span class="acc-badge">Revit API</span>
-          <span class="acc-badge">Observable Properties</span>
-        </div>
-      </div>
-      <div class="acc-arrow">▼</div>
-    </div>
-    <div class="acc-body">
-      <div class="acc-tools">
-        <a href="tool.html?id=09" class="acc-tool">
-          <h4>Model Navigator Tool</h4>
-          <p>Centralized model control — browse categories, select elements, perform bulk actions from one panel.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=10" class="acc-tool">
-          <h4>Room Wizard Tool</h4>
-          <p>Room management with instant Section Box navigation and live material change preview.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=11" class="acc-tool">
-          <h4>Instance Parameter Transfer Tool</h4>
-          <p>Copy, move, or delete instance parameter values across elements — supports all storage types.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=12" class="acc-tool">
-          <h4>Type Parameter Transfer Tool</h4>
-          <p>Same powerful interface operating on Revit family type parameters. Essential for BIM data management.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=14" class="acc-tool">
-          <h4>Selection by Filter Tool</h4>
-          <p>Pick an element, select a parameter, and instantly select all matching elements in the active view.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=15" class="acc-tool">
-          <h4>Warning Clash Visualizer Tool</h4>
-          <p>Centralized warning dashboard — isolate, color-code, and zoom into conflicting elements in a dedicated 3D view.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-        <a href="tool.html?id=16" class="acc-tool">
-          <h4>Door Data Sync Tool</h4>
-          <p>Bi-directional SQL Server data bridge to export, edit externally, and import door finishes back into Revit.</p>
-          <span class="acc-tool-link">View Details →</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- CTA -->
-<section class="section section-blue" style="text-align:center">
-  <h2 class="section-title">Need a <span class="accent">Custom Tool</span>?</h2>
-  <p class="section-sub" style="margin:12px auto 28px;text-align:center">We build custom automation for any workflow, any discipline. Tell us your process.</p>
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mnsourabubakr95@gmail.com&su=Custom+Tool+Request" target="_blank" class="btn btn-primary">Request Custom Tool →</a>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="assets/images/logo.png" alt="" style="height:28px" onerror="this.style.display='none'">
-      <span class="footer-brand-name">BIM Sprint</span>
-    </div>
-    <div class="footer-links">
-      <a href="index.html#about">About</a>
-      <a href="index.html#why">Why Automate</a>
-      <a href="tools.html">Tools</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:20px">
-    <span class="footer-copy">© 2025 BIM Sprint · All rights reserved</span>
-  </div>
+  <div class="container footer-bottom"><span>© 2026 BIM Sprint. All rights reserved.</span><span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></span></div>
 </footer>
-
-<script src="js/main.js"></script>
-</body>
-</html>
+<a class="floating-whatsapp" href="https://wa.me/201068970898?text=Hello%20BIM%20Sprint%2C%20I%20want%20to%20discuss%20a%20BIM%20automation%20solution." target="_blank" rel="noopener" aria-label="Chat with BIM Sprint on WhatsApp"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"/></svg><span>WhatsApp</span></a>
+<script src="js/site.js" defer></script></body></html>
