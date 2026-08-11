@@ -16,14 +16,14 @@ const SERVICES = {
             "Save 80%+ of Your Time: Eliminate repetitive workflows and focus on engineering instead of repetitive clicking.",
             "Production-Proven: Every tool has been developed, tested, and successfully used in real engineering projects before release.",
             "Instant Setup: Install in under a minute with zero configuration.",
-            "Professional Toolkits: Organized into specialized suites for reinforcement, CAD conversion, and engineering productivity.",
+            "Professional Toolkits: Organized into specialized suites for reinforcement, CAD conversion, architectural automation, and engineering productivity.",
             "Regular Updates: Continuous improvements and new features based on user feedback.",
             "Full Documentation: Complete step-by-step guides with priority technical support."
         ],
 
         useCases: [
             "Deploying a proven Revit tool immediately instead of commissioning a new add-in from scratch.",
-            "Automating reinforcement, CAD-to-Revit modeling, room finishes, parameter management, and coordination workflows.",
+            "Automating reinforcement, CAD-to-Revit modeling, room finishes, suspended ceilings, parameter management, and coordination workflows.",
             "Standardizing repetitive tasks across project teams with the same tested commands and outputs."
         ],
 
@@ -31,17 +31,22 @@ const SERVICES = {
             {
                 name: "🔩 Rebar Automation Suite",
                 count: "5 Professional Tools",
-                desc: "Structural reinforcement automation (footings, columns, slabs, legs generator...)"
+                desc: "Structural reinforcement automation for footings, columns, slab rebar, legs generation, and visibility control."
             },
             {
                 name: "📐 CAD to Revit Suite",
                 count: "4 Professional Tools",
-                desc: "CAD integration & instant elements modeling"
+                desc: "CAD-driven structural modeling for foundations, columns and walls, slabs, drop panels, and beams."
             },
             {
-                name: "⚡ Productivity Suite",
-                count: "7 Professional Tools",
-                desc: "General productivity, parameter transfers, warning clash visualization, SQL doors..."
+                name: "🏠 Architectural Automation Suite",
+                count: "2 Professional Tools",
+                desc: "Room Wizard and Ceiling Wizard for room finishes and automated suspended-ceiling design and modeling."
+            },
+            {
+                name: "⚡ General Productivity Suite",
+                count: "6 Professional Tools",
+                desc: "Model navigation, parameter transfer, smart selection, warning visualization, and SQL synchronization."
             }
         ],
 

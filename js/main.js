@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Open a package linked from the Ready-to-Use service page or home page.
   const hash = window.location.hash;
-  if (hash && /^#pkg0[1-3]$/.test(hash)) {
+  if (hash && /^#pkg0[1-4]$/.test(hash)) {
     const target = document.querySelector(hash);
     const header = target?.querySelector('.acc-header');
     const body = header?.nextElementSibling;

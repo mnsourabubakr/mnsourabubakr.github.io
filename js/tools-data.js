@@ -207,7 +207,7 @@ const TOOLS = {
     summary: "10-floor building with <strong>2,000 beam placements</strong> — Manual: <strong style='color:var(--error)'>entire project week</strong> → With Tool: <strong>under 30 minutes</strong>"
   },
   "09": {
-    pkg: "Package 03 · Tool 01",
+    pkg: "Package 04 · Tool 01",
     title: "Model Navigator Tool",
     desc: "A centralized model control panel — browse all categories and types, select any combination of elements, and perform bulk actions (isolate, hide, delete, override color) from a single interface.",
     image: "assets/images/tool-09-navigator.png",
@@ -229,28 +229,32 @@ const TOOLS = {
     summary: "Full model color-coding for <strong>coordination review</strong> — Manual: <strong style='color:var(--error)'>1–2 hours</strong> → With Tool: <strong>under 5 minutes</strong>"
   },
   "10": {
-    pkg: "Package 03 · Tool 02",
+    pkg: "Package 03 · Tool 01",
     title: "Room Wizard Tool",
-    desc: "A room management panel that lists all rooms in the project, displays their properties, and lets architects change finish materials while viewing the result live in a Section Box — in real time.",
-    image: "assets/images/tool-10-room-wizard.png",
+    desc: "An architectural room-finishes workflow that detects existing floor finishes, builds single- or multi-layer finish systems, previews each room in 3D, and applies verified finishes individually or in batches.",
+    image: "assets/images/tool-10-room-wizard-v2.png",
     features: [
-      "Lists every room with: name, number, finish type, level, area, and volume",
-      "One-click Section Box: press a room's button → Revit creates a Section Box around that exact room instantly",
-      "Live material change: select a finish material from a dropdown → room updates in real time via MVVM Observable Properties",
-      "See the finish in context before committing — adjacent walls, adjacent finishes visible",
-      "No manual navigation to each room, no view creation, no Property Inspector needed"
+      "Central room-finishes table with room number, name, level, area, volume, current finish, proposed finish, status, and searchable room data",
+      "Single-layer and multi-layer finish design with independent material and thickness control for each finish layer",
+      "One-room Apply and batch Apply Selected workflows so every checked room can keep its own finish configuration",
+      "Match workflow to copy a room's finish setup to other rooms, with options to copy only or copy and apply",
+      "One-click 3D room preview using a dedicated Section Box, with optional preview colorization for faster visual checking",
+      "Existing-finish conflict handling that can automatically resolve safe cases while leaving pinned, grouped, structural, or otherwise unsafe floors for manual review",
+      "Configurable room table: add Room parameters as columns, show/hide columns, arrange their order and widths, search, and use multi-criteria sorting",
+      "Supports rooms from the host model and, when enabled, loaded linked models while keeping finish ownership and worksharing safety checks"
     ],
-    tableTitle: "Time Comparison — Reviewing & Updating Finishes (50-Room Floor)",
+    tableTitle: "Workflow Comparison — Room Finish Coordination",
     rows: [
-      ["Navigate to a specific room in model", "~1–2 min per room", "1 click", "99%"],
-      ["Create Section Box for room", "~3 min", "Automatic", "100%"],
-      ["Change floor finish material", "~2 min", "Dropdown → instant", "95%"],
-      ["Full review session — 50 rooms", "~4–5 hrs", "~30 min", "90%"]
+      ["Review room data and current finishes", "Open rooms and inspect finishes one by one", "Central searchable room table", "High"],
+      ["Build layered floor-finish systems", "Create/check types and layers repeatedly", "Single- or multi-layer setup per room", "High"],
+      ["Apply finishes across many rooms", "Repeat floor creation and edits room by room", "Apply Selected batch workflow", "High"],
+      ["Reuse the same finish strategy", "Re-enter the setup for every similar room", "Match → copy or copy & apply", "High"],
+      ["Resolve overlapping existing finishes", "Manual investigation and trimming", "Safe automatic resolution + manual review for unsafe cases", "Safer" ]
     ],
-    summary: "10,000 m² building with <strong>300+ rooms</strong> — Manual finish review: <strong style='color:var(--error)'>days of work</strong> → With Tool: <strong>a few hours</strong>"
+    summary: "Room Wizard brings <strong>room data, finish design, 3D review, matching, conflict handling, and batch creation</strong> into one controlled architectural workflow."
   },
   "11": {
-    pkg: "Package 03 · Tool 03a",
+    pkg: "Package 04 · Tool 02",
     title: "Instance Parameter Transfer Tool",
     desc: "A data management tool for Revit instance parameters — copy, move, or delete parameter values across element instances, or assign new values to any parameter type directly from the interface.",
     image: "assets/images/tool-11-instance-params.png",
@@ -271,7 +275,7 @@ const TOOLS = {
     summary: "Critical for <strong>BIM data management and QA/QC</strong> — previously impractical tasks completed in seconds."
   },
   "12": {
-    pkg: "Package 03 · Tool 03b",
+    pkg: "Package 04 · Tool 03",
     title: "Type Parameter Transfer Tool",
     desc: "The companion to the Instance Parameter Tool — same powerful interface but operating on Revit family type parameters rather than individual instances.",
     image: "assets/images/tool-12-type-params.png",
@@ -314,7 +318,7 @@ const TOOLS = {
     summary: "Large foundation raft detailing — Manual: <strong style='color:var(--error)'>~26 hours</strong> → With Tool: <strong>under 10 seconds</strong> (99.9% time saved)"
   },
   "14": {
-    pkg: "Package 03 · Tool 05",
+    pkg: "Package 04 · Tool 04",
     title: "Selection by Filter Tool",
     desc: "An intelligent selection interface — pick a single element, choose any instance parameter, select a value, and instantly select all matching elements in the active view.",
     image: "assets/images/tool-14-selection-parameter.png",
@@ -336,7 +340,7 @@ const TOOLS = {
     summary: "Smart, instant selection of coordination elements in large views. Manual: <strong style='color:var(--error)'>20–40 minutes</strong> (requires scheduling, exporting, or custom scripting, often failing with custom parameters) → With Tool: <strong>under 15 seconds</strong>."
   },
   "15": {
-    pkg: "Package 03 · Tool 06",
+    pkg: "Package 04 · Tool 05",
     title: "Warning Clash Visualizer Tool",
     desc: "A centralized warning management dashboard — display all project warnings and clashes in a single list, and instantly isolate, color-code, and zoom into conflicting elements in a dedicated 3D view with an automatically sized section box.",
     image: "assets/images/tool-15-clash-visualizer.png",
@@ -362,7 +366,7 @@ const TOOLS = {
     summary: "Comprehensive warning and clash inspection. Manual: <strong style='color:var(--error)'>2–4 hours</strong> (locating warnings, copying IDs, isolating, color-coding, and zooming for dozens of items) → With Tool: <strong>under 5 minutes</strong> to inspect all warnings one-by-one."
   },
   "16": {
-    pkg: "Package 03 · Tool 07",
+    pkg: "Package 04 · Tool 06",
     title: "Door Data Sync Tool",
     desc: "A bi-directional data bridge — export all door data from Revit to a SQL Server database, edit parameters externally (via Excel, SQL, or web tools), and sync the changes back to Revit parameters in seconds.",
     image: "assets/images/tool-16-sql-doors.png",
@@ -383,5 +387,30 @@ const TOOLS = {
       ["Verification of duplicate or missing doors", "~15 min (Comparing Excel lists against Revit schedules)", "UniqueId matches 100% reliably", "100%"]
     ],
     summary: "Update finish data for all doors in the project from an external database. Manual: <strong style='color:var(--error)'>1–2 hours</strong> (exporting schedules, editing Excel, locating elements, and typing updates) → With Tool: <strong>under 30 seconds</strong>."
+  },
+  "17": {
+    pkg: "Package 03 · Tool 02",
+    title: "Ceiling Wizard Tool",
+    desc: "An automated suspended-ceiling design and modeling workflow that converts room geometry into reviewed gypsum and tile ceiling layouts, validates heights against structural soffits, and generates selected rooms in controlled batches.",
+    image: "assets/images/tool-17-ceiling-wizard.png",
+    features: [
+      "Four production workflows: Full Gypsum, Full Tiles, Perimeter + Whole Tiles, and Divided Bays",
+      "Automatic tile-module detection from Revit ceiling types and material surface patterns, with layout calculations based on the detected module",
+      "Full-Tile Grid review that starts complete modules from two perpendicular room edges and calculates the remaining end cuts",
+      "Perimeter + Whole Tiles solver with preferred, minimum, and maximum gypsum-border controls plus optional stepped transitions and vertical gypsum bulkheads when ceiling heights differ",
+      "Divided-Bays design with perimeter and internal gypsum bands, equal or unequal symmetric span modes, directional tile modules, tile counts, and dedicated review/preview controls",
+      "Ceiling-height validation against the lowest detected structural soffit above the room, checking floors, roofs, structural framing, foundations, and loaded structural links",
+      "Group Similar Rooms workflow that analyzes compatible rooms using the confirmed design basis and allows a representative room layout to drive a room group",
+      "Host/linked-room support, one-click room viewing, existing-ceiling safety policies, owned-element tracking, Review / Modify workflows, and batch Generate Selected"
+    ],
+    tableTitle: "Workflow Comparison — Suspended Ceiling Design",
+    rows: [
+      ["Choose a ceiling system per room", "Interpret room geometry and configure each room separately", "Select one of four controlled design patterns", "High"],
+      ["Balance whole tiles and border widths", "Manual calculations and repeated trial layouts", "Calculated whole-tile / border solutions with review", "High"],
+      ["Check ceiling elevation", "Inspect structure and compare levels manually", "Structural-soffit detection + maximum-height validation", "High"],
+      ["Repeat a design across similar rooms", "Redesign each similar room independently", "Group Similar Rooms + representative design", "High"],
+      ["Create coordinated ceiling elements", "Model gypsum, tile regions and transitions room by room", "Generate Selected after design review", "High"]
+    ],
+    summary: "Ceiling Wizard combines <strong>ceiling calculation, visual review, structural-height checks, room grouping, and Revit modeling</strong> in one architectural workflow."
   }
 };
