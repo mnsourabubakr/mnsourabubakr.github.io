@@ -29,6 +29,11 @@ const SERVICES = {
 
         packages: [
             {
+                name: "🏠 Architectural Automation Suite",
+                count: "3 Professional Tools",
+                desc: "Room Wizard, Ceiling Wizard, and Model Navigator for architectural modeling, coordination, and model control."
+            },
+            {
                 name: "🔩 Rebar Automation Suite",
                 count: "5 Professional Tools",
                 desc: "Structural reinforcement automation for footings, columns, slab rebar, legs generation, and visibility control."
@@ -39,14 +44,9 @@ const SERVICES = {
                 desc: "CAD-driven structural modeling for foundations, columns and walls, slabs, drop panels, and beams."
             },
             {
-                name: "🏠 Architectural Automation Suite",
-                count: "2 Professional Tools",
-                desc: "Room Wizard and Ceiling Wizard for room finishes and automated suspended-ceiling design and modeling."
-            },
-            {
                 name: "⚡ General Productivity Suite",
-                count: "6 Professional Tools",
-                desc: "Model navigation, parameter transfer, smart selection, warning visualization, and SQL synchronization."
+                count: "5 Professional Tools",
+                desc: "Parameter transfer, smart selection, warning visualization, and SQL synchronization."
             }
         ],
 

@@ -32,7 +32,7 @@ HOW TO MANAGE THIS FILE (كيفية إدارة هذه البيانات)
 
 const TOOLS = {
   "01": {
-    pkg: "Package 01 · Tool 01",
+    pkg: "Package 02 · Tool 01",
     title: "Isolated Footing Rebar Tool",
     desc: "Automates all reinforcement detailing for isolated footings in a single operation — placing mesh layers, side bars, and cover constraints automatically.",
     image: "assets/images/tool-01-isolated-footing.png",
@@ -54,7 +54,7 @@ const TOOLS = {
     summary: "Project with <strong>50 isolated footings</strong> — Manual: <strong style='color:var(--error)'>~5 working days</strong> → With Tool: <strong>under 2 minutes</strong>"
   },
   "02": {
-    pkg: "Package 01 · Tool 02",
+    pkg: "Package 02 · Tool 02",
     title: "Column Reinforcement Tool",
     desc: "A complete column detailing engine — handles longitudinal bars, starter bars (dowels), and stirrups with variable spacing zones, fully compliant with the Egyptian Code of Practice.",
     image: "assets/images/tool-02-column-rebar.png",
@@ -77,7 +77,7 @@ const TOOLS = {
     summary: "10-floor building with <strong>200 columns</strong> — Manual: <strong style='color:var(--error)'>~40 working hours</strong> → With Tool: <strong>under 10 minutes</strong>"
   },
   "03": {
-    pkg: "Package 01 · Tool 03",
+    pkg: "Package 02 · Tool 03",
     title: "Additional Rebar from AutoCAD Drawing Tool",
     desc: "Reads an imported CAD drawing directly inside Revit and converts all annotated additional reinforcement into fully parametric Revit rebar — zero manual placement required.",
     image: "assets/images/tool-03-cad-rebar.png",
@@ -99,7 +99,7 @@ const TOOLS = {
     summary: "Full hospital raft with <strong>200+ rebar zones</strong> — Manual: <strong style='color:var(--error)'>full working day</strong> → With Tool: <strong>under 5 minutes</strong>"
   },
   "04": {
-    pkg: "Package 01 · Tool 04",
+    pkg: "Package 02 · Tool 05",
     title: "Rebar Visibility Control Tool",
     desc: "A one-click visibility manager for all rebar elements across any Revit view — eliminating the multi-step Visibility/Graphic Overrides workflow entirely.",
     image: "assets/images/tool-04-rebar-visibility.png",
@@ -119,7 +119,7 @@ const TOOLS = {
     summary: "Saves <strong>30–60 minutes daily</strong> during coordination and review cycles on complex multi-discipline projects."
   },
   "05": {
-    pkg: "Package 02 · Tool 01",
+    pkg: "Package 03 · Tool 01",
     title: "Foundation Modeling Tool (Isolated & Raft)",
     desc: "Reads CAD layer geometry and automatically generates Revit foundation elements — isolated footings and raft slabs — with correct dimensions, types, naming conventions, and level offsets.",
     image: "assets/images/tool-05-foundation.png",
@@ -142,7 +142,7 @@ const TOOLS = {
     summary: "Hospital foundation with <strong>120+ footings & raft zones</strong> — Manual: <strong style='color:var(--error)'>full working day</strong> → With Tool: <strong>under 10 minutes</strong>"
   },
   "06": {
-    pkg: "Package 02 · Tool 02",
+    pkg: "Package 03 · Tool 02",
     title: "Columns & RC Walls Modeling Tool",
     desc: "Processes a CAD plan and generates all structural columns (rectangular and circular) and RC walls as parametric Revit elements — fully typed, named, and placed at correct levels.",
     image: "assets/images/tool-06-columns.png",
@@ -165,7 +165,7 @@ const TOOLS = {
     summary: "10-floor building with <strong>1,000 column placements</strong> — Manual: <strong style='color:var(--error)'>weeks of modeling</strong> → With Tool: <strong>under 1 hour</strong>"
   },
   "07": {
-    pkg: "Package 02 · Tool 03",
+    pkg: "Package 03 · Tool 03",
     title: "Slabs & Drop Panels Modeling Tool",
     desc: "Reads slab boundaries from an imported CAD layer and generates Revit slab elements with correct types, elevations, and Drop Panels — including level adjustment for all slabs.",
     image: "assets/images/tool-07-slabs.png",
@@ -187,7 +187,7 @@ const TOOLS = {
     summary: "Multi-floor structure with <strong>300+ slab zones</strong> — Manual: <strong style='color:var(--error)'>weeks of modeling</strong> → With Tool: <strong>hours</strong>"
   },
   "08": {
-    pkg: "Package 02 · Tool 04",
+    pkg: "Package 03 · Tool 04",
     title: "Beams (Regular & Irregular) Modeling Tool",
     desc: "Reads beam geometry from an imported CAD plan and places all structural beams — including irregular cross-sections, L-shaped, T-shaped, and circular beams — across any number of floors simultaneously.",
     image: "assets/images/tool-08-beams.png",
@@ -207,7 +207,7 @@ const TOOLS = {
     summary: "10-floor building with <strong>2,000 beam placements</strong> — Manual: <strong style='color:var(--error)'>entire project week</strong> → With Tool: <strong>under 30 minutes</strong>"
   },
   "09": {
-    pkg: "Package 04 · Tool 01",
+    pkg: "Package 01 · Tool 03",
     title: "Model Navigator Tool",
     desc: "A centralized model control panel — browse all categories and types, select any combination of elements, and perform bulk actions (isolate, hide, delete, override color) from a single interface.",
     image: "assets/images/tool-09-navigator.png",
@@ -229,7 +229,7 @@ const TOOLS = {
     summary: "Full model color-coding for <strong>coordination review</strong> — Manual: <strong style='color:var(--error)'>1–2 hours</strong> → With Tool: <strong>under 5 minutes</strong>"
   },
   "10": {
-    pkg: "Package 03 · Tool 01",
+    pkg: "Package 01 · Tool 01",
     title: "Room Wizard Tool",
     desc: "An architectural room-finishes workflow that detects existing floor finishes, builds single- or multi-layer finish systems, previews each room in 3D, and applies verified finishes individually or in batches.",
     image: "assets/images/tool-10-room-wizard-v2.png",
@@ -254,7 +254,7 @@ const TOOLS = {
     summary: "Room Wizard brings <strong>room data, finish design, 3D review, matching, conflict handling, and batch creation</strong> into one controlled architectural workflow."
   },
   "11": {
-    pkg: "Package 04 · Tool 02",
+    pkg: "Package 04 · Tool 01",
     title: "Instance Parameter Transfer Tool",
     desc: "A data management tool for Revit instance parameters — copy, move, or delete parameter values across element instances, or assign new values to any parameter type directly from the interface.",
     image: "assets/images/tool-11-instance-params.png",
@@ -275,7 +275,7 @@ const TOOLS = {
     summary: "Critical for <strong>BIM data management and QA/QC</strong> — previously impractical tasks completed in seconds."
   },
   "12": {
-    pkg: "Package 04 · Tool 03",
+    pkg: "Package 04 · Tool 02",
     title: "Type Parameter Transfer Tool",
     desc: "The companion to the Instance Parameter Tool — same powerful interface but operating on Revit family type parameters rather than individual instances.",
     image: "assets/images/tool-12-type-params.png",
@@ -296,7 +296,7 @@ const TOOLS = {
     summary: "Together, both parameter tools transform <strong>BIM data management from a day-long task into minutes</strong>."
   },
   "13": {
-    pkg: "Package 01 · Tool 05",
+    pkg: "Package 02 · Tool 04",
     title: "Legs Generator Tool",
     desc: "An intelligent Revit automation engine that instantly creates structural hook legs for rebar layers at concrete boundaries, openings, and drop panels across slabs, rafts, and beams.",
     image: "assets/images/tool-13-leg-generator.png",
@@ -318,7 +318,7 @@ const TOOLS = {
     summary: "Large foundation raft detailing — Manual: <strong style='color:var(--error)'>~26 hours</strong> → With Tool: <strong>under 10 seconds</strong> (99.9% time saved)"
   },
   "14": {
-    pkg: "Package 04 · Tool 04",
+    pkg: "Package 04 · Tool 03",
     title: "Selection by Filter Tool",
     desc: "An intelligent selection interface — pick a single element, choose any instance parameter, select a value, and instantly select all matching elements in the active view.",
     image: "assets/images/tool-14-selection-parameter.png",
@@ -340,7 +340,7 @@ const TOOLS = {
     summary: "Smart, instant selection of coordination elements in large views. Manual: <strong style='color:var(--error)'>20–40 minutes</strong> (requires scheduling, exporting, or custom scripting, often failing with custom parameters) → With Tool: <strong>under 15 seconds</strong>."
   },
   "15": {
-    pkg: "Package 04 · Tool 05",
+    pkg: "Package 04 · Tool 04",
     title: "Warning Clash Visualizer Tool",
     desc: "A centralized warning management dashboard — display all project warnings and clashes in a single list, and instantly isolate, color-code, and zoom into conflicting elements in a dedicated 3D view with an automatically sized section box.",
     image: "assets/images/tool-15-clash-visualizer.png",
@@ -366,7 +366,7 @@ const TOOLS = {
     summary: "Comprehensive warning and clash inspection. Manual: <strong style='color:var(--error)'>2–4 hours</strong> (locating warnings, copying IDs, isolating, color-coding, and zooming for dozens of items) → With Tool: <strong>under 5 minutes</strong> to inspect all warnings one-by-one."
   },
   "16": {
-    pkg: "Package 04 · Tool 06",
+    pkg: "Package 04 · Tool 05",
     title: "Door Data Sync Tool",
     desc: "A bi-directional data bridge — export all door data from Revit to a SQL Server database, edit parameters externally (via Excel, SQL, or web tools), and sync the changes back to Revit parameters in seconds.",
     image: "assets/images/tool-16-sql-doors.png",
@@ -389,7 +389,7 @@ const TOOLS = {
     summary: "Update finish data for all doors in the project from an external database. Manual: <strong style='color:var(--error)'>1–2 hours</strong> (exporting schedules, editing Excel, locating elements, and typing updates) → With Tool: <strong>under 30 seconds</strong>."
   },
   "17": {
-    pkg: "Package 03 · Tool 02",
+    pkg: "Package 01 · Tool 02",
     title: "Ceiling Wizard Tool",
     desc: "An automated suspended-ceiling design and modeling workflow that converts room geometry into reviewed gypsum and tile ceiling layouts, validates heights against structural soffits, and generates selected rooms in controlled batches.",
     image: "assets/images/tool-17-ceiling-wizard.png",
