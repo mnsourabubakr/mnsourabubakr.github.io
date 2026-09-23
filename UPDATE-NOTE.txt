@@ -1,0 +1,15 @@
+BIM Sprint Original Design — Architectural Package Update
+Date: 2026-08-11
+
+This package is based on BIM_Sprint_Original_Design_Refined_2026 (2).zip.
+The rejected Professional website package was not used as the base.
+
+Changes:
+- Ready tools: 16 -> 17
+- Packages: 3 -> 4
+- Package 03: Architectural Automation Suite (Room Wizard + Ceiling Wizard)
+- Package 04: General & Multi-Discipline BIM Utilities (6 tools)
+- Room Wizard page content/image updated from the supplied RoomWizard source and screenshot
+- Ceiling Wizard added as Tool 17 from the supplied CeilingWizard source and screenshot
+- Ready-addins service package list, anchor navigation, and sitemap updated
+- Original visual design preserved; only the package-card grid changed to 2x2 for four packages
