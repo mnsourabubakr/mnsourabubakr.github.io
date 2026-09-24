@@ -241,13 +241,6 @@ body.request-modal-open{overflow:hidden}
 .request-customer-type legend{margin-bottom:8px}
 .request-customer-type label{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text-sec)}
 .request-company-field{grid-column:1/-1}
-.request-channel{border:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.request-channel legend{grid-column:1/-1;font-size:12px;font-weight:700;margin-bottom:2px}
-.request-channel label{position:relative;display:block;cursor:pointer}
-.request-channel input{position:absolute;opacity:0;pointer-events:none}
-.request-channel label span{height:100%;min-height:76px;padding:13px;border:1px solid var(--border);border-radius:12px;background:var(--bg);display:flex;flex-direction:column;gap:3px;transition:border-color .2s,background .2s,box-shadow .2s}
-.request-channel strong{font-size:12px}.request-channel small{font-size:10px;line-height:1.45;color:var(--text-muted)}
-.request-channel input:checked+span{border-color:var(--primary-500);background:var(--primary-50);box-shadow:0 0 0 2px var(--primary-100)}
 .request-form-status{min-height:18px;color:var(--error);font-size:11px;font-weight:600}
 .request-submit-btn{height:46px;border:0;border-radius:11px;background:var(--primary);color:#fff;font-family:var(--font);font-size:13px;font-weight:750;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background .2s,transform .2s}
 .request-submit-btn:hover{background:var(--primary-600);transform:translateY(-1px)}
@@ -256,7 +249,7 @@ body.request-modal-open{overflow:hidden}
 .request-ready h3{font-size:24px;margin-bottom:8px}.request-ready p{max-width:520px;margin:0 auto;color:var(--text-sec);font-size:13px;line-height:1.7}
 .request-ready-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:24px 0 18px}
 .request-ready-actions a{min-width:160px;padding:12px 18px;border-radius:10px;color:#fff;font-size:12px;font-weight:750}
-.request-action-email{background:var(--primary)}.request-action-whatsapp{background:#128C7E}.request-ready-actions a:hover{filter:brightness(.94)}
+.request-action-whatsapp{background:#128C7E}.request-ready-actions a:hover{filter:brightness(.94)}
 .request-edit-btn{border:0;background:transparent;color:var(--text-muted);font-size:11px;font-weight:650;cursor:pointer}.request-edit-btn:hover{color:var(--primary)}
 
 @media(max-width:1150px) and (min-width:901px){
@@ -305,8 +298,6 @@ body.request-modal-open{overflow:hidden}
   .request-dialog-header h2{font-size:23px}
   .request-fields-grid{grid-template-columns:1fr}
   .request-company-field{grid-column:auto}
-  .request-channel{grid-template-columns:1fr}
-  .request-channel label span{min-height:0}
 }
 
 /* TOOL DETAIL PAGE */

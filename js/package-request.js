@@ -12,14 +12,12 @@
   const companyField = modal?.querySelector('.request-company-field');
   const companyInput = document.getElementById('request-company');
   const readyPanel = document.getElementById('request-ready');
-  const emailAction = document.getElementById('request-email-action');
   const whatsappAction = document.getElementById('request-whatsapp-action');
   const editButton = document.getElementById('request-edit-btn');
 
   if (!packageButtons.length || !requestTrigger || !modal || !form) return;
 
   const STORAGE_KEY = 'bimSprintPackageRequest';
-  const OWNER_EMAIL = 'mnsourabubakr95@gmail.com';
   const OWNER_WHATSAPP = '201068970898';
   const packageMap = new Map(packageButtons.map(button => [button.dataset.packageId, button.dataset.packageName]));
   let selectedPackages = new Set(loadSelection());
@@ -150,9 +148,7 @@
     const phone = String(data.get('phone')).trim();
     const customerType = String(data.get('customerType'));
     const company = String(data.get('company') || '').trim();
-    const channel = String(data.get('requestChannel'));
     const packages = selectedPackageNames();
-    const subject = `BIM Sprint Package Request — ${name}`;
     const message = [
       'BIM Sprint Package Request',
       '',
@@ -168,10 +164,7 @@
       'Please contact me with package details, pricing, and the next steps.'
     ].join('\n');
 
-    emailAction.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
     whatsappAction.href = `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(message)}`;
-    emailAction.hidden = channel === 'whatsapp';
-    whatsappAction.hidden = channel === 'email';
     form.hidden = true;
     readyPanel.hidden = false;
     readyPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
