@@ -43,6 +43,11 @@
 <h3>Key Features</h3>
 <ul class="feat-list" id="tool-features"></ul>
 </div>
+<!-- Optional Feature Highlight -->
+<div class="tool-section" hidden="" id="tool-highlight-section">
+<h3 id="tool-highlight-title"></h3>
+<div class="summary-bar" id="tool-highlight-text"></div>
+</div>
 <!-- Comparison Table -->
 <div class="tool-section">
 <h3 id="table-title">Time Comparison</h3>
@@ -81,7 +86,7 @@
 <span class="footer-copy">© <span data-year="">2026</span> BIM Sprint · All rights reserved</span>
 </div>
 </footer>
-<script src="js/tools-data.js?v=20260811-arch"></script>
+<script src="js/tools-data.js?v=20260924-model-navigator"></script>
 <script src="js/main.js"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
@@ -121,9 +126,23 @@
     const featEl = document.getElementById('tool-features');
     (tool.features || []).forEach(feature => {
       const li = document.createElement('li');
-      li.textContent = feature;
+      if (typeof feature === 'object' && feature.title && feature.text) {
+        const content = document.createElement('span');
+        const title = document.createElement('strong');
+        title.textContent = feature.title;
+        content.append(title, ` — ${feature.text}`);
+        li.appendChild(content);
+      } else {
+        li.textContent = feature;
+      }
       featEl.appendChild(li);
     });
+
+    if (tool.highlight?.title && tool.highlight?.text) {
+      document.getElementById('tool-highlight-title').textContent = tool.highlight.title;
+      document.getElementById('tool-highlight-text').textContent = tool.highlight.text;
+      document.getElementById('tool-highlight-section').hidden = false;
+    }
 
     document.getElementById('table-title').textContent = tool.tableTitle;
     const tbody = document.getElementById('tool-table');

@@ -209,24 +209,34 @@ const TOOLS = {
   "09": {
     pkg: "Shared Tool · All Packages",
     title: "Model Navigator Tool",
-    desc: "A centralized model control panel — browse all categories and types, select any combination of elements, and perform bulk actions (isolate, hide, delete, override color) from a single interface.",
+    desc: "Find → Filter → Select → Visualize → Act. Model Navigator helps Revit users find, filter, select, visualize, and control model elements from one workspace — without repeatedly navigating multiple Revit dialogs.",
     image: "assets/images/tool-09-navigator.png",
     features: [
-      "Displays all element categories in the project in a browsable list",
-      "Select a category → instantly lists all Revit types within it",
-      "Select one or multiple types → Select All fetches every instance in the model",
-      "Bulk actions: Isolate, Hide, Delete, or apply Color Override",
-      "Reverse actions: un-hide, un-isolate, restore — all from the same panel",
-      "Restore deleted elements directly from the interface — no Undo needed",
-      "Pick multiple categories + apply a display color to all selected elements instantly"
+      { title: "Flexible Scope", text: "Work in Active View, Entire Model, or a custom Current Selection scope." },
+      { title: "Category & Type Navigation", text: "Browse model categories and instantly see the available Revit types and element counts." },
+      { title: "Advanced Parameter Filtering", text: "Narrow elements using Revit parameter values with smart cascading filters." },
+      { title: "Pick Directly from the Model", text: "Pick categories or exact elements directly from Revit instead of searching manually." },
+      { title: "Select by Element ID", text: "Paste multiple Revit Element IDs and locate the corresponding elements quickly." },
+      { title: "Saved Selections", text: "Save and reload Filter, Pick Element, and ID-based selections for later use." },
+      { title: "Visibility & Graphics Controls", text: "Isolate, hide, reveal hidden elements, apply transparency, and color overrides." },
+      { title: "Bulk Model Actions", text: "Select or delete large groups of matching elements and restore the last deleted group directly from Model Navigator." }
     ],
-    tableTitle: "Time Comparison — Color-Coding Structural Elements",
+    highlight: {
+      title: "Work on exactly the part of the model you need",
+      text: "Use Current Selection to define a custom working scope directly from Revit. Model Navigator then shows only the Categories, Types, counts, and filter results contained inside that selected scope."
+    },
+    tableTitle: "Time Comparison — Model Navigation & Control",
     rows: [
-      ["Select all slabs by type in Revit", "~5 min", "2 clicks", "95%"],
-      ["Apply color override to category", "~3 min", "Pick color → done", "98%"],
-      ["Delete all elements of a type", "~10 min", "Select type → Delete", "97%"]
+      ["Select elements by Category / Type", "Multiple selection steps (~5 min)", "Choose Category / Type → Select", "Repeated dialogs"],
+      ["Filter by parameter values", "Inspect properties or create filters", "Filter directly in Model Navigator", "Property inspection"],
+      ["Work inside a specific model area", "Repeated manual selections", "Select Current Scope → Filter", "Repeated reselection"],
+      ["Find multiple Element IDs", "Search individually", "Paste IDs → Select", "Individual searches"],
+      ["Isolate matching elements", "Select manually → Isolate", "Filter → Isolate", "Manual selection steps"],
+      ["Apply graphic color", "Select → Override Graphics (~3 min)", "Pick Color → Apply", "Override dialog steps"],
+      ["Reuse a complex selection", "Rebuild it manually", "Load Saved Selection", "Rebuild time"],
+      ["Delete matching elements", "Find → Select → Delete (~10 min)", "Filter → Delete", "Manual search steps"]
     ],
-    summary: "Full model color-coding for <strong>coordination review</strong> — Manual: <strong style='color:var(--error)'>1–2 hours</strong> → With Tool: <strong>under 5 minutes</strong>"
+    summary: "Find the exact elements you need, filter them by <strong>Category, Type, Scope, or parameters</strong>, then isolate, hide, apply transparency, or color-code the result from one panel."
   },
   "10": {
     pkg: "Package 01 · Tool 01",
