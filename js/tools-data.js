@@ -207,7 +207,7 @@ const TOOLS = {
     summary: "10-floor building with <strong>2,000 beam placements</strong> — Manual: <strong style='color:var(--error)'>entire project week</strong> → With Tool: <strong>under 30 minutes</strong>"
   },
   "09": {
-    pkg: "Package 01 · Tool 03",
+    pkg: "Shared Tool · All Packages",
     title: "Model Navigator Tool",
     desc: "A centralized model control panel — browse all categories and types, select any combination of elements, and perform bulk actions (isolate, hide, delete, override color) from a single interface.",
     image: "assets/images/tool-09-navigator.png",
@@ -319,7 +319,7 @@ const TOOLS = {
   },
   "14": {
     pkg: "Package 04 · Tool 03",
-    title: "Selection by Filter Tool",
+    title: "Selection by Parameter",
     desc: "An intelligent selection interface — pick a single element, choose any instance parameter, select a value, and instantly select all matching elements in the active view.",
     image: "assets/images/tool-14-selection-parameter.png",
     features: [

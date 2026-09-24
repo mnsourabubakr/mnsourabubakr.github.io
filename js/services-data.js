@@ -35,18 +35,18 @@ const SERVICES = {
             },
             {
                 name: "🔩 Rebar Automation Suite",
-                count: "5 Professional Tools",
-                desc: "Structural reinforcement automation for footings, columns, slab rebar, legs generation, and visibility control."
+                count: "6 Professional Tools",
+                desc: "Structural reinforcement automation for footings, columns, slab rebar, legs generation, visibility control, and shared model navigation."
             },
             {
                 name: "📐 CAD to Revit Suite",
-                count: "4 Professional Tools",
-                desc: "CAD-driven structural modeling for foundations, columns and walls, slabs, drop panels, and beams."
+                count: "5 Professional Tools",
+                desc: "CAD-driven structural modeling for foundations, columns and walls, slabs, drop panels, beams, and shared model navigation."
             },
             {
                 name: "⚡ General Productivity Suite",
-                count: "5 Professional Tools",
-                desc: "Parameter transfer, smart selection, warning visualization, and SQL synchronization."
+                count: "6 Professional Tools",
+                desc: "Model navigation, parameter transfer, selection by parameter, warning visualization, and SQL synchronization."
             }
         ],
 
