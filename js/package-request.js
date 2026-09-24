@@ -1,8 +1,9 @@
 // BIM Sprint — Package request workflow
 (() => {
   const packageButtons = [...document.querySelectorAll('.package-request-btn')];
-  const requestTrigger = document.getElementById('request-list-trigger');
-  const requestCount = document.getElementById('request-count');
+  const requestTriggers = [...document.querySelectorAll('[data-open-request-list]')];
+  const requestCounts = [...document.querySelectorAll('[data-request-count]')];
+  const requestClear = document.getElementById('request-list-clear');
   const modal = document.getElementById('package-request-modal');
   const dialog = modal?.querySelector('.request-dialog');
   const form = document.getElementById('package-request-form');
@@ -15,7 +16,7 @@
   const whatsappAction = document.getElementById('request-whatsapp-action');
   const editButton = document.getElementById('request-edit-btn');
 
-  if (!packageButtons.length || !requestTrigger || !modal || !form) return;
+  if (!packageButtons.length || !requestTriggers.length || !requestClear || !modal || !form) return;
 
   const STORAGE_KEY = 'bimSprintPackageRequest';
   const OWNER_WHATSAPP = '201068970898';
@@ -56,8 +57,9 @@
 
   function renderSelection() {
     const names = selectedPackageNames();
-    requestCount.textContent = String(names.length);
-    requestTrigger.classList.toggle('has-items', names.length > 0);
+    requestCounts.forEach(count => { count.textContent = String(names.length); });
+    requestTriggers.forEach(trigger => trigger.classList.toggle('has-items', names.length > 0));
+    requestClear.disabled = names.length === 0;
     selectedCount.textContent = `${names.length} selected`;
     selectedList.replaceChildren();
 
@@ -116,7 +118,11 @@
     });
   });
 
-  requestTrigger.addEventListener('click', openModal);
+  requestTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+  requestClear.addEventListener('click', () => {
+    selectedPackages.clear();
+    updateSelection();
+  });
   modal.querySelectorAll('[data-close-request]').forEach(button => button.addEventListener('click', closeModal));
   modal.querySelectorAll('input[name="customerType"]').forEach(input => input.addEventListener('change', syncCompanyField));
 
