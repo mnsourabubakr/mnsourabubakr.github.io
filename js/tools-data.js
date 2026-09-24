@@ -56,25 +56,27 @@ const TOOLS = {
   "02": {
     pkg: "Package 02 · Tool 02",
     title: "Column Reinforcement Tool",
-    desc: "A complete column detailing engine — handles longitudinal bars, starter bars (dowels), and stirrups with variable spacing zones, fully compliant with the Egyptian Code of Practice.",
+    desc: "A complete concrete-column reinforcement workflow for rectangular, square, and circular columns — covering longitudinal bars, extensions, foundation dowels, and intelligent stirrup distribution with Egyptian Code-based critical-zone calculations.",
     image: "assets/images/tool-02-column-rebar.png",
     features: [
-      "Main longitudinal bars — set diameter and count per X and Y direction independently",
-      "Double-layer reinforcement: add a second bar row in either or both directions",
-      "Starter bar (dowel) generation for column-to-foundation connections",
-      "Stirrups with three independent spacing zones: dense top, dense bottom, standard mid-height",
-      "Starter zone stirrups with separate spacing control",
-      "Flexible selection: pick columns directly in the model OR filter by column type",
-      "Per-type mode: detail one column per type, or apply to all columns of the same type at once"
+      "Rectangular, square & circular columns — configure shape-appropriate reinforcement from one workflow",
+      "Independent main-bar control — set bar type and count in Length and Width directions, or configure circular bar layouts",
+      "Optional second reinforcement layers — enable independently in Length, Width, or as a second circular layer",
+      "Top & bottom bar extensions — use fixed lengths or bar-diameter multiples with independent lap/start offsets",
+      "Foundation starters / dowels — control cover, minimum leg length, embedment factor, lap-start offset, and fixed or diameter-based top extensions",
+      "Three-zone stirrup distribution — critical bottom, normal middle, and critical top zones with separate spacing controls",
+      "Egyptian Code-based or user-defined critical-zone lengths, plus optional foundation/dowel stirrups with independent spacing",
+      "Flexible targeting — select columns from the model or type list, then filter instances by parameter and value",
+      "Reference-to-batch workflow — create main bars, prepare a temporary section for stirrup/crosstie setup, check existing hosted rebar, then apply to one or all matching columns"
     ],
-    tableTitle: "Time Comparison — 20 Columns (Typical Floor)",
+    tableTitle: "Typical Workflow Estimates — 20 Similar Columns",
     rows: [
-      ["Main Longitudinal Bars", "~60 min", "~15 sec", "99%"],
-      ["Starter Bars (Dowels)", "~80 min", "Included automatically", "99%"],
-      ["Stirrups + Variable Zones", "~100 min", "~10 sec", "99%"],
-      ["Full Floor — All 20 Columns", "~4 hours", "~1 min", "97%"]
+      ["Main Bars + Extensions", "~60 min", "~15 sec", "~99%"],
+      ["Foundation Dowels + Dowel Stirrups", "~80 min", "Included in workflow", "~99%"],
+      ["Stirrups + Critical / Normal Zones", "~100 min", "~10 sec after defining the reference stirrup arrangement", "~99%"],
+      ["Full Batch — 20 Similar Columns", "~4 hours", "~1 min", "~97%"]
     ],
-    summary: "10-floor building with <strong>200 columns</strong> — Manual: <strong style='color:var(--error)'>~40 working hours</strong> → With Tool: <strong>under 10 minutes</strong>"
+    summary: "Repetitive multi-floor column detailing can move from <strong>hours to minutes</strong> by processing matching column types in batches, depending on each column type and reinforcement configuration."
   },
   "03": {
     pkg: "Package 02 · Tool 03",
