@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Revit Add-in Details — BIM Sprint</title>
 <meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." name="description"/>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="css/style.css?v=20260925-tool-demos" rel="stylesheet"/>
 <meta content="index,follow,max-image-preview:large" data-seo="bimsprint" name="robots"/><meta content="#F8FAFC" data-seo="bimsprint" name="theme-color"/><link data-seo="bimsprint" href="https://mnsourabubakr.github.io/tool.html" rel="canonical"/><link data-seo="bimsprint" href="assets/images/favicon.png" rel="icon" sizes="64x64" type="image/png"/><link data-seo="bimsprint" href="assets/images/favicon-192.png" rel="apple-touch-icon"/><link data-seo="bimsprint" href="site.webmanifest" rel="manifest"/><meta content="website" data-seo="bimsprint" property="og:type"/><meta content="Revit Add-in Details — BIM Sprint" data-seo="bimsprint" property="og:title"/><meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." data-seo="bimsprint" property="og:description"/><meta content="https://mnsourabubakr.github.io/tool.html" data-seo="bimsprint" property="og:url"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" property="og:image"/><meta content="BIM Sprint" data-seo="bimsprint" property="og:site_name"/><meta content="summary_large_image" data-seo="bimsprint" name="twitter:card"/><meta content="Revit Add-in Details — BIM Sprint" data-seo="bimsprint" name="twitter:title"/><meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." data-seo="bimsprint" name="twitter:description"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" name="twitter:image"/></head>
 <body>
 <!-- NAV -->
@@ -69,6 +69,7 @@
 </div>
 </div>
 </main>
+<nav aria-label="Tool video demonstrations" class="tool-demo-actions" hidden="" id="tool-demo-actions"></nav>
 <!-- FOOTER -->
 <footer class="footer">
 <div class="footer-inner">
@@ -86,7 +87,7 @@
 <span class="footer-copy">© <span data-year="">2026</span> BIM Sprint · All rights reserved</span>
 </div>
 </footer>
-<script src="js/tools-data.js?v=20260924-column-reinforcement"></script>
+<script src="js/tools-data.js?v=20260925-ceiling-demos"></script>
 <script src="js/main.js"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
@@ -163,6 +164,31 @@
     if (demoButton && tool.videoUrl?.trim()) {
       demoButton.style.display = 'inline-flex';
       demoButton.addEventListener('click', () => window.open(tool.videoUrl, '_blank', 'noopener'));
+    }
+
+    const demoActions = document.getElementById('tool-demo-actions');
+    const demoLinks = (tool.demoLinks || []).filter(demo => demo?.label?.trim() && demo?.url?.trim());
+    if (demoActions && demoLinks.length) {
+      demoLinks.forEach(demo => {
+        const link = document.createElement('a');
+        const context = demo.description?.trim() ? ` — ${demo.description.trim()}` : '';
+        link.className = 'tool-demo-link';
+        link.href = demo.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.setAttribute('aria-label', `${demo.label}${context} on Facebook (opens in a new tab)`);
+        link.title = `${demo.label}${context}`;
+        const playIcon = document.createElement('span');
+        playIcon.className = 'tool-demo-play';
+        playIcon.setAttribute('aria-hidden', 'true');
+        playIcon.textContent = '▶';
+        const label = document.createElement('span');
+        label.textContent = demo.label;
+        link.append(playIcon, label);
+        demoActions.appendChild(link);
+      });
+      demoActions.hidden = false;
+      document.body.classList.add('has-tool-demo-actions');
     }
   } else {
     document.getElementById('tool-content').innerHTML = `

@@ -11,9 +11,9 @@ HOW TO MANAGE THIS FILE (كيفية إدارة هذه البيانات)
 مثال: image: "assets/images/my-tool-pic.png"
 
 2. الفيديوهات (Videos):
-لإضافة فيديو يفتح عند الضغط على "Watch a Demo"، فقط أضف خاصية `videoUrl` لأي أداة،
-مثال: videoUrl: "https://www.youtube.com/watch?v=..."
-إذا لم تقم بإضافتها، سيظهر للمستخدم رسالة أن الفيديو غير متاح.
+لإضافة أزرار فيديو ثابتة لأي أداة، أضف مصفوفة `demoLinks` تحتوي على اسم الزر والرابط،
+مثال: demoLinks: [{ label: "Watch Demo 1", url: "https://..." }]
+إذا لم تقم بإضافتها، لن تظهر أزرار الفيديو الثابتة.
 
 3. موجز الأداة (Short Summary):
 خاصية `desc` هي المسؤولة عن عرض موجز أو شرح بسيط لكل أداة يظهر تحت العنوان.
@@ -405,6 +405,18 @@ const TOOLS = {
     title: "Ceiling Wizard Tool",
     desc: "An automated suspended-ceiling design and modeling workflow that converts room geometry into reviewed gypsum and tile ceiling layouts, validates heights against structural soffits, and generates selected rooms in controlled batches.",
     image: "assets/images/tool-17-ceiling-wizard.png",
+    demoLinks: [
+      {
+        label: "Watch Demo 1",
+        description: "Full Automation",
+        url: "https://www.facebook.com/reel/1950452872298159/"
+      },
+      {
+        label: "Watch Demo 2",
+        description: "Custom Design",
+        url: "https://www.facebook.com/reel/1020220074351408/"
+      }
+    ],
     features: [
       "Four production workflows: Full Gypsum, Full Tiles, Perimeter + Whole Tiles, and Divided Bays",
       "Automatic tile-module detection from Revit ceiling types and material surface patterns, with layout calculations based on the detected module",
