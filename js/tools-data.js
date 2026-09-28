@@ -245,6 +245,13 @@ const TOOLS = {
     title: "Room Wizard Tool",
     desc: "An architectural room-finishes workflow that detects existing floor finishes, builds single- or multi-layer finish systems, previews each room in 3D, and applies verified finishes individually or in batches.",
     image: "assets/images/tool-10-room-wizard-v2.png",
+    demoLinks: [
+      {
+        label: "Watch Demo 1",
+        description: "Room Wizard",
+        url: "https://www.facebook.com/reel/1810249153431777/"
+      }
+    ],
     features: [
       "Central room-finishes table with room number, name, level, area, volume, current finish, proposed finish, status, and searchable room data",
       "Single-layer and multi-layer finish design with independent material and thickness control for each finish layer",
