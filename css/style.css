@@ -219,6 +219,9 @@ img{max-width:100%;display:block}
 .catalog-request-access{max-width:1180px;margin:-50px auto 30px;padding:0 48px;display:flex;justify-content:center}
 .catalog-request-list-btn strong{min-width:25px;height:25px;padding:0 7px;border-radius:999px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:11px}
 .catalog-request-list-btn.has-items strong{background:var(--accent);color:#111827}
+.package-choice-notice{position:fixed;top:92px;left:50%;z-index:1100;min-width:min(330px,calc(100vw - 32px));padding:14px 22px;border:1px solid rgba(255,255,255,.24);border-radius:13px;background:#0B2742;color:#fff;box-shadow:0 18px 44px rgba(2,10,22,.3);font-size:13px;font-weight:750;letter-spacing:.01em;text-align:center;opacity:0;transform:translate(-50%,-14px);transition:opacity .22s ease,transform .22s ease}
+.package-choice-notice[hidden]{display:none}
+.package-choice-notice.is-visible{opacity:1;transform:translate(-50%,0)}
 body.request-modal-open{overflow:hidden}
 .request-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px}
 .request-modal[hidden]{display:none}
@@ -302,6 +305,7 @@ body.request-modal-open{overflow:hidden}
   .catalog-info{padding-inline:16px}
   .request-floating-actions{right:12px;bottom:12px}
   .request-list-trigger{min-height:46px;padding:9px 10px 9px 13px}
+  .package-choice-notice{top:82px;padding:13px 18px}
   .catalog-request-access{margin-top:-38px;padding-inline:16px}
   .request-dialog{padding:20px 16px;border-radius:18px;max-height:calc(100vh - 20px)}
   .request-dialog-header h2{font-size:23px}

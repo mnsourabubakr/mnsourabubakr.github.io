@@ -15,14 +15,18 @@
   const readyPanel = document.getElementById('request-ready');
   const whatsappAction = document.getElementById('request-whatsapp-action');
   const editButton = document.getElementById('request-edit-btn');
+  const packageChoiceNotice = document.getElementById('package-choice-notice');
+  const firstPackage = document.getElementById('pkg01');
 
-  if (!packageButtons.length || !requestTriggers.length || !requestClear || !modal || !form) return;
+  if (!packageButtons.length || !requestTriggers.length || !requestClear || !modal || !form || !packageChoiceNotice || !firstPackage) return;
 
   const STORAGE_KEY = 'bimSprintPackageRequest';
   const OWNER_WHATSAPP = '201068970898';
   const packageMap = new Map(packageButtons.map(button => [button.dataset.packageId, button.dataset.packageName]));
   let selectedPackages = new Set(loadSelection());
   let lastFocusedElement = null;
+  let noticeHideTimer = null;
+  let noticeScrollTimer = null;
 
   function loadSelection() {
     try {
@@ -96,6 +100,22 @@
     setTimeout(() => modal.querySelector('.request-modal-close')?.focus(), 0);
   }
 
+  function promptForPackage() {
+    clearTimeout(noticeHideTimer);
+    clearTimeout(noticeScrollTimer);
+    packageChoiceNotice.hidden = false;
+    requestAnimationFrame(() => packageChoiceNotice.classList.add('is-visible'));
+
+    noticeHideTimer = setTimeout(() => {
+      packageChoiceNotice.classList.remove('is-visible');
+      noticeScrollTimer = setTimeout(() => {
+        packageChoiceNotice.hidden = true;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        firstPackage.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      }, 220);
+    }, 1800);
+  }
+
   function closeModal() {
     modal.hidden = true;
     document.body.classList.remove('request-modal-open');
@@ -118,7 +138,13 @@
     });
   });
 
-  requestTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+  requestTriggers.forEach(trigger => trigger.addEventListener('click', () => {
+    if (!selectedPackages.size) {
+      promptForPackage();
+      return;
+    }
+    openModal();
+  }));
   requestClear.addEventListener('click', () => {
     selectedPackages.clear();
     updateSelection();
