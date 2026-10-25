@@ -250,6 +250,11 @@ const TOOLS = {
         label: "Watch Demo 1",
         description: "Room Wizard",
         url: "https://www.facebook.com/reel/1810249153431777/"
+      },
+      {
+        label: "Watch Demo 2",
+        description: "Room Finish Design",
+        url: "https://www.facebook.com/reel/1367657712110346/"
       }
     ],
     features: [
