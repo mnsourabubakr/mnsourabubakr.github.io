@@ -245,6 +245,62 @@ const TOOLS = {
     title: "Room Wizard Tool",
     desc: "An architectural room-finishes workflow that detects existing floor finishes, builds single- or multi-layer finish systems, previews each room in 3D, and applies verified finishes individually or in batches.",
     image: "assets/images/tool-10-room-wizard-v2.png",
+    seo: {
+      title: "Room Wizard for Revit — Floor Finish Automation | BIM Sprint",
+      description: "Design, review, match, preview, and apply room floor finishes inside Revit with Room Wizard by BIM Sprint.",
+      keywords: "Room Wizard, Revit floor finishes, Revit add-in, BIM automation, room finish design, BIM Sprint"
+    },
+    landing: {
+      eyebrow: "Room Wizard · Architectural Automation · Revit Add-in",
+      headline: "Design. Match. Apply.",
+      headlineAccent: "Floor Finishes — Inside Revit.",
+      heroText: "Room Wizard brings room data, finish design, 3D review, matching, conflict handling, and controlled creation into one focused Revit workspace.",
+      primaryCta: "Request a Demo",
+      secondaryCta: "Watch the Demos",
+      proofPoints: [
+        "Single & multi-layer finish design",
+        "Room-by-room or batch workflows",
+        "Built around real Revit room data"
+      ],
+      pains: [
+        {
+          title: "Scattered room information",
+          text: "Reviewing rooms, existing finishes, levels, areas, and proposed finishes across separate Revit views makes coordination harder to follow."
+        },
+        {
+          title: "Repeated finish setup",
+          text: "Building the same material and layer logic room by room creates repetitive work and makes consistency difficult to maintain."
+        },
+        {
+          title: "Manual checking before apply",
+          text: "Previewing, matching, and resolving existing-finish conflicts can require multiple selections and repeated visual checks."
+        }
+      ],
+      valueTitle: "One controlled workflow from room data to applied finishes.",
+      valueText: "Room Wizard keeps the work visible and structured: review each room, design its finish system, preview the result, reuse proven configurations, and apply only when you are ready.",
+      workflow: [
+        {
+          title: "Review",
+          text: "Search and review room data, current finishes, status, and the proposed finish from one table."
+        },
+        {
+          title: "Design",
+          text: "Build a single-layer or multi-layer floor finish with independent material and thickness control."
+        },
+        {
+          title: "Preview",
+          text: "Open a dedicated 3D Section Box preview and optionally colorize the finish for a clearer check."
+        },
+        {
+          title: "Match",
+          text: "Copy a completed finish setup to other rooms, with options to copy only or copy and apply."
+        },
+        {
+          title: "Apply",
+          text: "Create finishes for one room or use Apply Selected while each checked room keeps its own configuration."
+        }
+      ]
+    },
     demoLinks: [
       {
         label: "Watch Demo 1",
@@ -258,14 +314,38 @@ const TOOLS = {
       }
     ],
     features: [
-      "Central room-finishes table with room number, name, level, area, volume, current finish, proposed finish, status, and searchable room data",
-      "Single-layer and multi-layer finish design with independent material and thickness control for each finish layer",
-      "One-room Apply and batch Apply Selected workflows so every checked room can keep its own finish configuration",
-      "Match workflow to copy a room's finish setup to other rooms, with options to copy only or copy and apply",
-      "One-click 3D room preview using a dedicated Section Box, with optional preview colorization for faster visual checking",
-      "Existing-finish conflict handling that can automatically resolve safe cases while leaving pinned, grouped, structural, or otherwise unsafe floors for manual review",
-      "Configurable room table: add Room parameters as columns, show/hide columns, arrange their order and widths, search, and use multi-criteria sorting",
-      "Supports rooms from the host model and, when enabled, loaded linked models while keeping finish ownership and worksharing safety checks"
+      {
+        title: "Custom Floor Design",
+        text: "Build single-layer and multi-layer finish systems with independent material and thickness control for every layer."
+      },
+      {
+        title: "Match & Apply",
+        text: "Copy a room's finish setup to other rooms, then choose whether to copy only or copy and apply."
+      },
+      {
+        title: "3D Preview",
+        text: "Review a room in a dedicated Section Box and optionally colorize the finish for clearer visual checking."
+      },
+      {
+        title: "Batch Apply",
+        text: "Apply finishes to one room or many selected rooms while each room keeps its own verified configuration."
+      },
+      {
+        title: "Central Room Workspace",
+        text: "Work with room number, name, level, area, volume, current finish, proposed finish, status, and searchable data in one table."
+      },
+      {
+        title: "Conflict Handling",
+        text: "Automatically resolve safe existing-finish cases while keeping pinned, grouped, structural, or otherwise unsafe floors for manual review."
+      },
+      {
+        title: "Configurable Room Table",
+        text: "Add Room parameters as columns, show or hide them, arrange order and widths, search, and use multi-criteria sorting."
+      },
+      {
+        title: "Host & Linked Rooms",
+        text: "Use rooms from the host model and, when enabled, loaded linked models with finish ownership and worksharing safety checks."
+      }
     ],
     tableTitle: "Workflow Comparison — Room Finish Coordination",
     rows: [

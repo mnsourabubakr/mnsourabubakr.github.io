@@ -7,6 +7,7 @@
 <title>Revit Add-in Details — BIM Sprint</title>
 <meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." name="description"/>
 <link href="css/style.css?v=20260925-tool-demos" rel="stylesheet"/>
+<link href="css/tool-landing.css?v=20261104-room-wizard" rel="stylesheet"/>
 <meta content="index,follow,max-image-preview:large" data-seo="bimsprint" name="robots"/><meta content="#F8FAFC" data-seo="bimsprint" name="theme-color"/><link data-seo="bimsprint" href="https://mnsourabubakr.github.io/tool.html" rel="canonical"/><link data-seo="bimsprint" href="assets/images/favicon.png" rel="icon" sizes="64x64" type="image/png"/><link data-seo="bimsprint" href="assets/images/favicon-192.png" rel="apple-touch-icon"/><link data-seo="bimsprint" href="site.webmanifest" rel="manifest"/><meta content="website" data-seo="bimsprint" property="og:type"/><meta content="Revit Add-in Details — BIM Sprint" data-seo="bimsprint" property="og:title"/><meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." data-seo="bimsprint" property="og:description"/><meta content="https://mnsourabubakr.github.io/tool.html" data-seo="bimsprint" property="og:url"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" property="og:image"/><meta content="BIM Sprint" data-seo="bimsprint" property="og:site_name"/><meta content="summary_large_image" data-seo="bimsprint" name="twitter:card"/><meta content="Revit Add-in Details — BIM Sprint" data-seo="bimsprint" name="twitter:title"/><meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." data-seo="bimsprint" name="twitter:description"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" name="twitter:image"/></head>
 <body>
 <!-- NAV -->
@@ -87,8 +88,9 @@
 <span class="footer-copy">© <span data-year="">2026</span> BIM Sprint · All rights reserved</span>
 </div>
 </footer>
-<script src="js/tools-data.js?v=20261025-room-demo-2"></script>
+<script src="js/tools-data.js?v=20261104-room-wizard-landing"></script>
 <script src="js/main.js"></script>
+<script src="js/tool-landing.js?v=20261104-room-wizard"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
   const toolId = params.get('id');
@@ -101,8 +103,8 @@
   }
 
   if (tool) {
-    const pageTitle = `${tool.title} — BIM Sprint`;
-    const pageDescription = tool.desc.replace(/\s+/g, ' ').slice(0, 158);
+    const pageTitle = tool.seo?.title || `${tool.title} — BIM Sprint`;
+    const pageDescription = (tool.seo?.description || tool.desc).replace(/\s+/g, ' ').slice(0, 158);
     const pageUrl = `${siteBase}tool.html?id=${encodeURIComponent(toolId)}`;
     document.title = pageTitle;
     document.querySelector('meta[name="description"]')?.setAttribute('content', pageDescription);
@@ -112,58 +114,78 @@
     setMeta('meta[property="og:url"]', pageUrl);
     setMeta('meta[name="twitter:title"]', pageTitle);
     setMeta('meta[name="twitter:description"]', pageDescription);
-
-    document.getElementById('tool-badge').textContent = tool.pkg;
-    document.getElementById('tool-title').textContent = tool.title;
-    document.getElementById('tool-desc').textContent = tool.desc;
-
-    const imgEl = document.getElementById('tool-img');
-    imgEl.onerror = function() {
-      this.parentElement.innerHTML = '<div class="tool-image-placeholder">Screenshot currently being prepared.</div>';
-    };
-    imgEl.src = tool.image;
-    imgEl.alt = `${tool.title} interface`;
-
-    const featEl = document.getElementById('tool-features');
-    (tool.features || []).forEach(feature => {
-      const li = document.createElement('li');
-      if (typeof feature === 'object' && feature.title && feature.text) {
-        const content = document.createElement('span');
-        const title = document.createElement('strong');
-        title.textContent = feature.title;
-        content.append(title, ` — ${feature.text}`);
-        li.appendChild(content);
-      } else {
-        li.textContent = feature;
-      }
-      featEl.appendChild(li);
-    });
-
-    if (tool.highlight?.title && tool.highlight?.text) {
-      document.getElementById('tool-highlight-title').textContent = tool.highlight.title;
-      document.getElementById('tool-highlight-text').textContent = tool.highlight.text;
-      document.getElementById('tool-highlight-section').hidden = false;
+    if (tool.seo?.keywords) {
+      const keywords = document.createElement('meta');
+      keywords.name = 'keywords';
+      keywords.content = tool.seo.keywords;
+      document.head.appendChild(keywords);
+    }
+    if (tool.landing && tool.image) {
+      const imageUrl = new URL(tool.image, siteBase).href;
+      setMeta('meta[property="og:image"]', imageUrl);
+      setMeta('meta[name="twitter:image"]', imageUrl);
     }
 
-    document.getElementById('table-title').textContent = tool.tableTitle;
-    const tbody = document.getElementById('tool-table');
-    (tool.rows || []).forEach(row => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${row[0]}</td>
-        <td><span class="e-manual">${row[1]}</span></td>
-        <td><span class="e-auto">${row[2]}</span></td>
-        <td><span class="e-save">${row[3]}</span></td>
-      `;
-      tbody.appendChild(tr);
-    });
+    const landingRendered = Boolean(tool.landing && window.renderToolLandingPage?.({
+      root: document.getElementById('tool-content'),
+      tool,
+      toolId,
+      siteBase
+    }));
 
-    document.getElementById('tool-summary').innerHTML = `⚡ ${tool.summary}`;
+    if (!landingRendered) {
+      document.getElementById('tool-badge').textContent = tool.pkg;
+      document.getElementById('tool-title').textContent = tool.title;
+      document.getElementById('tool-desc').textContent = tool.desc;
 
-    const demoButton = document.getElementById('demo-button');
-    if (demoButton && tool.videoUrl?.trim()) {
-      demoButton.style.display = 'inline-flex';
-      demoButton.addEventListener('click', () => window.open(tool.videoUrl, '_blank', 'noopener'));
+      const imgEl = document.getElementById('tool-img');
+      imgEl.onerror = function() {
+        this.parentElement.innerHTML = '<div class="tool-image-placeholder">Screenshot currently being prepared.</div>';
+      };
+      imgEl.src = tool.image;
+      imgEl.alt = `${tool.title} interface`;
+
+      const featEl = document.getElementById('tool-features');
+      (tool.features || []).forEach(feature => {
+        const li = document.createElement('li');
+        if (typeof feature === 'object' && feature.title && feature.text) {
+          const content = document.createElement('span');
+          const title = document.createElement('strong');
+          title.textContent = feature.title;
+          content.append(title, ` — ${feature.text}`);
+          li.appendChild(content);
+        } else {
+          li.textContent = feature;
+        }
+        featEl.appendChild(li);
+      });
+
+      if (tool.highlight?.title && tool.highlight?.text) {
+        document.getElementById('tool-highlight-title').textContent = tool.highlight.title;
+        document.getElementById('tool-highlight-text').textContent = tool.highlight.text;
+        document.getElementById('tool-highlight-section').hidden = false;
+      }
+
+      document.getElementById('table-title').textContent = tool.tableTitle;
+      const tbody = document.getElementById('tool-table');
+      (tool.rows || []).forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${row[0]}</td>
+          <td><span class="e-manual">${row[1]}</span></td>
+          <td><span class="e-auto">${row[2]}</span></td>
+          <td><span class="e-save">${row[3]}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('tool-summary').innerHTML = `⚡ ${tool.summary}`;
+
+      const demoButton = document.getElementById('demo-button');
+      if (demoButton && tool.videoUrl?.trim()) {
+        demoButton.style.display = 'inline-flex';
+        demoButton.addEventListener('click', () => window.open(tool.videoUrl, '_blank', 'noopener'));
+      }
     }
 
     const demoActions = document.getElementById('tool-demo-actions');
