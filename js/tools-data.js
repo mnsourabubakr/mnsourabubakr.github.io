@@ -247,37 +247,16 @@ const TOOLS = {
     image: "assets/images/tool-10-room-wizard-v2.png",
     seo: {
       title: "Room Wizard for Revit — Floor Finish Automation | BIM Sprint",
-      description: "Design, review, match, preview, and apply room floor finishes inside Revit with Room Wizard by BIM Sprint.",
-      keywords: "Room Wizard, Revit floor finishes, Revit add-in, BIM automation, room finish design, BIM Sprint"
+      description: "Design layered floor finishes, preview them in 3D, and apply them to selected Revit rooms with Room Wizard by BIM Sprint."
     },
     landing: {
-      eyebrow: "Room Wizard · Architectural Automation · Revit Add-in",
-      headline: "Design. Match. Apply.",
-      headlineAccent: "Floor Finishes — Inside Revit.",
-      heroText: "Room Wizard brings room data, finish design, 3D review, matching, conflict handling, and controlled creation into one focused Revit workspace.",
-      primaryCta: "Request a Demo",
+      headline: "Room Wizard",
+      headlineAccent: "Floor finishes in Revit",
+      heroText: "Design layered floor finishes, preview them in 3D, and apply them across selected rooms. Reuse a finish setup wherever it fits, while keeping room-specific designs where they differ.",
+      primaryCta: "Request a Demo on WhatsApp",
       secondaryCta: "Watch the Demos",
-      proofPoints: [
-        "Single & multi-layer finish design",
-        "Room-by-room or batch workflows",
-        "Built around real Revit room data"
-      ],
-      pains: [
-        {
-          title: "Scattered room information",
-          text: "Reviewing rooms, existing finishes, levels, areas, and proposed finishes across separate Revit views makes coordination harder to follow."
-        },
-        {
-          title: "Repeated finish setup",
-          text: "Building the same material and layer logic room by room creates repetitive work and makes consistency difficult to maintain."
-        },
-        {
-          title: "Manual checking before apply",
-          text: "Previewing, matching, and resolving existing-finish conflicts can require multiple selections and repeated visual checks."
-        }
-      ],
-      valueTitle: "One controlled workflow from room data to applied finishes.",
-      valueText: "Room Wizard keeps the work visible and structured: review each room, design its finish system, preview the result, reuse proven configurations, and apply only when you are ready.",
+      packageName: "Architectural Automation",
+      packageUrl: "tools.html#pkg01",
       workflow: [
         {
           title: "Review",
@@ -305,11 +284,13 @@ const TOOLS = {
       {
         label: "Watch Demo 1",
         description: "Room Wizard",
+        caption: "See how the room table brings existing finishes and finish assignments together in Revit.",
         url: "https://www.facebook.com/reel/1810249153431777/"
       },
       {
         label: "Watch Demo 2",
         description: "Room Finish Design",
+        caption: "See the custom floor-finish design workflow inside Room Wizard.",
         url: "https://www.facebook.com/reel/1367657712110346/"
       }
     ],

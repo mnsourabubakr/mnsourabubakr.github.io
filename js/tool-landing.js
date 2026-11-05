@@ -1,4 +1,5 @@
-(function () {
+// Build-time template. Run node scripts/build-room-wizard.cjs after editing.
+module.exports = (function () {
   const WHATSAPP_NUMBER = '201068970898';
 
   const iconPaths = {
@@ -10,8 +11,6 @@
     shield: '<path d="M12 3 5 6v5c0 4.7 2.9 8.1 7 10 4.1-1.9 7-5.3 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
     columns: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16M3 9h18"/>',
     link: '<path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1"/>',
-    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
-    repeat: '<path d="m17 1 4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="m7 23-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>',
     check: '<path d="m4 12 5 5L20 6"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
     play: '<path d="m9 7 8 5-8 5V7Z"/>',
@@ -38,7 +37,7 @@
     const title = typeof feature === 'object' ? feature.title : `Capability ${index + 1}`;
     const text = typeof feature === 'object' ? feature.text : feature;
     return `
-      <article class="rw-feature-card${isPrimary} rw-reveal">
+      <article class="rw-feature-card${isPrimary}">
         <div class="rw-feature-icon">${icon(names[index])}</div>
         <div>
           <h3>${escapeHtml(title)}</h3>
@@ -52,12 +51,8 @@
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   }
 
-  function installStructuredData(tool, pageUrl, imageUrl, siteBase) {
-    document.getElementById('room-wizard-schema')?.remove();
-    const schema = document.createElement('script');
-    schema.id = 'room-wizard-schema';
-    schema.type = 'application/ld+json';
-    schema.textContent = JSON.stringify({
+  function structuredData(tool, pageUrl, imageUrl, siteBase) {
+    return {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
       name: 'Room Wizard',
@@ -72,111 +67,46 @@
         name: 'BIM Sprint',
         url: siteBase
       }
-    });
-    document.head.appendChild(schema);
+    };
   }
 
-  function prepareRevealAnimations(root) {
-    const elements = [...root.querySelectorAll('.rw-reveal')];
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reducedMotion || !('IntersectionObserver' in window)) {
-      elements.forEach(element => element.classList.add('is-visible'));
-      return;
-    }
-
-    document.body.classList.add('rw-animations-ready');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-    elements.forEach(element => observer.observe(element));
-  }
-
-  function prepareConversionHooks(root) {
-    root.addEventListener('click', event => {
-      const action = event.target.closest('[data-conversion]');
-      if (!action) return;
-      const detail = {
-        event: 'room_wizard_conversion_click',
-        action: action.dataset.conversion,
-        destination: action.getAttribute('href') || ''
-      };
-      if (Array.isArray(window.dataLayer)) window.dataLayer.push(detail);
-      window.dispatchEvent(new CustomEvent('bimsprint:conversion', { detail }));
-    });
-  }
-
-  function prepareDemoRail(root) {
-    const demoSection = root.querySelector('#room-wizard-demos');
-    if (!demoSection || !('IntersectionObserver' in window)) return;
-    const observer = new IntersectionObserver(entries => {
-      const isVisible = entries.some(entry => entry.isIntersecting);
-      document.body.classList.toggle('rw-demos-in-view', isVisible);
-    }, { threshold: 0.18 });
-    observer.observe(demoSection);
-  }
-
-  window.renderToolLandingPage = function renderToolLandingPage({ root, tool, toolId, siteBase }) {
-    if (!root || !tool?.landing) return false;
-
+  function renderToolLandingPage(tool) {
     const landing = tool.landing;
-    const pageUrl = `${siteBase}tool.html?id=${encodeURIComponent(toolId)}`;
-    const imageUrl = new URL(tool.image, siteBase).href;
     const whatsappUrl = buildWhatsappUrl();
-    const demoLinks = (tool.demoLinks || []).filter(demo => demo?.label && demo?.url);
-
-    const painIcons = ['search', 'repeat', 'check'];
-    const pains = (landing.pains || []).map((pain, index) => `
-      <article class="rw-pain-card rw-reveal">
-        <span class="rw-pain-number">0${index + 1}</span>
-        <div class="rw-pain-icon">${icon(painIcons[index])}</div>
-        <h3>${escapeHtml(pain.title)}</h3>
-        <p>${escapeHtml(pain.text)}</p>
-      </article>`).join('');
 
     const features = (tool.features || []).map(renderFeature).join('');
 
     const workflow = (landing.workflow || []).map((step, index) => `
-      <article class="rw-workflow-step rw-reveal">
-        <span class="rw-step-number">${String(index + 1).padStart(2, '0')}</span>
+      <li class="rw-workflow-step">
+        <span class="rw-step-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
         <div>
           <h3>${escapeHtml(step.title)}</h3>
           <p>${escapeHtml(step.text)}</p>
         </div>
-      </article>`).join('');
+      </li>`).join('');
 
-    const demos = demoLinks.map((demo, index) => `
-      <article class="rw-demo-card rw-reveal">
+    const demos = tool.demoLinks.map((demo, index) => `
+      <a class="rw-demo-card" href="${escapeHtml(demo.url)}" target="_blank" rel="noopener noreferrer" data-conversion="watch_demo_${index + 1}" aria-labelledby="rw-demo-action-${index} rw-demo-name-${index}">
         <div class="rw-demo-visual" aria-hidden="true">
           <span class="rw-demo-index">0${index + 1}</span>
           <span class="rw-demo-pulse">${icon('play')}</span>
-          <span class="rw-demo-line"></span>
         </div>
         <div class="rw-demo-copy">
-          <span class="rw-demo-kicker">Product demonstration</span>
-          <h3>${escapeHtml(demo.description || demo.label)}</h3>
-          <p>See the Room Wizard workflow in action and follow the tool directly inside Revit.</p>
-          <a class="rw-button rw-button--light" href="${escapeHtml(demo.url)}" target="_blank" rel="noopener noreferrer" data-conversion="watch_demo_${index + 1}">
-            ${icon('play')}<span>${escapeHtml(demo.label)}</span>
-          </a>
+          <span class="rw-demo-kicker">Facebook · Opens in a new tab</span>
+          <h3 id="rw-demo-name-${index}">${escapeHtml(demo.description || demo.label)}</h3>
+          <p>${escapeHtml(demo.caption)}</p>
+          <span class="rw-button rw-button--light" id="rw-demo-action-${index}">${escapeHtml(demo.label)} ${icon('arrow')}</span>
         </div>
-      </article>`).join('');
+      </a>`).join('');
 
     const comparisonRows = (tool.rows || []).map(row => `
       <tr>
         <th scope="row">${escapeHtml(row[0])}</th>
-        <td><span class="rw-manual-mark">Manual</span>${escapeHtml(row[1])}</td>
-        <td><span class="rw-product-mark">Room Wizard</span>${escapeHtml(row[2])}</td>
+        <td headers="rw-manual"><span class="rw-manual-mark" aria-hidden="true">Manual Revit workflow</span>${escapeHtml(row[1])}</td>
+        <td headers="rw-with-tool"><span class="rw-product-mark" aria-hidden="true">With Room Wizard</span>${escapeHtml(row[2])}</td>
       </tr>`).join('');
 
-    const proofPoints = (landing.proofPoints || []).map(point => `
-      <li>${icon('check')}<span>${escapeHtml(point)}</span></li>`).join('');
-
-    root.className = 'rw-page';
-    root.innerHTML = `
+    return `
       <section class="rw-hero" aria-labelledby="room-wizard-title">
         <div class="rw-hero-grid"></div>
         <div class="rw-orb rw-orb--one"></div>
@@ -184,7 +114,7 @@
         <div class="rw-container rw-hero-layout">
           <div class="rw-hero-copy">
             <a class="rw-back" href="tools.html">${icon('arrow')}<span>Back to all tools</span></a>
-            <span class="rw-eyebrow">${escapeHtml(landing.eyebrow)}</span>
+            <span class="rw-eyebrow">Architectural Automation · Revit Add-in</span>
             <h1 id="room-wizard-title">${escapeHtml(landing.headline)} <span>${escapeHtml(landing.headlineAccent)}</span></h1>
             <p class="rw-hero-text">${escapeHtml(landing.heroText)}</p>
             <div class="rw-hero-actions">
@@ -195,7 +125,6 @@
                 ${icon('play')}<span>${escapeHtml(landing.secondaryCta)}</span>
               </a>
             </div>
-            <ul class="rw-proof-list">${proofPoints}</ul>
           </div>
           <div class="rw-hero-product" aria-label="Room Wizard interface preview">
             <div class="rw-product-window">
@@ -203,102 +132,58 @@
                 <span></span><span></span><span></span>
                 <strong>Room Wizard · Revit Workspace</strong>
               </div>
-              <img src="${escapeHtml(tool.image)}" alt="Room Wizard interface for designing and applying room floor finishes in Revit" fetchpriority="high"/>
+              <a class="rw-product-image" href="${escapeHtml(tool.image)}" target="_blank" rel="noopener noreferrer" data-conversion="view_interface">
+                <img src="${escapeHtml(tool.image)}" width="1629" height="925" alt="Room Wizard interface showing current finishes, layer setups, and room controls" fetchpriority="high"/>
+                <span>View full-size screenshot ↗</span>
+              </a>
             </div>
-            <div class="rw-floating-chip rw-floating-chip--top">${icon('layers')}<span>Custom floor design</span></div>
-            <div class="rw-floating-chip rw-floating-chip--bottom">${icon('batch')}<span>Batch apply</span></div>
           </div>
-        </div>
-      </section>
-
-      <section class="rw-section rw-pain-section" aria-labelledby="room-wizard-challenge">
-        <div class="rw-container">
-          <div class="rw-section-heading rw-reveal">
-            <span class="rw-section-kicker">The coordination challenge</span>
-            <h2 id="room-wizard-challenge">Floor-finish decisions are simple. <span>The workflow around them is not.</span></h2>
-            <p>Traditional room-finish work spreads information, setup, review, and creation across repeated Revit steps.</p>
-          </div>
-          <div class="rw-pain-grid">${pains}</div>
-        </div>
-      </section>
-
-      <section class="rw-value-band" aria-labelledby="room-wizard-value">
-        <div class="rw-container rw-value-layout">
-          <div class="rw-value-icon rw-reveal">${icon('arrow')}</div>
-          <div class="rw-reveal">
-            <span class="rw-section-kicker">The Room Wizard approach</span>
-            <h2 id="room-wizard-value">${escapeHtml(landing.valueTitle)}</h2>
-          </div>
-          <p class="rw-reveal">${escapeHtml(landing.valueText)}</p>
-        </div>
-      </section>
-
-      <section class="rw-section rw-features-section" aria-labelledby="room-wizard-features">
-        <div class="rw-container">
-          <div class="rw-section-heading rw-section-heading--split rw-reveal">
-            <div>
-              <span class="rw-section-kicker">Capabilities that stay connected</span>
-              <h2 id="room-wizard-features">From custom design to final apply.</h2>
-            </div>
-            <p>Every capability supports the same controlled room-finish workflow—without turning the page into a list of disconnected commands.</p>
-          </div>
-          <div class="rw-features-grid">${features}</div>
-        </div>
-      </section>
-
-      <section class="rw-product-focus" aria-label="Room Wizard product interface">
-        <div class="rw-container rw-product-focus-grid">
-          <div class="rw-product-focus-copy rw-reveal">
-            <span class="rw-section-kicker">The workspace</span>
-            <h2>See the room, its current finish, and the proposed design together.</h2>
-            <p>The central table keeps room data and finish decisions visible while design, preview, match, and apply actions stay close to the work.</p>
-            <ul>
-              <li>${icon('check')}Search and sort room data</li>
-              <li>${icon('check')}Review current and proposed finishes</li>
-              <li>${icon('check')}Keep individual configurations during batch work</li>
-            </ul>
-          </div>
-          <figure class="rw-interface-figure rw-reveal">
-            <img src="${escapeHtml(tool.image)}" alt="Room Wizard central room-finishes table and design controls" loading="lazy"/>
-            <figcaption>Room Wizard workspace inside Revit</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="rw-section rw-workflow-section" aria-labelledby="room-wizard-workflow">
-        <div class="rw-container">
-          <div class="rw-section-heading rw-reveal">
-            <span class="rw-section-kicker">A clear Revit workflow</span>
-            <h2 id="room-wizard-workflow">Review → Design → Preview → Match → Apply</h2>
-            <p>Move through the work in a visible sequence while keeping control of each room's finish configuration.</p>
-          </div>
-          <div class="rw-workflow-list">${workflow}</div>
         </div>
       </section>
 
       <section class="rw-demo-section" id="room-wizard-demos" aria-labelledby="room-wizard-demo-title">
         <div class="rw-container">
-          <div class="rw-section-heading rw-section-heading--light rw-reveal">
+          <div class="rw-section-heading rw-section-heading--light">
             <span class="rw-section-kicker">Video demonstrations</span>
-            <h2 id="room-wizard-demo-title">Watch Room Wizard work inside Revit.</h2>
-            <p>Open either demonstration on Facebook to see the current workflows in action.</p>
+            <h2 id="room-wizard-demo-title">See Room Wizard in Revit</h2>
           </div>
           <div class="rw-demo-grid">${demos}</div>
         </div>
       </section>
 
+      <section class="rw-section rw-workflow-section" aria-labelledby="room-wizard-workflow">
+        <div class="rw-container">
+          <div class="rw-section-heading">
+            <span class="rw-section-kicker">The workflow</span>
+            <h2 id="room-wizard-workflow">From existing finishes to new floors</h2>
+            <p>Review what’s already modeled in one room table, reuse a setup for similar rooms, and apply each room’s design when it’s ready.</p>
+          </div>
+          <ol class="rw-workflow-list" role="list">${workflow}</ol>
+        </div>
+      </section>
+
+      <section class="rw-section rw-features-section" aria-labelledby="room-wizard-features">
+        <div class="rw-container">
+          <div class="rw-section-heading rw-section-heading--split">
+            <div>
+              <span class="rw-section-kicker">Capabilities that stay connected</span>
+              <h2 id="room-wizard-features">From custom design to final apply.</h2>
+            </div>
+            <p>Set materials and thicknesses per layer, check the design in 3D, then model the finishes for one room or a selection.</p>
+          </div>
+          <div class="rw-features-grid">${features}</div>
+        </div>
+      </section>
+
       <section class="rw-section rw-comparison-section" aria-labelledby="room-wizard-comparison">
         <div class="rw-container">
-          <div class="rw-section-heading rw-section-heading--split rw-reveal">
-            <div>
-              <span class="rw-section-kicker">Workflow comparison</span>
-              <h2 id="room-wizard-comparison">Fewer disconnected steps. More visible control.</h2>
-            </div>
-            <p>No invented percentages—just a direct comparison between the manual workflow and the Room Wizard workflow.</p>
+          <div class="rw-section-heading">
+            <span class="rw-section-kicker">Workflow comparison</span>
+            <h2 id="room-wizard-comparison">Manual Revit workflow vs. Room Wizard</h2>
           </div>
-          <div class="rw-comparison-wrap rw-reveal">
-            <table class="rw-comparison-table">
-              <thead><tr><th>Task</th><th>Manual Revit workflow</th><th>With Room Wizard</th></tr></thead>
+          <div class="rw-comparison-wrap">
+            <table class="rw-comparison-table" role="table" aria-labelledby="room-wizard-comparison">
+              <thead role="rowgroup"><tr role="row"><th scope="col">Task</th><th id="rw-manual" scope="col">Manual Revit workflow</th><th id="rw-with-tool" scope="col">With Room Wizard</th></tr></thead>
               <tbody>${comparisonRows}</tbody>
             </table>
           </div>
@@ -306,27 +191,23 @@
       </section>
 
       <section class="rw-closing-section" aria-labelledby="room-wizard-cta">
-        <div class="rw-container rw-closing-card rw-reveal">
+        <div class="rw-container rw-closing-card">
           <div class="rw-closing-glow"></div>
           <div>
-            <span class="rw-section-kicker">Bring the workflow into your Revit process</span>
-            <h2 id="room-wizard-cta">Ready to see Room Wizard on a real floor-finish workflow?</h2>
-            <p>Contact BIM Sprint on WhatsApp to request a demonstration or discuss purchasing the add-in.</p>
+            <span class="rw-section-kicker">${escapeHtml(landing.packageName)} package</span>
+            <h2 id="room-wizard-cta">Bring Room Wizard to your Revit workflow</h2>
+            <p>Message BIM Sprint to request a demo or ask about Revit compatibility, licensing, and support. To request the package, open ${escapeHtml(landing.packageName)}, choose Add to Request, then open Request List.</p>
           </div>
           <div class="rw-closing-actions">
             <a class="rw-button rw-button--accent" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" data-conversion="request_demo_final">
-              ${icon('whatsapp')}<span>Request a Demo</span>
+              ${icon('whatsapp')}<span>${escapeHtml(landing.primaryCta)}</span>
             </a>
-            <a class="rw-text-link" href="tools.html">Explore all add-ins ${icon('arrow')}</a>
+            <a class="rw-text-link" href="${escapeHtml(landing.packageUrl)}" data-conversion="view_package">View ${escapeHtml(landing.packageName)} ${icon('arrow')}</a>
           </div>
         </div>
       </section>`;
 
-    document.body.classList.add('room-wizard-page-active');
-    installStructuredData(tool, pageUrl, imageUrl, siteBase);
-    prepareConversionHooks(root);
-    prepareRevealAnimations(root);
-    prepareDemoRail(root);
-    return true;
-  };
+  }
+
+  return { renderToolLandingPage, structuredData, escapeHtml };
 })();
