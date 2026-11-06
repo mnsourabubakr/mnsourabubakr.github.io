@@ -45,21 +45,6 @@
   line-height: 1.05;
 }
 .rw-section-heading h2 span { color: var(--rw-blue); }
-.rw-section-heading > p,
-.rw-section-heading--split > p {
-  margin-top: 20px;
-  color: var(--rw-copy);
-  font-size: 16px;
-  line-height: 1.8;
-}
-.rw-section-heading--split {
-  max-width: none;
-  display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  align-items: end;
-  gap: 68px;
-}
-.rw-section-heading--split > p { margin: 0 0 5px; }
 
 /* Hero */
 .rw-hero {
@@ -175,58 +160,6 @@
 .rw-window-bar > span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.28); }
 .rw-window-bar > span:first-child { background: var(--rw-orange); }
 .rw-window-bar strong { margin-left: 8px; color: rgba(255,255,255,.62); font-family: var(--mono); font-size: 8px; font-weight: 650; letter-spacing: .08em; }
-/* Feature bento */
-.rw-features-section { background: var(--rw-soft); }
-.rw-features-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-.rw-feature-card {
-  grid-column: span 3;
-  min-height: 0;
-  padding: 27px;
-  border: 1px solid var(--rw-line);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 32px;
-  background: rgba(255,255,255,.9);
-  box-shadow: 0 8px 30px rgba(7,27,46,.035);
-  transition: transform .25s, box-shadow .25s, border-color .25s;
-}
-.rw-feature-card--primary { grid-column: span 6; min-height: 0; flex-direction: row; align-items: flex-start; }
-.rw-feature-card:hover { transform: translateY(-4px); border-color: #a9c9e4; box-shadow: 0 18px 42px rgba(7,27,46,.08); }
-.rw-feature-icon { color: #fff; background: var(--rw-blue); flex: 0 0 auto; }
-.rw-feature-card--primary .rw-feature-icon { width: 58px; height: 58px; background: linear-gradient(135deg, var(--rw-blue), var(--rw-blue-bright)); box-shadow: 0 12px 28px rgba(15,76,129,.19); }
-.rw-feature-card h3 { font-size: 18px; font-weight: 820; letter-spacing: -.02em; }
-.rw-feature-card p { margin-top: 9px; color: var(--rw-copy); font-size: 13px; line-height: 1.75; }
-.rw-feature-card--primary h3 { font-size: 23px; }
-.rw-feature-card--primary p { max-width: 440px; font-size: 14px; }
-
-/* Workflow */
-.rw-workflow-section { border-top: 1px solid var(--rw-line); background: #f9fbfd; }
-.rw-workflow-list { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
-.rw-workflow-step { position: relative; min-height: 0; padding: 25px 25px 28px; border: solid var(--rw-line); border-width: 1px 1px 1px 0; background: #fff; }
-.rw-workflow-step:first-child { border-left-width: 1px; border-radius: 18px 0 0 18px; }
-.rw-workflow-step:last-child { border-radius: 0 18px 18px 0; }
-.rw-workflow-step:not(:last-child)::after {
-  content: '→';
-  position: absolute;
-  z-index: 2;
-  top: 38px;
-  right: -13px;
-  width: 26px;
-  height: 26px;
-  border: 1px solid var(--rw-line);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--rw-blue);
-  background: #fff;
-  font-size: 12px;
-}
-.rw-step-number { color: #b9c9d8; font-family: var(--mono); font-size: 31px; font-weight: 800; }
-.rw-workflow-step h3 { margin-top: 20px; font-size: 17px; font-weight: 820; }
-.rw-workflow-step p { margin-top: 9px; color: var(--rw-copy); font-size: 12px; line-height: 1.75; }
-
 /* Demos */
 .rw-demo-section { scroll-margin-top: 72px; padding: 62px 0; color: #fff; background: linear-gradient(140deg, #071b2e, #0b3153); }
 .rw-section-heading--light h2 { color: #fff; }
@@ -288,11 +221,6 @@
   .rw-hero-copy { max-width: 760px; }
   .rw-hero-product { width: min(850px, 100%); margin-inline: auto; }
   .rw-hero h1 { max-width: 780px; }
-  .rw-feature-card { grid-column: span 6; }
-  .rw-workflow-list { grid-template-columns: repeat(6, 1fr); gap: 16px; }
-  .rw-workflow-step { grid-column: span 2; border-width: 1px; border-radius: 16px !important; }
-  .rw-workflow-step:nth-child(4) { grid-column: 2 / span 2; }
-  .rw-workflow-step::after { display: none !important; }
   .rw-demo-card { grid-template-columns: 1fr; }
   .rw-demo-visual { min-height: 180px; }
   .rw-closing-card { grid-template-columns: 1fr; }
@@ -303,7 +231,6 @@
   .rw-container { width: min(100% - 32px, 640px); }
   .rw-section { padding: 52px 0; }
   .rw-section-heading { margin-bottom: 38px; }
-  .rw-section-heading--split { grid-template-columns: 1fr; gap: 18px; }
   .rw-hero { padding: 98px 0 44px; }
   .rw-hero h1 { font-size: clamp(36px, 9vw, 58px); }
   .rw-hero-text { font-size: 15px; }
@@ -311,17 +238,6 @@
   .rw-button { width: 100%; }
   .rw-product-window { transform: none; border-radius: 14px; padding: 6px; }
   .rw-window-bar { height: 29px; }
-  .rw-features-grid { grid-template-columns: 1fr; }
-  .rw-feature-card,
-  .rw-feature-card--primary { grid-column: auto; min-height: auto; flex-direction: row; align-items: flex-start; }
-  .rw-feature-card h3,
-  .rw-feature-card--primary h3 { font-size: 19px; }
-  .rw-feature-card p,
-  .rw-feature-card--primary p { font-size: 13px; }
-  .rw-workflow-list { grid-template-columns: 1fr; }
-  .rw-workflow-step,
-  .rw-workflow-step:nth-child(4) { grid-column: auto; min-height: auto; display: grid; grid-template-columns: 50px 1fr; gap: 14px; }
-  .rw-workflow-step h3 { margin-top: 0; }
   .rw-demo-section { padding: 52px 0; }
   .rw-demo-grid { grid-template-columns: 1fr; }
   .rw-demo-card { min-height: auto; }
@@ -332,9 +248,6 @@
 }
 
 @media (max-width: 430px) {
-  .rw-feature-card,
-  .rw-feature-card--primary { display: block; }
-  .rw-feature-icon { margin-bottom: 24px; }
   .rw-demo-visual { min-height: 155px; }
   .rw-comparison-table th,
   .rw-comparison-table td { padding: 18px; }
@@ -396,4 +309,28 @@
 
 @media (prefers-reduced-motion: reduce) {
   html:has(.room-wizard-page-active) { scroll-behavior: auto; }
+}
+
+/* Keep the video shortcuts available while scrolling. */
+.rw-demo-shortcuts {
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  max-height: 55vh;
+  overflow-y: auto;
+  padding: 7px;
+}
+.rw-demo-shortcuts .tool-demo-link { min-height: 48px; padding: 9px; }
+.rw-demo-shortcuts .tool-demo-link:focus-visible { outline-offset: 1px; }
+
+@media (max-width: 760px) {
+  .room-wizard-page-active .footer { padding-bottom: calc(116px + env(safe-area-inset-bottom)); }
+  .rw-demo-shortcuts {
+    left: 8px;
+    right: 8px;
+    bottom: calc(4px + env(safe-area-inset-bottom));
+    width: auto;
+    grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
+    gap: 5px;
+  }
+  .rw-demo-shortcuts .tool-demo-link { gap: 3px; font-size: 12px; padding-inline: 3px; }
+  .rw-demo-shortcuts svg { width: 12px; }
 }
