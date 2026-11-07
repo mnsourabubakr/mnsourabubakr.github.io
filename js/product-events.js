@@ -1,8 +1,4 @@
 const demoPlayer = document.getElementById('product-demo-player');
-if (demoPlayer) {
-  demoPlayer.defaultPlaybackRate = 1.5;
-  demoPlayer.playbackRate = 1.5;
-}
 
 document.getElementById('tool-content').addEventListener('click', event => {
   const link = event.target.closest('[data-conversion]');
