@@ -118,6 +118,20 @@
 }
 .catalog-page .package-request-btn span { margin: 0; color: inherit; font-family: inherit; letter-spacing: 0; text-transform: none; }
 .catalog-page .catalog-tool-card { height: auto; min-height: 225px; border-color: var(--site-line); }
+.catalog-page .catalog-tool-icon--3d {
+  --catalog-icon-art-size: 96px;
+  position: relative;
+}
+/* Center the artwork over its original slot so the card and text keep their positions. */
+.catalog-page .catalog-tool-icon--3d img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--catalog-icon-art-size);
+  height: var(--catalog-icon-art-size);
+  max-width: none;
+  transform: translate(-50%, -50%);
+}
 .catalog-page .catalog-tool-card h3 { min-height: 34px; margin-bottom: 5px; color: var(--site-navy); }
 .catalog-tool-summary { margin-bottom: 12px; color: var(--site-copy); font-size: 12px; line-height: 1.4; }
 .catalog-page .catalog-info-grid article { border-color: var(--site-line); }
@@ -168,6 +182,9 @@
 @media (max-width: 760px) {
   .home-workflow { grid-template-columns: 1fr; }
   .service-intro .service-meta-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px), (min-width: 901px) and (max-width: 1150px) {
+  .catalog-page .catalog-tool-icon--3d { --catalog-icon-art-size: 88px; }
 }
 @media (max-width: 600px) {
   .home-marketing .hero h1 { font-size: clamp(30px, 8.5vw, 38px); }
