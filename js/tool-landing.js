@@ -133,6 +133,38 @@ module.exports = (function () {
               <tbody>${comparisonRows}</tbody>
             </table>
           </div>
+          <section class="rw-time-study" id="floor-finish-time" aria-labelledby="rw-time-title">
+            <header class="rw-time-study-heading">
+              <span class="rw-section-kicker">Floor finish example</span>
+              <h3 id="rw-time-title"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg> How long would this floor take?</h3>
+            </header>
+            <figure class="rw-time-study-image">
+              <img src="assets/images/room-wizard-floor-finish-example.png" width="1218" height="762" loading="lazy" alt="Floor finish plan with layered red and green borders around a large central inset">
+            </figure>
+            <div class="rw-time-cards" aria-describedby="rw-time-note">
+              <div class="rw-time-card">
+                <span class="rw-time-scope">Single Room</span>
+                <h4>Manual Drawing in Revit</h4>
+                <p class="rw-time-number">35–45 min</p>
+                <p>Draw the borders and center pattern manually.</p>
+              </div>
+              <div class="rw-time-card rw-time-card--wizard">
+                <span class="rw-time-scope">Single Room</span>
+                <h4>Room Wizard</h4>
+                <p class="rw-time-number">~2 min</p>
+                <p>Polyline, Boundary Line, and Constrain Group.</p>
+              </div>
+              <div class="rw-time-card">
+                <span class="rw-time-scope">Batch Comparison</span>
+                <h4>5 Matching Rooms</h4>
+                <dl class="rw-time-batch">
+                  <div><dt>Revit · Redraw each room</dt><dd>175–225 min</dd></div>
+                  <div><dt>Room Wizard · Match &amp; Apply</dt><dd>~2 min</dd></div>
+                </dl>
+              </div>
+            </div>
+            <p id="rw-time-note">Illustrative estimates for this design. The manual batch estimate multiplies the single-room time by five. Match &amp; Apply starts with a prepared design.</p>
+          </section>
         </div>
       </section>
 

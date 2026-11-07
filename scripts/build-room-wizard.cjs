@@ -33,7 +33,7 @@ const html = `<!doctype html>
 <link rel="apple-touch-icon" href="assets/images/favicon-192.png">
 <link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="css/style.css?v=20260925-tool-demos">
-<link rel="stylesheet" href="css/tool-landing.css?v=3">
+<link rel="stylesheet" href="css/tool-landing.css?v=4">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BIM Sprint">
 <meta property="og:title" content="${title}">

@@ -194,6 +194,40 @@
 .rw-comparison-table tbody td { width: 35%; color: var(--rw-copy); font-size: 12px; line-height: 1.7; }
 .rw-comparison-table tbody tr + tr { border-top: 1px solid var(--rw-line); }
 .rw-comparison-table tbody tr:nth-child(even) { background: #f9fbfd; }
+
+.rw-time-study {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  scroll-margin-top: 88px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid var(--rw-line);
+  border-radius: 20px;
+  background: #f9fbfd;
+}
+.rw-time-study-heading { text-align: center; }
+.rw-time-study-heading h3 { font-size: clamp(23px, 3vw, 32px); line-height: 1.2; }
+.rw-time-study-heading svg { width: .85em; height: .85em; vertical-align: -.07em; color: var(--rw-blue); }
+.rw-time-study-image { margin: 0 auto; width: min(100%, 420px); }
+.rw-time-study-image img { width: 100%; height: auto; border-radius: 10px; }
+.rw-time-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.rw-time-card { padding: 14px 16px; border: 1px solid var(--rw-line); border-radius: 12px; background: #fff; }
+.rw-time-card--wizard { border-color: #c7dcf3; background: #eff6ff; }
+.rw-time-scope { color: var(--rw-blue); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.rw-time-card h4 { margin: 2px 0 8px; font-size: 15px; line-height: 1.25; }
+.rw-time-card p { color: var(--rw-copy); font-size: 13px; }
+.rw-time-card .rw-time-number { color: var(--rw-navy); font-size: clamp(23px, 3vw, 32px); font-weight: 800; line-height: 1.2; }
+.rw-time-card--wizard .rw-time-number { color: var(--rw-blue); }
+.rw-time-batch { display: grid; gap: 5px; margin: 0; }
+.rw-time-batch div { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 8px; }
+.rw-time-batch dt { color: var(--rw-copy); font-size: 12px; }
+.rw-time-batch dd { margin: 0; font-size: 15px; font-weight: 800; }
+.rw-time-batch div:last-child dd { color: var(--rw-blue); }
+#rw-time-note { color: var(--rw-copy); font-size: 12px; }
+
+@media (max-width: 650px) {
+  .rw-time-cards { grid-template-columns: minmax(0, 1fr); }
+}
 .rw-manual-mark,
 .rw-product-mark { display: none; margin-bottom: 5px; font-family: var(--mono); font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 .rw-manual-mark { color: #9f4141; }
