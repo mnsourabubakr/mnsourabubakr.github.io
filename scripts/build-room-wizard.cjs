@@ -54,7 +54,7 @@ ${nav}<main class="rw-page" id="tool-content" tabindex="-1">${renderToolLandingP
 ${footer}
 <script src="js/main.js" defer></script>
 <script src="js/room-wizard.js" defer></script>
-<script src="js/package-selection.js?v=in-page-request" defer></script>
+<script src="js/package-selection.js?v=package-button-confirmation" defer></script>
 <script src="js/package-request.js?v=in-page-request" defer></script>
 </body>
 </html>

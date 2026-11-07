@@ -76,7 +76,7 @@
       button.disabled = !id;
       button.setAttribute('aria-disabled', String(!id || added));
       button.textContent = added ? 'Package Added ✓' : 'Request Package';
-      button.setAttribute('aria-label', id ? (added ? `${packages.get(id)} added to Request List` : `Request Package: ${packages.get(id)}`) : 'Request Package');
+      button.setAttribute('aria-label', id ? (added ? `Package Added: ${packages.get(id)}` : `Request Package: ${packages.get(id)}`) : 'Request Package');
       list.hidden = !selected.size;
       list.textContent = `View Request List (${selected.size})`;
     }
@@ -91,8 +91,6 @@
         status.hidden = false;
         return;
       }
-      status.textContent = `${packages.get(id)} added to Request List.`;
-      status.hidden = false;
     });
     picker?.addEventListener('change', () => {
       status.hidden = true;
