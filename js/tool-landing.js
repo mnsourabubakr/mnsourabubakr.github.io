@@ -151,16 +151,18 @@ module.exports = (function () {
               <div class="rw-time-card rw-time-card--wizard">
                 <span class="rw-time-scope">Single Room</span>
                 <h4>Room Wizard</h4>
-                <p class="rw-time-number">~2 min</p>
+                <p class="rw-time-number">~5 min</p>
                 <p>Polyline, Boundary Line, and Constrain Group.</p>
               </div>
-              <div class="rw-time-card">
+              <p class="rw-time-savings rw-time-savings--single"><strong>30–40 min saved</strong> per room</p>
+              <div class="rw-time-card rw-time-card--batch">
                 <span class="rw-time-scope">Batch Comparison</span>
                 <h4>5 Matching Rooms</h4>
                 <dl class="rw-time-batch">
                   <div><dt>Revit · Redraw each room</dt><dd>175–225 min</dd></div>
                   <div><dt>Room Wizard · Match &amp; Apply</dt><dd>~2 min</dd></div>
                 </dl>
+                <p class="rw-time-savings"><strong>~99% time saved</strong></p>
               </div>
             </div>
             <p id="rw-time-note">Illustrative estimates for this design. The manual batch estimate multiplies the single-room time by five. Match &amp; Apply starts with a prepared design.</p>
