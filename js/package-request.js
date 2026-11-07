@@ -4,6 +4,46 @@
   const requestTriggers = [...document.querySelectorAll('[data-open-request-list]')];
   const requestCounts = [...document.querySelectorAll('[data-request-count]')];
   const requestClear = document.getElementById('request-list-clear');
+  const store = window.BimSprintPackageSelection;
+  if (!store || !requestTriggers.length) return;
+
+  document.body.insertAdjacentHTML('beforeend', `
+    <div class="request-modal" hidden id="package-request-modal">
+      <button aria-label="Close request form" class="request-modal-backdrop" data-close-request tabindex="-1" type="button"></button>
+      <section aria-labelledby="request-modal-title" aria-modal="true" class="request-dialog" role="dialog">
+        <header class="request-dialog-header">
+          <div><span class="request-dialog-kicker">Package Request</span><h2 id="request-modal-title">Review Your Request</h2></div>
+          <button aria-label="Close request form" class="request-modal-close" data-close-request type="button">×</button>
+        </header>
+        <form id="package-request-form" novalidate>
+          <div class="request-form-section">
+            <div class="request-form-heading"><h3>Selected Packages</h3><span id="selected-package-count">0 selected</span></div>
+            <div class="selected-package-list" id="selected-package-list"></div>
+          </div>
+          <div class="request-fields-grid">
+            <label class="request-field"><span>Full Name</span><input autocomplete="name" id="request-name" name="name" required type="text"></label>
+            <label class="request-field"><span>Email Address</span><input autocomplete="email" id="request-email" name="email" required type="email"></label>
+            <label class="request-field"><span>Phone / WhatsApp</span><input autocomplete="tel" id="request-phone" name="phone" pattern="[+0-9\\(\\) .\\-]{7,}" required type="tel"></label>
+            <fieldset class="request-field request-customer-type">
+              <legend>Customer Type</legend>
+              <label><input checked name="customerType" type="radio" value="Individual"> Individual</label>
+              <label><input name="customerType" type="radio" value="Company"> Company</label>
+            </fieldset>
+            <label class="request-field request-company-field" hidden><span>Company Name</span><input autocomplete="organization" id="request-company" name="company" type="text"></label>
+          </div>
+          <p aria-live="polite" class="request-form-status" id="request-form-status"></p>
+          <button class="request-submit-btn" type="submit">Prepare WhatsApp Request <span>→</span></button>
+        </form>
+        <div class="request-ready" hidden id="request-ready">
+          <div class="request-ready-icon">✓</div>
+          <h3 tabindex="-1">Your WhatsApp request is ready</h3>
+          <p>Open WhatsApp below, review the prepared message, then press Send.</p>
+          <div class="request-ready-actions"><a class="request-action-whatsapp" href="#" id="request-whatsapp-action" rel="noopener noreferrer" target="_blank">Open WhatsApp</a></div>
+          <button class="request-edit-btn" id="request-edit-btn" type="button">← Edit Request</button>
+        </div>
+      </section>
+    </div>`);
+
   const modal = document.getElementById('package-request-modal');
   const dialog = modal?.querySelector('.request-dialog');
   const form = document.getElementById('package-request-form');
@@ -18,18 +58,14 @@
   const packageChoiceNotice = document.getElementById('package-choice-notice');
   const firstPackage = document.getElementById('pkg01');
 
-  if (!packageButtons.length || !requestTriggers.length || !requestClear || !modal || !form || !packageChoiceNotice || !firstPackage) return;
-
-  const store = window.BimSprintPackageSelection;
   const OWNER_WHATSAPP = '201068970898';
-  const packageMap = new Map(packageButtons.map(button => [button.dataset.packageId, button.dataset.packageName]));
   let selectedPackages = store.read();
   let lastFocusedElement = null;
   let noticeHideTimer = null;
   let noticeScrollTimer = null;
 
   function selectedPackageNames() {
-    return [...selectedPackages].map(id => packageMap.get(id)).filter(Boolean);
+    return [...selectedPackages].map(store.packageName);
   }
 
   function updatePackageButtons() {
@@ -46,14 +82,16 @@
     const names = selectedPackageNames();
     requestCounts.forEach(count => { count.textContent = String(names.length); });
     requestTriggers.forEach(trigger => trigger.classList.toggle('has-items', names.length > 0));
-    requestClear.disabled = names.length === 0;
+    if (requestClear) requestClear.disabled = names.length === 0;
     selectedCount.textContent = `${names.length} selected`;
     selectedList.replaceChildren();
 
     if (!names.length) {
       const empty = document.createElement('p');
       empty.className = 'selected-package-empty';
-      empty.textContent = 'No packages selected yet. Close this window and choose Add to Request beside a package.';
+      empty.textContent = firstPackage
+        ? 'No packages selected yet. Close this window and choose Add to Request beside a package.'
+        : 'No packages selected yet. Close this window and choose Request Package.';
       selectedList.append(empty);
       return;
     }
@@ -61,14 +99,14 @@
     selectedPackages.forEach(id => {
       const item = document.createElement('div');
       item.className = 'selected-package-item';
-      item.innerHTML = `<span>${packageMap.get(id)}</span><button type="button" data-remove-package="${id}" aria-label="Remove ${packageMap.get(id)}">Remove</button>`;
+      const name = store.packageName(id);
+      item.innerHTML = `<span>${name}</span><button type="button" data-remove-package="${id}" aria-label="Remove ${name}">Remove</button>`;
       selectedList.append(item);
     });
   }
 
   function updateSelection() {
-    store.write(selectedPackages);
-    refreshSelection();
+    if (!store.write(selectedPackages)) refreshSelection();
   }
 
   function refreshSelection() {
@@ -76,8 +114,8 @@
     renderSelection();
   }
 
-  function openModal() {
-    lastFocusedElement = document.activeElement;
+  function openModal(trigger = document.activeElement) {
+    lastFocusedElement = trigger;
     form.hidden = false;
     readyPanel.hidden = true;
     formStatus.textContent = '';
@@ -88,6 +126,7 @@
   }
 
   function promptForPackage() {
+    if (!packageChoiceNotice || !firstPackage) return;
     clearTimeout(noticeHideTimer);
     clearTimeout(noticeScrollTimer);
     packageChoiceNotice.hidden = false;
@@ -106,7 +145,13 @@
   function closeModal() {
     modal.hidden = true;
     document.body.classList.remove('request-modal-open');
-    lastFocusedElement?.focus?.();
+    if (lastFocusedElement?.hidden) {
+      const rail = lastFocusedElement.closest('[data-tool-package]');
+      const fallback = rail?.querySelector('.tool-package-picker, .tool-package-action');
+      fallback?.focus({ preventScroll: true });
+    } else {
+      lastFocusedElement?.focus({ preventScroll: true });
+    }
   }
 
   function syncCompanyField() {
@@ -131,9 +176,9 @@
       promptForPackage();
       return;
     }
-    openModal();
+    openModal(trigger);
   }));
-  requestClear.addEventListener('click', () => {
+  requestClear?.addEventListener('click', () => {
     selectedPackages.clear();
     updateSelection();
   });
@@ -145,6 +190,7 @@
     if (!removeButton) return;
     selectedPackages.delete(removeButton.dataset.removePackage);
     updateSelection();
+    (selectedList.querySelector('[data-remove-package]') || modal.querySelector('.request-modal-close')).focus();
   });
 
   form.addEventListener('submit', event => {

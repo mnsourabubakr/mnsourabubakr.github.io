@@ -1,5 +1,6 @@
 (() => {
   const key = 'bimSprintPackageRequest';
+  const updates = new EventTarget();
   const packages = new Map([
     ['pkg01', 'Architectural Automation'],
     ['pkg02', 'Structural Rebar'],
@@ -19,20 +20,22 @@
   function write(selection) {
     try {
       localStorage.setItem(key, JSON.stringify([...selection]));
-      return true;
     } catch {
       return false;
     }
+    updates.dispatchEvent(new Event('change'));
+    return true;
   }
 
   function onChange(sync) {
+    updates.addEventListener('change', sync);
     window.addEventListener('pageshow', sync);
     window.addEventListener('storage', event => {
       if (event.key === key || event.key === null) sync();
     });
   }
 
-  window.BimSprintPackageSelection = { read, write, onChange };
+  window.BimSprintPackageSelection = { read, write, onChange, packageName: id => packages.get(id) };
 
   for (const rail of document.querySelectorAll('[data-tool-package]')) {
     const packageId = rail.dataset.toolPackage;
@@ -55,9 +58,12 @@
     status.className = 'tool-package-status';
     status.setAttribute('role', 'status');
     status.hidden = true;
-    const list = document.createElement('a');
+    const list = document.createElement('button');
+    list.type = 'button';
     list.className = 'tool-package-list';
-    list.href = 'tools.html#request-list-trigger';
+    list.dataset.openRequestList = '';
+    list.setAttribute('aria-controls', 'package-request-modal');
+    list.setAttribute('aria-haspopup', 'dialog');
     list.hidden = true;
     rail.append(button, status, list);
     rail.hidden = false;
@@ -80,13 +86,13 @@
       const selected = read();
       if (!id || selected.has(id)) return;
       selected.add(id);
-      status.hidden = false;
       if (!write(selected)) {
         status.textContent = 'Could not save this package. Try again with browser storage enabled.';
+        status.hidden = false;
         return;
       }
       status.textContent = `${packages.get(id)} added to Request List.`;
-      sync();
+      status.hidden = false;
     });
     picker?.addEventListener('change', () => {
       status.hidden = true;

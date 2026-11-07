@@ -360,7 +360,7 @@ body.request-modal-open{overflow:hidden}
 .tool-demo-actions .tool-package-action[aria-disabled="true"]{background:#daf2e7;color:#155c3c;transform:none;cursor:default}
 .tool-package-picker,.tool-package-list,.tool-package-status{padding:8px 10px;border:1px solid var(--border);border-radius:10px;background:#fff;color:#0b2742;font:650 12px/1.35 var(--font)}
 .tool-package-picker{min-width:0;min-height:40px}
-.tool-package-list{text-align:center}
+.tool-package-list{text-align:center;cursor:pointer}
 .tool-package-list:hover{text-decoration:underline}
 .tool-package-picker:focus-visible,.tool-package-list:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 
