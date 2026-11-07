@@ -20,30 +20,13 @@
 
   if (!packageButtons.length || !requestTriggers.length || !requestClear || !modal || !form || !packageChoiceNotice || !firstPackage) return;
 
-  const STORAGE_KEY = 'bimSprintPackageRequest';
+  const store = window.BimSprintPackageSelection;
   const OWNER_WHATSAPP = '201068970898';
   const packageMap = new Map(packageButtons.map(button => [button.dataset.packageId, button.dataset.packageName]));
-  let selectedPackages = new Set(loadSelection());
+  let selectedPackages = store.read();
   let lastFocusedElement = null;
   let noticeHideTimer = null;
   let noticeScrollTimer = null;
-
-  function loadSelection() {
-    try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      return Array.isArray(saved) ? saved.filter(id => packageMap.has(id)) : [];
-    } catch {
-      return [];
-    }
-  }
-
-  function saveSelection() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([...selectedPackages]));
-    } catch {
-      // The request still works when browser storage is unavailable.
-    }
-  }
 
   function selectedPackageNames() {
     return [...selectedPackages].map(id => packageMap.get(id)).filter(Boolean);
@@ -84,7 +67,11 @@
   }
 
   function updateSelection() {
-    saveSelection();
+    store.write(selectedPackages);
+    refreshSelection();
+  }
+
+  function refreshSelection() {
     updatePackageButtons();
     renderSelection();
   }
@@ -132,6 +119,7 @@
   packageButtons.forEach(button => {
     button.addEventListener('click', () => {
       const id = button.dataset.packageId;
+      selectedPackages = store.read(selectedPackages);
       if (selectedPackages.has(id)) selectedPackages.delete(id);
       else selectedPackages.add(id);
       updateSelection();
@@ -231,5 +219,10 @@
   });
 
   syncCompanyField();
-  updateSelection();
+  refreshSelection();
+  if (location.hash === '#request-list-trigger' && selectedPackages.size) openModal();
+  store.onChange(() => {
+    selectedPackages = store.read(selectedPackages);
+    refreshSelection();
+  });
 })();

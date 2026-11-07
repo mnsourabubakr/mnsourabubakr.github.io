@@ -32,8 +32,8 @@ const html = `<!doctype html>
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="apple-touch-icon" href="assets/images/favicon-192.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="css/style.css?v=20260925-tool-demos">
-<link rel="stylesheet" href="css/tool-landing.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=tool-package-request">
+<link rel="stylesheet" href="css/tool-landing.css?v=8">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BIM Sprint">
 <meta property="og:title" content="${title}">
@@ -54,6 +54,7 @@ ${nav}<main class="rw-page" id="tool-content" tabindex="-1">${renderToolLandingP
 ${footer}
 <script src="js/main.js" defer></script>
 <script src="js/room-wizard.js" defer></script>
+<script src="js/package-selection.js" defer></script>
 </body>
 </html>
 `;

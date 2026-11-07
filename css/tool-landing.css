@@ -365,7 +365,7 @@
 .rw-demo-shortcuts .tool-demo-link:focus-visible { outline-offset: 1px; }
 
 @media (max-width: 760px) {
-  .room-wizard-page-active .footer { padding-bottom: calc(116px + env(safe-area-inset-bottom)); }
+  .room-wizard-page-active .footer { padding-bottom: calc(220px + env(safe-area-inset-bottom)); }
   .rw-demo-shortcuts {
     left: 8px;
     right: 8px;

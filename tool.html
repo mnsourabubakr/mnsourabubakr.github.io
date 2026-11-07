@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Revit Add-in Details — BIM Sprint</title>
 <meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." name="description"/>
-<link href="css/style.css?v=20260925-tool-demos" rel="stylesheet"/>
+<link href="css/style.css?v=tool-package-request" rel="stylesheet"/>
 <meta content="index,follow,max-image-preview:large" data-seo="bimsprint" name="robots"/><meta content="#F8FAFC" data-seo="bimsprint" name="theme-color"/><link data-seo="bimsprint" href="https://mnsourabubakr.github.io/tool.html" rel="canonical"/><link data-seo="bimsprint" href="assets/images/favicon.png" rel="icon" sizes="64x64" type="image/png"/><link data-seo="bimsprint" href="assets/images/favicon-192.png" rel="apple-touch-icon"/><link data-seo="bimsprint" href="site.webmanifest" rel="manifest"/><meta content="website" data-seo="bimsprint" property="og:type"/><meta content="Revit Add-in Details — BIM Sprint" data-seo="bimsprint" property="og:title"/><meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." data-seo="bimsprint" property="og:description"/><meta content="https://mnsourabubakr.github.io/tool.html" data-seo="bimsprint" property="og:url"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" property="og:image"/><meta content="BIM Sprint" data-seo="bimsprint" property="og:site_name"/><meta content="summary_large_image" data-seo="bimsprint" name="twitter:card"/><meta content="Revit Add-in Details — BIM Sprint" data-seo="bimsprint" name="twitter:title"/><meta content="Explore BIM Sprint Revit add-in features, workflow benefits, and engineering time comparisons." data-seo="bimsprint" name="twitter:description"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" name="twitter:image"/></head>
 <body>
 <!-- NAV -->
@@ -69,7 +69,7 @@
 </div>
 </div>
 </main>
-<nav aria-label="Tool video demonstrations" class="tool-demo-actions" hidden="" id="tool-demo-actions"></nav>
+<nav aria-label="Tool demos and package request" class="tool-demo-actions tool-detail-actions" hidden="" id="tool-demo-actions"></nav>
 <!-- FOOTER -->
 <footer class="footer">
 <div class="footer-inner">
@@ -89,6 +89,7 @@
 </footer>
 <script src="js/tools-data.js?v=20261104-room-wizard-landing"></script>
 <script src="js/main.js"></script>
+<script src="js/package-selection.js" defer></script>
 <script>
   const params = new URLSearchParams(window.location.search);
   const toolId = params.get('id');
@@ -170,6 +171,9 @@
         demoButton.addEventListener('click', () => window.open(tool.videoUrl, '_blank', 'noopener'));
       }
     const demoActions = document.getElementById('tool-demo-actions');
+    const packageNumber = /^Package (\d{2})\b/.exec(tool.pkg)?.[1];
+    const sharedPackage = params.get('package');
+    demoActions.dataset.toolPackage = packageNumber ? `pkg${packageNumber}` : /^pkg0[1-4]$/.test(sharedPackage) ? sharedPackage : 'shared';
     const demoLinks = (tool.demoLinks || []).filter(demo => demo?.label?.trim() && demo?.url?.trim());
     if (demoActions && demoLinks.length) {
       demoLinks.forEach(demo => {

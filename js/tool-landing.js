@@ -197,7 +197,7 @@ module.exports = (function () {
         </div>
       </section>
 
-      <nav class="tool-demo-actions rw-demo-shortcuts" aria-label="Room Wizard video shortcuts">${demoShortcuts}</nav>`;
+      <nav class="tool-demo-actions rw-demo-shortcuts" aria-label="Room Wizard demos and package request" data-tool-package="pkg01">${demoShortcuts}</nav>`;
   }
 
   return { renderToolLandingPage, structuredData, escapeHtml };
