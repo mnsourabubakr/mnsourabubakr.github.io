@@ -4,18 +4,19 @@ const SERVICES = {
     "01": {
         title: "Ready-to-Use Revit Add-ins",
         icon: "🧩",
-        tagline: "Install, click, and automate — production-ready tools that deliver results from day one.",
+        tagline: "Pick a focused Revit package for the work your team repeats.",
 
-        overview: "Ready-to-use Revit Add-ins designed to eliminate repetitive engineering tasks, improve modeling accuracy, and save over 80% of your time. Simply install, activate, and start delivering projects faster from day one. Spend less time modeling and more time engineering.",
+        overview: "Explore 17 Revit tools across four packages. See how each one handles the input, setup, and review for a specific task, from suspended ceilings to reinforcement detailing and CAD-to-Revit modeling.",
 
-        deliveryTime: "Instant download and activation",
+        deliveryTime: "Ask about licensing and activation",
+        inquiry: "Share your Revit version and the tasks you want to automate. We can discuss the right package, licensing, and setup.",
 
         supportedVersions: "Revit 2022–2027",
 
         features: [
-            "Save 80%+ of Your Time: Eliminate repetitive workflows and focus on engineering instead of repetitive clicking.",
-            "Production-Proven: Every tool has been developed, tested, and successfully used in real engineering projects before release.",
-            "Instant Setup: Install in under a minute with zero configuration.",
+            "Repeatable Workflows: Configure the task once and apply supported settings across matching elements, rooms, or views.",
+            "Real Revit Examples: Review screenshots and workflow comparisons before choosing a package.",
+            "Setup and Compatibility: Confirm your Revit version and licensing needs with BIM Sprint.",
             "Professional Toolkits: Organized into specialized suites for reinforcement, CAD conversion, architectural automation, and engineering productivity.",
             "Regular Updates: Continuous improvements and new features based on user feedback.",
             "Full Documentation: Complete step-by-step guides with priority technical support."
@@ -60,7 +61,8 @@ const SERVICES = {
         title: "Custom Revit Add-in Development",
         icon: "🔧",
 
-        tagline: "Your workflow is unique — your software should be too.",
+        tagline: "Build a Revit add-in around your team’s standards and repeatable tasks.",
+        inquiry: "Share the Revit version, the steps your team repeats, and a sample of the result you need. We’ll use that to discuss scope and delivery.",
 
         overview: "Every company has its own standards and workflows. Whether you need a completely new Revit Add-in, want to automate repetitive engineering tasks, solve a workflow bottleneck, or extend one of our ready-to-use add-ins to meet your company's requirements, we build solutions around the way your team already works. The result is less manual work, higher accuracy, and significantly improved productivity.",
 
@@ -106,7 +108,8 @@ const SERVICES = {
         title: "Workflow Automation",
         icon: "⚙️",
 
-        tagline: "Automate complete engineering workflows—not just individual tasks.",
+        tagline: "Connect the handoffs between modeling, coordination, and delivery.",
+        inquiry: "Show us the steps, tools, and file handoffs in your current process. We can identify which steps make sense to automate first.",
 
         overview: "We automate complete engineering workflows by connecting the software your team already uses. Whether it's Revit, Excel, AutoCAD, Navisworks, SQL databases, cloud services, or internal business systems, we eliminate repetitive manual work and create seamless end-to-end automation that saves time, reduces errors, and improves productivity across your entire organization.",
 
@@ -121,7 +124,7 @@ const SERVICES = {
 
             "Batch Processing: Execute operations on hundreds or thousands of elements in a single run.",
 
-            "Save 80%+ of Your Time: Eliminate repetitive coordination tasks and allow your team to focus on engineering instead of manual processes.",
+            "Reduce Repeated Handoffs: Automate recurring transfers and checks while keeping review points visible to your team.",
 
             "Production-Proven Solutions: Every automation workflow is tested on real engineering projects before deployment.",
 
@@ -140,7 +143,8 @@ const SERVICES = {
         title: "Custom Engineering Software Development",
         icon: "💻",
 
-        tagline: "Engineering software built around your business—not the other way around.",
+        tagline: "Build software around the inputs, rules, and outputs your engineers use.",
+        inquiry: "Share a sample input, the expected output, and where your team needs to use the software. That gives us a starting point for the discussion.",
 
         overview: "We design and develop complete engineering software solutions tailored to your business needs. Whether you need a desktop application, web platform, engineering calculation engine, project management system, internal database solution, or cloud-based engineering platform, we build scalable software from the ground up using modern technologies that integrate seamlessly with your existing workflows.",
 
@@ -175,7 +179,8 @@ const SERVICES = {
   "05": {
     title: "Legacy Software Modernization",
     icon: "🔄",
-    tagline: "Your tools still work — but they deserve a modern, professional look and feel.",
+    tagline: "Update an existing engineering application so your team can keep using it.",
+    inquiry: "Tell us what the application does today, which parts are causing friction, and what version of the software or source code you have.",
     overview: "We specialize in modernizing the UI and architecture of existing Windows desktop tools. Whether you have an old Windows Forms application that needs to be rebuilt in WPF with a proper MVVM structure, or a WPF app whose interface needs a visual upgrade with modern design systems like Material Design — we handle it while preserving your existing business logic completely.",
     deliveryTime: "Depends on complexity",
     supportedVersions: "Windows 10/11, .NET 8+, WPF / Material Design",
@@ -202,7 +207,8 @@ const SERVICES = {
   "06": {
     title: "Revit Add-in Maintenance & Enhancement",
     icon: "🛠️",
-    tagline: "Keep your tools running smoothly — updates, fixes, and new features on demand.",
+    tagline: "Fix issues, update Revit compatibility, or extend an add-in your team already uses.",
+    inquiry: "Send the add-in name, your Revit version, and the steps that reproduce the issue or describe the feature you need.",
     overview: "Already have a Revit Add-in that needs maintenance, bug fixes, or new features? Whether it was built by your team or by another developer, we take over and keep it running at peak performance. We fix what's broken, add what's missing, and update it for the latest Revit versions.",
     deliveryTime: "Depends on task / On-going support available",
     supportedVersions: "Revit 2022–2027",
@@ -227,7 +233,8 @@ const SERVICES = {
     "07": {
         title: "Software Licensing & Protection",
         icon: "🔒",
-        tagline: "Protect your engineering tools with secure licensing and advanced code protection.",
+        tagline: "Manage who can activate your engineering software and how licenses are issued.",
+        inquiry: "Tell us how your application is distributed and how you want to manage activations. We can discuss managed licensing or a system you administer.",
 
         overview: "We provide a complete dual-layer protection solution for your engineering software. The first layer is a flexible licensing system that gives you full control over who can use your tools and for how long. The second layer is an advanced Code Obfuscation (code protection) solution that helps secure your compiled assemblies against reverse engineering and intellectual property theft — while ensuring your DLL files never leave your own computer.",
 
@@ -275,7 +282,8 @@ const SERVICES = {
   "08": {
     title: "BIM Automation Consulting",
     icon: "📋",
-    tagline: "Expert guidance to automate smarter — strategy before code.",
+    tagline: "Identify which BIM workflows to automate and what to tackle first.",
+    inquiry: "Share the task that slows your team down and the tools you already use. We can discuss practical options and where to start.",
     overview: "Not every company needs new software. Sometimes improving existing workflows can save hundreds of engineering hours every month. In our consulting service, we analyze your processes, identify where automation will make the biggest impact, and create a clear roadmap — so you invest in the right solutions from day one.",
     deliveryTime: "Milestone-based delivery",
     supportedVersions: "All Autodesk / BIM platforms",
@@ -300,7 +308,8 @@ const SERVICES = {
   "09": {
     title: "Structural & Architectural BIM Modeling",
     icon: "🏢",
-    tagline: "Accurate, detailed BIM models — ready for coordination and construction.",
+    tagline: "Develop structural and architectural models around the project’s coordination and delivery requirements.",
+    inquiry: "Share your drawing set, required LOD, modeling standards, and delivery date so we can discuss scope and outputs.",
     overview: "Professional structural and architectural BIM modeling using Revit. From initial models to construction-ready documentation, we build precise models covering all structural elements (columns, beams, slabs, foundations) and architectural elements (walls, doors, windows, finishes).",
     deliveryTime: "Depends on model size and LOD",
     supportedVersions: "LOD 300 to LOD 400",
@@ -309,7 +318,7 @@ const SERVICES = {
       "Geometric Accuracy: Precise dimensions, offsets, elevations, and annotations",
       "Clash Detection: Models formatted and cleaned specifically for Navisworks coordination",
       "Quantity Takeoff: Extract precise material schedules and takeoffs directly from models",
-      "BIM Standards: 100% compliance with international BIM standards and templates"
+      "BIM Standards: Agree on the project standards, naming conventions, and templates before modeling"
     ],
     useCases: [
       "Building high-complexity structural concrete models for hospitals and high-rises from 2D designs.",
@@ -332,7 +341,8 @@ const SERVICES = {
     "10": {
         title: "Structural Shop Drawings",
         icon: "📐",
-        tagline: "Construction-ready shop drawings — precise, detailed, and built for the site.",
+        tagline: "Turn structural models and design information into coordinated drawing packages.",
+        inquiry: "Share the model or design drawings, the required sheet list, and the issue date so we can discuss deliverables and review milestones.",
         overview: "We produce Revit-based structural shop drawings for concrete elements — from concrete dimension plans to full reinforcement detailing with Bar Bending Schedules (BBS) and quantity summaries. You provide an IFC or RVT model at LOD 300, and we deliver fabrication-ready shop drawings at LOD 400 directly from Revit. We also provide LOD 500 as-built documentation reflecting actual site conditions after execution.",
         deliveryTime: "Depends on sheet count and complexity",
         supportedVersions: "IFC / RVT / DWG / PDF",

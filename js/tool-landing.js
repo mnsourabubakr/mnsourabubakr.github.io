@@ -22,8 +22,8 @@ module.exports = (function () {
       .replace(/'/g, '&#039;');
   }
 
-  function buildWhatsappUrl() {
-    const message = 'Hello BIM Sprint, I would like to request a demo of Room Wizard for Revit.';
+  function buildWhatsappUrl(name = 'Room Wizard') {
+    const message = `Hello BIM Sprint, I would like to request a demo of ${name} for Revit.`;
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   }
 
@@ -31,7 +31,7 @@ module.exports = (function () {
     return {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
-      name: 'Room Wizard',
+      name: tool.name || 'Room Wizard',
       applicationCategory: 'DesignApplication',
       operatingSystem: 'Windows',
       softwareRequirements: 'Autodesk Revit',
@@ -200,5 +200,5 @@ module.exports = (function () {
       <nav class="tool-demo-actions rw-demo-shortcuts" aria-label="Room Wizard demos and package request" data-tool-package="pkg01">${demoShortcuts}</nav>`;
   }
 
-  return { renderToolLandingPage, structuredData, escapeHtml };
+  return { renderToolLandingPage, structuredData, escapeHtml, icon, buildWhatsappUrl };
 })();

@@ -37,8 +37,10 @@
 
   window.BimSprintPackageSelection = { read, write, onChange, packageName: id => packages.get(id) };
 
+  const requestedPackage = new URLSearchParams(window.location.search).get('package');
   for (const rail of document.querySelectorAll('[data-tool-package]')) {
-    const packageId = rail.dataset.toolPackage;
+    const railPackage = rail.dataset.toolPackage;
+    const packageId = railPackage === 'shared' && packages.has(requestedPackage) ? requestedPackage : railPackage;
     if (!packages.has(packageId) && packageId !== 'shared') continue;
 
     let picker;

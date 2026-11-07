@@ -1,0 +1,176 @@
+{
+  "01": {
+    "hero": {
+      "src": "assets/images/product-evidence/01-hero.webp",
+      "width": 830,
+      "height": 785,
+      "alt": "Isolated Footing Rebar workspace with mesh and side-bar settings.",
+      "source": "IsolatedFootingRFT.mp4",
+      "seconds": 54.1
+    },
+    "example": {
+      "src": "assets/images/product-evidence/01-example.webp",
+      "width": 1278,
+      "height": 874,
+      "alt": "Revit 3D view of reinforced isolated footings and their concrete hosts.",
+      "source": "IsolatedFootingRFT.mp4",
+      "seconds": 248.8
+    }
+  },
+  "02": {
+    "example": {
+      "src": "assets/images/product-evidence/02-example.webp",
+      "width": 1060,
+      "height": 913,
+      "alt": "Column reinforcement in plan showing the perimeter bars and stirrup layout.",
+      "source": "Column RFT Full Ex 1 Col.mp4",
+      "seconds": 137.1
+    }
+  },
+  "03": {
+    "hero": {
+      "src": "assets/images/product-evidence/03-hero.webp",
+      "width": 931,
+      "height": 830,
+      "alt": "Additional Rebar from CAD setup showing the layer and reinforcement options.",
+      "source": "Additional RFT.mp4",
+      "seconds": 97.1
+    },
+    "example": {
+      "src": "assets/images/product-evidence/03-example.webp",
+      "width": 1220,
+      "height": 874,
+      "alt": "Revit plan showing the additional reinforcement distributed across slab zones.",
+      "source": "Additional RFT.mp4",
+      "seconds": 170
+    }
+  },
+  "04": {
+    "hero": {
+      "src": "assets/images/product-evidence/04-hero.webp",
+      "width": 1278,
+      "height": 874,
+      "alt": "Example structural coordination view in Revit with reinforcement visible.",
+      "source": "IsolatedFootingRFT.mp4",
+      "seconds": 246
+    },
+    "example": {
+      "src": "assets/images/product-evidence/04-example.webp",
+      "width": 1152,
+      "height": 810,
+      "alt": "Example Revit section with the footing reinforcement visible along the concrete cover.",
+      "source": "Rebar ConstraintIsolated.mp4",
+      "seconds": 14.7
+    }
+  },
+  "05": {
+    "example": {
+      "src": "assets/images/product-evidence/05-example.webp",
+      "width": 982,
+      "height": 856,
+      "alt": "Revit plan of the modeled foundations, including multiple isolated footing shapes.",
+      "source": "SourceRecords/Screen Recording 2025-11-06 084402.mp4",
+      "seconds": 12.1
+    }
+  },
+  "06": {
+    "hero": {
+      "src": "assets/images/product-evidence/06-hero.webp",
+      "width": 1500,
+      "height": 731,
+      "alt": "Columns and RC walls in Revit beside the CAD modeling controls.",
+      "source": "Creation Column&Walls.mp4",
+      "seconds": 50.6
+    },
+    "example": {
+      "src": "assets/images/product-evidence/06-example.webp",
+      "width": 1208,
+      "height": 814,
+      "alt": "Three-dimensional Revit view of modeled structural columns and concrete walls.",
+      "source": "Creation Column&Walls.mp4",
+      "seconds": 59.5
+    }
+  },
+  "07": {
+    "hero": {
+      "src": "assets/images/product-evidence/07-hero.webp",
+      "width": 1253,
+      "height": 850,
+      "alt": "Slab and Drop Panels workspace showing the modeling and level controls.",
+      "source": "CreationSlabs&Drops.mp4",
+      "seconds": 33.7
+    },
+    "example": {
+      "src": "assets/images/product-evidence/07-example.webp",
+      "width": 1188,
+      "height": 836,
+      "alt": "Close-up Revit view of the floor slab and highlighted drop-panel geometry.",
+      "source": "CreationSlabs&Drops.mp4",
+      "seconds": 84.3
+    }
+  },
+  "08": {
+    "hero": {
+      "src": "assets/images/product-evidence/08-hero.webp",
+      "width": 1300,
+      "height": 857,
+      "alt": "Beam Modeling workspace with the CAD, beam properties, and level controls.",
+      "source": "Creat Beams.mp4",
+      "seconds": 10
+    },
+    "example": {
+      "src": "assets/images/product-evidence/08-example.webp",
+      "width": 1223,
+      "height": 874,
+      "alt": "Multilevel Revit framing model with colored beam sections for review.",
+      "source": "Creat Beams.mp4",
+      "seconds": 70.3
+    }
+  },
+  "09": {
+    "example": {
+      "src": "assets/images/product-evidence/09-example.webp",
+      "width": 1490,
+      "height": 950,
+      "alt": "Model Navigator in use with graphic controls open on a color-coded Revit framing model.",
+      "source": "Creat Beams.mp4",
+      "seconds": 85.3
+    }
+  },
+  "13": {
+    "example": {
+      "src": "assets/images/product-evidence/13-example.webp",
+      "width": 1243,
+      "height": 944,
+      "alt": "Close-up Revit view of reinforcement at the edge of a concrete opening.",
+      "source": "LegGeneratorAfterEdit.mp4",
+      "seconds": 8.4
+    }
+  },
+  "17": {
+    "example": {
+      "src": "assets/images/product-evidence/17-example.webp",
+      "width": 1430,
+      "height": 884,
+      "alt": "Ceiling Wizard review with a divided-bay tile pattern and gypsum bands.",
+      "source": "Ceiling Wizard Videos/Groups Feature/Groups Variants Full.mp4",
+      "seconds": 128.4
+    },
+    "demo1": {
+      "src": "assets/images/product-evidence/17-demo1.webp",
+      "width": 1500,
+      "height": 775,
+      "alt": "Ceiling Wizard room selection and batch generation workspace.",
+      "source": "Ceiling Wizard Videos/Groups Feature/Groups Variants Full.mp4",
+      "seconds": 176.6
+    },
+    "demo2": {
+      "src": "assets/images/product-evidence/17-demo2.webp",
+      "width": 1500,
+      "height": 877,
+      "alt": "Ceiling Wizard custom layout review with fixture placements.",
+      "source": "Ceiling Wizard Videos/Groups Feature/Groups Variants Full.mp4",
+      "seconds": 272.9
+    }
+  }
+}

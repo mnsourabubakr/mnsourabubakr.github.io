@@ -75,7 +75,7 @@
   .service-section {
     margin-bottom: 40px;
   }
-  .service-section h3 {
+  .service-section h2 {
     font-size: 20px;
     font-weight: 800;
     color: var(--primary);
@@ -114,7 +114,7 @@
     margin: 50px 0;
     box-shadow: var(--shadow);
   }
-  .service-box-cta h3 {
+  .service-box-cta h2 {
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 8px;
@@ -183,6 +183,7 @@
     transform: translateX(2px);
   }
 </style>
+<link href="css/site-marketing.css?v=1" rel="stylesheet"/>
 <meta content="index,follow,max-image-preview:large" data-seo="bimsprint" name="robots"/><meta content="#F8FAFC" data-seo="bimsprint" name="theme-color"/><link data-seo="bimsprint" href="https://mnsourabubakr.github.io/service.html" rel="canonical"/><link data-seo="bimsprint" href="assets/images/favicon.png" rel="icon" sizes="64x64" type="image/png"/><link data-seo="bimsprint" href="assets/images/favicon-192.png" rel="apple-touch-icon"/><link data-seo="bimsprint" href="site.webmanifest" rel="manifest"/><meta content="website" data-seo="bimsprint" property="og:type"/><meta content="BIM Automation Services — BIM Sprint" data-seo="bimsprint" property="og:title"/><meta content="Explore BIM Sprint services including ready Revit add-ins, custom automation, software development, licensing, BIM modeling, and shop drawings." data-seo="bimsprint" property="og:description"/><meta content="https://mnsourabubakr.github.io/service.html" data-seo="bimsprint" property="og:url"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" property="og:image"/><meta content="BIM Sprint" data-seo="bimsprint" property="og:site_name"/><meta content="summary_large_image" data-seo="bimsprint" name="twitter:card"/><meta content="BIM Automation Services — BIM Sprint" data-seo="bimsprint" name="twitter:title"/><meta content="Explore BIM Sprint services including ready Revit add-ins, custom automation, software development, licensing, BIM modeling, and shop drawings." data-seo="bimsprint" name="twitter:description"/><meta content="https://mnsourabubakr.github.io/assets/images/social-share.jpg" data-seo="bimsprint" name="twitter:image"/></head>
 <body>
 <!-- NAV -->
@@ -207,12 +208,14 @@
 <!-- SERVICE CONTENT -->
 <main class="service-page" id="service-content">
 <a class="service-back" href="index.html#services">← Back to Services</a>
+<header class="service-intro">
+<span class="section-label" id="service-category">BIM Sprint Services</span>
 <div class="service-header-wrap">
 <div class="service-icon-large" id="service-icon"></div>
 <h1 class="service-detail-title" id="service-title"></h1>
 </div>
 <p class="service-tagline" id="service-tagline"></p>
-<div class="service-actions"><a class="btn btn-primary" href="https://wa.me/201068970898" rel="noopener noreferrer" target="_blank">Request a Free Consultation</a><a class="btn btn-outline" href="tools.html" id="service-tools-link" style="display:none">Show Available Tools →</a></div>
+<div class="service-actions"><a class="btn btn-primary" href="https://wa.me/201068970898" id="service-hero-contact" rel="noopener noreferrer" target="_blank">Discuss Your Project on WhatsApp</a><a class="btn btn-outline" href="tools.html" id="service-tools-link" hidden>Explore Add-in Packages →</a></div>
 <div class="service-meta-grid">
 <div class="service-meta-item">
       📅 <strong>Delivery Time:</strong> <span id="service-delivery"></span>
@@ -221,42 +224,41 @@
       ⚙️ <strong>Compatibility:</strong> <span id="service-compat"></span>
 </div>
 </div>
+</header>
 <!-- Overview -->
 <div class="service-section">
-<h3>Overview</h3>
+<h2>How this service helps</h2>
 <p id="service-overview" style="line-height:1.6;color:var(--text-sec);font-size:15px"></p>
 </div>
 <!-- Packages (Only for ready tools) -->
-<div class="ready-tools-cta" id="ready-tools-cta" style="display:none"><div><strong>Browse the ready-to-use tool catalog</strong><span>Open the four packages and choose the tool that matches your workflow.</span></div><a class="btn btn-primary" href="tools.html">Show Tools →</a></div><div class="service-section" id="service-packages-section" style="display:none">
-<h3>Available Deployed Packages</h3>
+<div class="service-section" id="service-packages-section" style="display:none">
+<h2>Explore the four add-in packages</h2>
 <div class="packages-grid" id="service-packages"></div>
 </div>
 <!-- Features -->
 <div class="service-section">
-<h3>Key Features</h3>
+<h2>Key Capabilities</h2>
 <ul class="service-ul" id="service-features"></ul>
 </div>
 <!-- Use Cases -->
 <div class="service-section" id="service-usecases-section">
-<h3>Typical Use Cases</h3>
+<h2>Typical Use Cases</h2>
 <ul class="service-ul" id="service-usecases"></ul>
 </div>
 <!-- Deliverables -->
 <div class="service-section" id="service-deliverables-section" style="display:none">
-<h3>Deliverables Included</h3>
+<h2>Deliverables Included</h2>
 <ul class="service-ul" id="service-deliverables"></ul>
 </div>
 <!-- CTA Box -->
-<div class="service-box-cta">
-<h3>Ready to improve your engineering workflow?</h3>
-<p>Let's discuss your project requirements and find the best automated solution tailored for your team.</p>
-<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-<a class="btn btn-primary" href="https://wa.me/201068970898?text=Hello%20BIM%20Sprint%2C%20I%27d%20like%20to%20request%20a%20consultation%20about%20BIM%20automation%20services." rel="noopener noreferrer" target="_blank">Request a Consultation on WhatsApp</a>
-</div>
-</div>
+<section class="service-box-cta" aria-labelledby="service-next-title">
+<h2 id="service-next-title">Tell us what you want to deliver</h2>
+<p id="service-next-copy">Share your starting point, the result you need, and any project deadline.</p>
+<a class="btn btn-primary" href="https://wa.me/201068970898" id="service-closing-contact" rel="noopener noreferrer" target="_blank">Request a Consultation on WhatsApp</a>
+</section>
 <!-- Related Services -->
 <div class="service-section">
-<h3>Related Services</h3>
+<h2>Related Services</h2>
 <div class="related-grid" id="service-related"></div>
 </div>
 </main>
@@ -277,12 +279,12 @@
 <span class="footer-copy">© <span data-year="">2026</span> BIM Sprint · All rights reserved</span>
 </div>
 </footer>
-<script src="js/services-data.js?v=20260811-arch"></script>
+<script src="js/services-data.js?v=service-inquiries"></script>
 <script src="js/main.js"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
   const serviceId = params.get('id');
-  const service = serviceId ? SERVICES[serviceId] : null;
+  const service = Object.hasOwn(SERVICES, serviceId) ? SERVICES[serviceId] : null;
   const siteBase = 'https://mnsourabubakr.github.io/';
 
   function setMeta(selector, value) {
@@ -310,10 +312,42 @@
     document.getElementById('service-compat').textContent = service.supportedVersions;
     document.getElementById('service-overview').textContent = service.overview;
 
+    const readyTools = Boolean(service.packages?.length);
+    const category = readyTools ? 'Ready-to-use Revit Add-ins'
+      : ['09', '10'].includes(serviceId) ? 'BIM Modeling & Documentation'
+      : 'Automation & Software Services';
+    document.getElementById('service-category').textContent = category;
+    const message = readyTools
+      ? 'Hello BIM Sprint, I would like help choosing a ready-to-use Revit add-in package.'
+      : `Hello BIM Sprint, I would like to discuss ${service.title} for my team.`;
+    const whatsapp = `https://wa.me/201068970898?text=${encodeURIComponent(message)}`;
+    const heroContact = document.getElementById('service-hero-contact');
+    const closingContact = document.getElementById('service-closing-contact');
+    heroContact.href = whatsapp;
+    closingContact.href = whatsapp;
+    if (service.inquiry) document.getElementById('service-next-copy').textContent = service.inquiry;
+    if (readyTools) {
+      document.getElementById('service-next-title').textContent = 'Find a package for your Revit workflow';
+      closingContact.textContent = 'Ask About a Package on WhatsApp';
+      heroContact.className = 'btn btn-outline';
+      heroContact.textContent = 'Ask About a Package';
+      const catalogLink = document.getElementById('service-tools-link');
+      catalogLink.hidden = false;
+      catalogLink.className = 'btn btn-primary';
+      heroContact.before(catalogLink);
+    }
+
     const featEl = document.getElementById('service-features');
     (service.features || []).forEach(feature => {
       const li = document.createElement('li');
-      li.textContent = feature;
+      const split = feature.indexOf(': ');
+      if (split > 0 && split < 72) {
+        const label = document.createElement('strong');
+        label.textContent = feature.slice(0, split);
+        li.append(label, document.createTextNode(feature.slice(split + 2)));
+      } else {
+        li.textContent = feature;
+      }
       featEl.appendChild(li);
     });
 
@@ -330,12 +364,8 @@
       casesSection.style.display = 'none';
     }
 
-    if (service.packages?.length) {
+    if (readyTools) {
       document.getElementById('service-packages-section').style.display = 'block';
-      document.getElementById('ready-tools-cta').style.display = 'flex';
-      const topToolsLink = document.getElementById('service-tools-link');
-      topToolsLink.style.display = 'inline-flex';
-      topToolsLink.href = 'tools.html';
       const packageHashes = ['#pkg01', '#pkg02', '#pkg03', '#pkg04'];
       const pkgEl = document.getElementById('service-packages');
       service.packages.forEach((pkg, index) => {
