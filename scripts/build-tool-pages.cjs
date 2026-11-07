@@ -15,6 +15,7 @@ const nav = legacy.match(/<!-- NAV -->\n([\s\S]*?)<!-- TOOL CONTENT -->/)[1]
 const footer = legacy.match(/<footer class="footer">[\s\S]*?<\/footer>/)[0];
 const siteBase = 'https://mnsourabubakr.github.io/';
 const routeFiles = { '10': 'room-wizard.html' };
+const localDemoIds = new Set(['01', '02', '03', '06', '07', '08', '09', '13']);
 const check = process.argv.includes('--check');
 
 function emit(file, html) {
@@ -60,7 +61,7 @@ function renderPage(tool, file) {
 <link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="css/style.css?v=in-page-request">
 <link rel="stylesheet" href="css/tool-landing.css?v=8">
-<link rel="stylesheet" href="css/product-detail.css?v=1">
+<link rel="stylesheet" href="css/product-detail.css?v=${tool.localDemo ? 'local-demo' : '1'}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BIM Sprint">
 <meta property="og:title" content="${esc(title)}">
@@ -80,7 +81,7 @@ ${nav}<main class="rw-page" id="tool-content" tabindex="-1">${renderProduct(tool
 </main>
 ${footer}
 <script src="js/main.js" defer></script>
-<script src="js/product-events.js" defer></script>
+<script src="js/product-events.js${tool.localDemo ? '?v=local-demo' : ''}" defer></script>
 <script src="js/package-selection.js?v=product-landing-pages" defer></script>
 <script src="js/package-request.js?v=in-page-request" defer></script>
 </body>
@@ -99,6 +100,13 @@ for (const [id, source] of Object.entries(tools)) {
   tool.heroImage = captures[id]?.hero ? validateAsset(captures[id].hero) : fallback;
   tool.exampleImage = captures[id]?.example ? validateAsset(captures[id].example) : { ...fallback, alt: tool.visual };
   tool.demoImages = [captures[id]?.demo1, captures[id]?.demo2].map(asset => asset && validateAsset(asset));
+  if (localDemoIds.has(id)) {
+    const assetBase = `assets/videos/tool-demos/${tool.slug}`;
+    tool.localDemo = { src: `${assetBase}.mp4`, poster: `${assetBase}.webp` };
+    for (const file of Object.values(tool.localDemo)) {
+      if (!existsSync(resolve(root, file))) throw new Error(`Missing demo asset: ${file}`);
+    }
+  }
   routeFiles[id] = file;
   emit(file, renderPage(tool, file).replace(/[ \t]+$/gm, ''));
 }

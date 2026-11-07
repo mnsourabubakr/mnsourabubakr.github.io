@@ -53,6 +53,23 @@ function demoLinks(tool) {
 }
 
 function renderDemos(tool, links) {
+  if (tool.localDemo) {
+    const { src, poster } = tool.localDemo;
+    return `
+    <section id="product-demos" class="rw-demo-section" aria-labelledby="demos-title">
+      <div class="rw-container">
+        <div class="rw-section-heading rw-section-heading--light">
+          <span class="rw-section-kicker">1-minute workflow demo</span>
+          <h2 id="demos-title">See ${esc(tool.name)} in Revit</h2>
+          <p>Follow the on-screen steps from setup to the modeled result.</p>
+        </div>
+        <video id="product-demo-player" class="product-demo-player" controls playsinline preload="none" poster="${esc(poster)}" aria-labelledby="demos-title">
+          <source src="${esc(src)}" type="video/mp4">
+          <a href="${esc(src)}">Open the MP4 demo</a>
+        </video>
+      </div>
+    </section>`;
+  }
   if (!links.length) return '';
   return `
     <section id="product-demos" class="rw-demo-section" aria-labelledby="demos-title">
@@ -132,6 +149,9 @@ function renderProduct(tool) {
   const productPackage = productPackages[tool.packageId];
   const shared = tool.packageId === 'shared';
   const links = demoLinks(tool);
+  const demoCount = tool.localDemo ? 1 : links.length;
+  const demoTarget = demoCount ? '#product-demos' : '#workflow-comparison';
+  const playInline = tool.localDemo ? ' data-play-local-demo' : '';
   const whatsapp = buildWhatsappUrl(tool.name);
   const [valueTitle, valueText] = tool.value;
   const [headline, emphasis] = tool.headline;
@@ -149,7 +169,7 @@ function renderProduct(tool) {
           <p class="rw-hero-text">${esc(tool.lead)}</p>
           <div class="rw-hero-actions">
             <a class="rw-button rw-button--primary" href="${whatsapp}" target="_blank" rel="noopener noreferrer" data-conversion="request_demo_hero">${icon('whatsapp')}<span>Request Demo on WhatsApp</span></a>
-            <a class="rw-button rw-button--ghost" href="${links.length ? '#product-demos' : '#workflow-comparison'}" data-conversion="${links.length ? 'view_demos_hero' : 'view_workflow_hero'}">${icon(links.length ? 'play' : 'arrow')}<span>${links.length ? 'Watch Demos' : 'Compare Workflows'}</span></a>
+            <a class="rw-button rw-button--ghost" href="${demoTarget}" data-conversion="${demoCount ? 'view_demos_hero' : 'view_workflow_hero'}"${playInline}>${icon(demoCount ? 'play' : 'arrow')}<span>${tool.localDemo ? 'Watch Demo' : links.length ? 'Watch Demos' : 'Compare Workflows'}</span></a>
           </div>
         </div>
         <figure class="rw-hero-product">
@@ -188,8 +208,10 @@ function renderProduct(tool) {
         </div>
       </div>
     </section>
-    <nav class="tool-demo-actions tool-detail-actions rw-demo-shortcuts product-shortcuts" aria-label="${esc(tool.name)} demos and package request" data-demo-count="${links.length}" data-tool-package="${tool.packageId}"${links.length ? '' : ' hidden'}>
-      ${links.map((demo, i) => `<a class="tool-demo-link" href="${esc(demo.url)}" target="_blank" rel="noopener noreferrer" data-conversion="watch_demo_floating_${i + 1}" title="${esc(demo.description || demo.label)}">${icon('play')}<span>${esc(demo.label)}</span></a>`).join('')}
+    <nav class="tool-demo-actions tool-detail-actions rw-demo-shortcuts product-shortcuts" aria-label="${esc(tool.name)} demos and package request" data-demo-count="${demoCount}" data-tool-package="${tool.packageId}"${demoCount ? '' : ' hidden'}>
+      ${tool.localDemo
+        ? `<a class="tool-demo-link" href="#product-demos" data-conversion="watch_demo_floating_1" data-play-local-demo>${icon('play')}<span>Watch Demo</span></a>`
+        : links.map((demo, i) => `<a class="tool-demo-link" href="${esc(demo.url)}" target="_blank" rel="noopener noreferrer" data-conversion="watch_demo_floating_${i + 1}" title="${esc(demo.description || demo.label)}">${icon('play')}<span>${esc(demo.label)}</span></a>`).join('')}
     </nav>`;
 }
 

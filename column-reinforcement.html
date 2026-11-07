@@ -14,7 +14,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="css/style.css?v=in-page-request">
 <link rel="stylesheet" href="css/tool-landing.css?v=8">
-<link rel="stylesheet" href="css/product-detail.css?v=1">
+<link rel="stylesheet" href="css/product-detail.css?v=local-demo">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BIM Sprint">
 <meta property="og:title" content="Column Reinforcement for Revit | BIM Sprint">
@@ -61,7 +61,7 @@
           <p class="rw-hero-text">Configure longitudinal bars, foundation starters, and stirrup zones for rectangular, square, or circular concrete columns in Revit.</p>
           <div class="rw-hero-actions">
             <a class="rw-button rw-button--primary" href="https://wa.me/201068970898?text=Hello%20BIM%20Sprint%2C%20I%20would%20like%20to%20request%20a%20demo%20of%20Column%20Reinforcement%20for%20Revit." target="_blank" rel="noopener noreferrer" data-conversion="request_demo_hero"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M8.2 7.8c.2-.4.4-.4.7-.4h.4c.2 0 .4.1.5.4l1 2.3c.1.3.1.5-.1.7l-.7.8c-.2.2-.2.4-.1.6.7 1.4 1.8 2.5 3.2 3.2.2.1.4.1.6-.1l.9-1c.2-.2.4-.3.7-.2l2.2 1c.3.1.4.3.4.5 0 .3-.1 1.5-1.1 2.1-.7.4-1.6.7-2.6.4-1.2-.3-2.8-1-4.6-2.6-1.4-1.3-2.5-2.9-3-4.2-.5-1.1-.1-2.5.5-3.2.3-.3.7-.5 1.1-.3Z"/></svg><span>Request Demo on WhatsApp</span></a>
-            <a class="rw-button rw-button--ghost" href="#workflow-comparison" data-conversion="view_workflow_hero"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Compare Workflows</span></a>
+            <a class="rw-button rw-button--ghost" href="#product-demos" data-conversion="view_demos_hero" data-play-local-demo><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Watch Demo</span></a>
           </div>
         </div>
         <figure class="rw-hero-product">
@@ -85,6 +85,19 @@
       </div>
     </section>
 
+    <section id="product-demos" class="rw-demo-section" aria-labelledby="demos-title">
+      <div class="rw-container">
+        <div class="rw-section-heading rw-section-heading--light">
+          <span class="rw-section-kicker">1-minute workflow demo</span>
+          <h2 id="demos-title">See Column Reinforcement in Revit</h2>
+          <p>Follow the on-screen steps from setup to the modeled result.</p>
+        </div>
+        <video id="product-demo-player" class="product-demo-player" controls playsinline preload="none" poster="assets/videos/tool-demos/column-reinforcement.webp" aria-labelledby="demos-title">
+          <source src="assets/videos/tool-demos/column-reinforcement.mp4" type="video/mp4">
+          <a href="assets/videos/tool-demos/column-reinforcement.mp4">Open the MP4 demo</a>
+        </video>
+      </div>
+    </section>
 
     <section class="rw-section rw-comparison-section" id="workflow-comparison" aria-labelledby="comparison-title">
       <div class="rw-container">
@@ -149,8 +162,8 @@
         </div>
       </div>
     </section>
-    <nav class="tool-demo-actions tool-detail-actions rw-demo-shortcuts product-shortcuts" aria-label="Column Reinforcement demos and package request" data-demo-count="0" data-tool-package="pkg02" hidden>
-
+    <nav class="tool-demo-actions tool-detail-actions rw-demo-shortcuts product-shortcuts" aria-label="Column Reinforcement demos and package request" data-demo-count="1" data-tool-package="pkg02">
+      <a class="tool-demo-link" href="#product-demos" data-conversion="watch_demo_floating_1" data-play-local-demo><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Watch Demo</span></a>
     </nav>
 </main>
 <footer class="footer">
@@ -170,7 +183,7 @@
 </div>
 </footer>
 <script src="js/main.js" defer></script>
-<script src="js/product-events.js" defer></script>
+<script src="js/product-events.js?v=local-demo" defer></script>
 <script src="js/package-selection.js?v=product-landing-pages" defer></script>
 <script src="js/package-request.js?v=in-page-request" defer></script>
 </body>
