@@ -59,7 +59,7 @@ function renderDemos(tool, links) {
     <section id="product-demos" class="rw-demo-section" aria-labelledby="demos-title">
       <div class="rw-container">
         <div class="rw-section-heading rw-section-heading--light">
-          <span class="rw-section-kicker">1-minute workflow demo</span>
+          <span class="rw-section-kicker">Workflow demo · 40 seconds at 1.5×</span>
           <h2 id="demos-title">See ${esc(tool.name)} in Revit</h2>
           <p>Follow the on-screen steps from setup to the modeled result.</p>
         </div>

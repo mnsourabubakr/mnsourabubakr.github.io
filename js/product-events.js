@@ -1,3 +1,9 @@
+const demoPlayer = document.getElementById('product-demo-player');
+if (demoPlayer) {
+  demoPlayer.defaultPlaybackRate = 1.5;
+  demoPlayer.playbackRate = 1.5;
+}
+
 document.getElementById('tool-content').addEventListener('click', event => {
   const link = event.target.closest('[data-conversion]');
   if (!link) return;
@@ -5,7 +11,7 @@ document.getElementById('tool-content').addEventListener('click', event => {
   if (link.hasAttribute('data-play-local-demo') && event.button === 0 &&
       !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
     // The anchor still jumps to the player if the browser blocks playback.
-    document.getElementById('product-demo-player')?.play().catch(() => {});
+    demoPlayer?.play().catch(() => {});
   }
 
   const detail = {

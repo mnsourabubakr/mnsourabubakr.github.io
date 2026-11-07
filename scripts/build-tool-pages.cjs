@@ -81,7 +81,7 @@ ${nav}<main class="rw-page" id="tool-content" tabindex="-1">${renderProduct(tool
 </main>
 ${footer}
 <script src="js/main.js" defer></script>
-<script src="js/product-events.js${tool.localDemo ? '?v=local-demo' : ''}" defer></script>
+<script src="js/product-events.js${tool.localDemo ? '?v=demo-speed' : ''}" defer></script>
 <script src="js/package-selection.js?v=product-landing-pages" defer></script>
 <script src="js/package-request.js?v=in-page-request" defer></script>
 </body>
