@@ -16,7 +16,7 @@ const footer = legacy.match(/<footer class="footer">[\s\S]*?<\/footer>/)[0];
 const siteBase = 'https://mnsourabubakr.github.io/';
 const routeFiles = { '10': 'room-wizard.html' };
 const localDemoIds = new Set(['01', '02', '03', '06', '07', '08', '09', '13']);
-const demoRevisions = { '06': 'walls-controls', '13': 'legs-controls' };
+const demoRevisions = { '06': 'walls-controls', '13': 'legs-workflow' };
 const check = process.argv.includes('--check');
 
 function emit(file, html) {
