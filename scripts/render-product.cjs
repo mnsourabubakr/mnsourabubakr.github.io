@@ -55,7 +55,6 @@ function demoLinks(tool) {
 function renderDemos(tool, links) {
   if (tool.localDemo) {
     const { src, poster } = tool.localDemo;
-    const mediaUrl = `${src}?v=40s`;
     return `
     <section id="product-demos" class="rw-demo-section" aria-labelledby="demos-title">
       <div class="rw-container">
@@ -65,8 +64,8 @@ function renderDemos(tool, links) {
           <p>Follow the on-screen steps from setup to the modeled result.</p>
         </div>
         <video id="product-demo-player" class="product-demo-player" controls playsinline preload="none" poster="${esc(poster)}" aria-labelledby="demos-title">
-          <source src="${esc(mediaUrl)}" type="video/mp4">
-          <a href="${esc(mediaUrl)}">Open the MP4 demo</a>
+          <source src="${esc(src)}" type="video/mp4">
+          <a href="${esc(src)}">Open the MP4 demo</a>
         </video>
       </div>
     </section>`;

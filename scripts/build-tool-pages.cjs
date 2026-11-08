@@ -16,6 +16,7 @@ const footer = legacy.match(/<footer class="footer">[\s\S]*?<\/footer>/)[0];
 const siteBase = 'https://mnsourabubakr.github.io/';
 const routeFiles = { '10': 'room-wizard.html' };
 const localDemoIds = new Set(['01', '02', '03', '06', '07', '08', '09', '13']);
+const demoRevisions = { '06': 'walls-controls', '13': 'legs-controls' };
 const check = process.argv.includes('--check');
 
 function emit(file, html) {
@@ -102,10 +103,13 @@ for (const [id, source] of Object.entries(tools)) {
   tool.demoImages = [captures[id]?.demo1, captures[id]?.demo2].map(asset => asset && validateAsset(asset));
   if (localDemoIds.has(id)) {
     const assetBase = `assets/videos/tool-demos/${tool.slug}`;
-    tool.localDemo = { src: `${assetBase}.mp4`, poster: `${assetBase}.webp` };
-    for (const file of Object.values(tool.localDemo)) {
+    const src = `${assetBase}.mp4`;
+    const poster = `${assetBase}.webp`;
+    for (const file of [src, poster]) {
       if (!existsSync(resolve(root, file))) throw new Error(`Missing demo asset: ${file}`);
     }
+    const revision = demoRevisions[id];
+    tool.localDemo = { src: `${src}?v=${revision || '40s'}`, poster: revision ? `${poster}?v=${revision}` : poster };
   }
   routeFiles[id] = file;
   emit(file, renderPage(tool, file).replace(/[ \t]+$/gm, ''));
