@@ -137,6 +137,73 @@
 .catalog-page .catalog-info-grid article { border-color: var(--site-line); }
 .catalog-page .catalog-cta { background: var(--site-light); }
 
+.package-carousel-controls { display: none; }
+
+@media (max-width: 767px) {
+  .catalog-page .package-tools.is-carousel {
+    grid-auto-columns: calc((100% - 12px) / 2);
+    gap: 12px;
+    min-width: 0;
+    padding: 12px;
+    scroll-padding-inline: 12px;
+    scrollbar-width: none;
+  }
+  .package-tools.is-carousel::-webkit-scrollbar { display: none; }
+  .package-tools.is-carousel .catalog-tool-card {
+    width: 100%;
+    scroll-snap-align: none;
+    overflow-wrap: anywhere;
+  }
+  .package-tools.is-carousel .catalog-tool-card:nth-child(odd) { scroll-snap-align: start; }
+  .package-tools.is-carousel.has-unpaired-card::after { content: ""; }
+  .package-carousel-controls:not([hidden]) {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px 12px;
+    background: #fff;
+  }
+  .package-carousel-arrow {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+  }
+  .package-carousel-arrow[aria-disabled="true"] {
+    background: #dce8f3;
+    color: #526e88;
+    cursor: default;
+  }
+  .package-carousel-arrow:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  .package-carousel-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .package-carousel-track {
+    position: relative;
+    height: 8px;
+    border-radius: 999px;
+    background: #dce8f3;
+  }
+  .package-carousel-thumb {
+    position: absolute;
+    inset-block: 0;
+    border-radius: inherit;
+    background: #c7500d;
+  }
+}
+
 .service-page .service-intro {
   margin-bottom: 32px;
   padding: clamp(18px, 4.8vw, 42px);
